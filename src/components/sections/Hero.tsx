@@ -47,15 +47,15 @@ export default function Hero() {
         className="grid grid-cols-1 md:grid-cols-3 gap-gutter mt-24 w-full max-w-4xl"
       >
         <div className="flex flex-col items-center">
-          <span className="font-display-lg text-display-lg text-primary">30+</span>
+          <span className="font-display-lg text-display-lg text-blue-400">30+</span>
           <span className="text-on-surface-variant font-label-caps text-label-caps">PROJECTS DELIVERED</span>
         </div>
         <div className="flex flex-col items-center">
-          <span className="font-display-lg text-display-lg text-primary">100%</span>
+          <span className="font-display-lg text-display-lg text-blue-400">100%</span>
           <span className="text-on-surface-variant font-label-caps text-label-caps">CLIENT SATISFACTION</span>
         </div>
         <div className="flex flex-col items-center">
-          <span className="font-display-lg text-display-lg text-primary">8+</span>
+          <span className="font-display-lg text-display-lg text-blue-400">8+</span>
           <span className="text-on-surface-variant font-label-caps text-label-caps">YEARS EXPERIENCE</span>
         </div>
       </motion.div>
