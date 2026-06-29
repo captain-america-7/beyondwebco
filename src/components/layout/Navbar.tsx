@@ -50,7 +50,7 @@ export default function Navbar() {
             </span>
           </button>
         )}
-        <Link href="/contact" className="hidden lg:block bg-primary text-on-primary-container px-6 py-2 rounded-xl font-bold hover:scale-95 active:scale-90 transition-transform">
+        <Link href="/contact" className="hidden lg:block bg-primary text-black px-6 py-2 rounded-xl font-bold hover:scale-95 active:scale-90 transition-transform">
           Start a Project
         </Link>
       </div>
