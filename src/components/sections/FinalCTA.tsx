@@ -27,7 +27,7 @@ export default function FinalCTA() {
         </p>
         
         <div className="flex flex-col sm:flex-row gap-6 justify-center">
-          <Link href="/contact" className="bg-primary text-on-primary-container px-12 py-6 rounded-xl font-black text-xl hover:scale-105 transition-transform shadow-2xl shadow-primary/20">
+          <Link href="/contact" className="bg-primary text-black px-12 py-6 rounded-xl font-black text-xl hover:scale-105 transition-transform shadow-2xl shadow-primary/20">
             Get Started Now
           </Link>
           <Link href="/contact" className="border border-white/20 px-12 py-6 rounded-xl font-bold text-xl backdrop-blur-xl hover:bg-white/10 transition-colors">
