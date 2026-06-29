@@ -302,11 +302,11 @@ export default function Header() {
         {/* Media queries style block */}
         <style dangerouslySetInnerHTML={{
           __html: `
-          @media (min-width: 768px) {
+          @media (min-width: 1024px) {
             .md-nav { display: flex !important; }
             .ham-btn { display: none !important; }
           }
-          @media (min-width: 1024px) {
+          @media (min-width: 1200px) {
             .phone-btn { display: inline-flex !important; }
           }
           .nav-item-link:hover {
