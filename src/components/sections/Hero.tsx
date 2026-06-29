@@ -23,7 +23,7 @@ export default function Hero() {
         </span>
         
         <h1 className="font-display-xl text-[64px] leading-[1.1] md:text-display-xl max-w-5xl mx-auto mb-stack-lg">
-          We build Web. Mobile. SaaS. <span className="text-primary">Scale.</span>
+          We build Web. Mobile. SaaS. <span className="text-[#9D4EDD]">Scale.</span>
         </h1>
         
         <p className="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto mb-12">
@@ -47,15 +47,15 @@ export default function Hero() {
         className="grid grid-cols-1 md:grid-cols-3 gap-gutter mt-24 w-full max-w-4xl"
       >
         <div className="flex flex-col items-center">
-          <span className="font-display-lg text-display-lg text-blue-400">30+</span>
+          <span className="font-display-lg text-display-lg text-[#9D4EDD]">30+</span>
           <span className="text-on-surface-variant font-label-caps text-label-caps">PROJECTS DELIVERED</span>
         </div>
         <div className="flex flex-col items-center">
-          <span className="font-display-lg text-display-lg text-blue-400">100%</span>
+          <span className="font-display-lg text-display-lg text-[#9D4EDD]">100%</span>
           <span className="text-on-surface-variant font-label-caps text-label-caps">CLIENT SATISFACTION</span>
         </div>
         <div className="flex flex-col items-center">
-          <span className="font-display-lg text-display-lg text-blue-400">8+</span>
+          <span className="font-display-lg text-display-lg text-[#9D4EDD]">8+</span>
           <span className="text-on-surface-variant font-label-caps text-label-caps">YEARS EXPERIENCE</span>
         </div>
       </motion.div>
