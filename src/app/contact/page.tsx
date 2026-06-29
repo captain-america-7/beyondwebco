@@ -65,25 +65,14 @@ export default function ContactPage() {
         >
           <div>
             <h3 className="font-bold text-xl mb-2">Direct Contact</h3>
-            <p className="text-on-surface-variant mb-1">Email: hello@beyondwebco.com</p>
-            <p className="text-on-surface-variant">Phone: +1 (555) 123-4567</p>
-          </div>
-          <div>
-            <h3 className="font-bold text-xl mb-2">Office</h3>
-            <p className="text-on-surface-variant mb-1">123 Engineering Blvd</p>
-            <p className="text-on-surface-variant">Tech District, San Francisco, CA</p>
+            <p className="text-on-surface-variant mb-1">Email: beyondwebco@gmail.com</p>
+            <p className="text-on-surface-variant">Phone: 7993597172</p>
           </div>
           <div>
             <h3 className="font-bold text-xl mb-4">Follow Us</h3>
             <div className="flex gap-4">
-              <a href="#" className="p-3 rounded-full bg-surface-container-high hover:bg-primary/20 hover:text-primary transition-colors">
-                X
-              </a>
-              <a href="#" className="p-3 rounded-full bg-surface-container-high hover:bg-primary/20 hover:text-primary transition-colors">
-                In
-              </a>
-              <a href="#" className="p-3 rounded-full bg-surface-container-high hover:bg-primary/20 hover:text-primary transition-colors">
-                Gh
+              <a href="https://instagram.com/beyondwebco" target="_blank" rel="noopener noreferrer" className="px-4 py-2 rounded-full bg-surface-container-high hover:bg-primary/20 hover:text-primary transition-colors font-medium">
+                Instagram: @beyondwebco
               </a>
             </div>
           </div>
