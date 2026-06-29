@@ -31,7 +31,7 @@ export default function Hero() {
         </p>
         
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center w-full sm:w-auto">
-          <Link href="/contact" className="w-full sm:w-auto px-10 py-4 bg-primary text-on-primary-container font-bold rounded-xl text-lg hover:scale-105 transition-transform">
+          <Link href="/contact" className="w-full sm:w-auto px-10 py-4 bg-primary text-black font-bold rounded-xl text-lg hover:scale-105 transition-transform">
             Start a Project
           </Link>
           <Link href="/work" className="w-full sm:w-auto px-10 py-4 border border-outline-variant hover:bg-white/5 font-bold rounded-xl text-lg transition-all">
