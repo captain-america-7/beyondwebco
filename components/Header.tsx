@@ -47,7 +47,7 @@ export default function Header() {
         className="sticky top-0 z-40 transition-all duration-300"
         style={{
           margin: scrolled ? "0.75rem auto" : "1.25rem auto",
-          width: "calc(100% - 2rem)",
+          width: "calc(100% - 1rem)",
           maxWidth: scrolled ? "1000px" : "1200px",
           borderRadius: "9999px",
           minHeight: scrolled ? "56px" : "68px",
@@ -300,7 +300,8 @@ export default function Header() {
         </div>
 
         {/* Media queries style block */}
-        <style dangerouslySetInnerHTML={{ __html: `
+        <style dangerouslySetInnerHTML={{
+          __html: `
           @media (min-width: 768px) {
             .md-nav { display: flex !important; }
             .ham-btn { display: none !important; }
