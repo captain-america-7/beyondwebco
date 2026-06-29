@@ -87,7 +87,7 @@ export default function ServicesPage() {
   return (
     <main>
       {/* Page Header */}
-      <section className="section-pad" style={{ background: "hsl(var(--cream))", paddingTop: "5rem" }}>
+      <section className="section-pad" style={{ background: "transparent", paddingTop: "5rem" }}>
         <div className="container">
           <span className="eyebrow" style={{ color: "hsl(var(--orange))" }}>
             OUR SERVICES
@@ -98,7 +98,7 @@ export default function ServicesPage() {
               marginBottom: "1.5rem",
               fontFamily: "var(--font-display)",
               fontWeight: 900,
-              color: "hsl(var(--navy))",
+              color: "#fff",
               fontSize: "clamp(2.5rem, 5vw, 4.5rem)",
               lineHeight: 1.1,
             }}
@@ -108,7 +108,7 @@ export default function ServicesPage() {
           <p
             style={{
               fontSize: "clamp(1.125rem, 2vw, 1.35rem)",
-              color: "hsl(var(--navy))",
+              color: "rgba(255, 255, 255, 0.7)",
               fontWeight: 500,
               lineHeight: 1.6,
               maxWidth: "750px",
@@ -120,7 +120,7 @@ export default function ServicesPage() {
       </section>
 
       {/* Services Grid Section */}
-      <section className="section-pad" style={{ background: "hsl(var(--paper))", borderTop: "2px solid hsl(var(--navy))" }}>
+      <section className="section-pad" style={{ background: "transparent", borderTop: "1px solid rgba(255, 255, 255, 0.08)" }}>
         <div className="container">
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 320px), 1fr))", gap: "1.5rem" }}>
             {servicesList.map((service) => (
@@ -134,7 +134,7 @@ export default function ServicesPage() {
                   justifyContent: "space-between",
                   padding: "clamp(1.5rem, 3vw, 2.25rem)",
                   minHeight: "360px",
-                  scrollMarginTop: "100px", // Enables smooth scrolling margin
+                  scrollMarginTop: "100px",
                 }}
               >
                 <div style={{ display: "flex", flexDirection: "column", gap: "1.25rem" }}>
@@ -146,8 +146,9 @@ export default function ServicesPage() {
                       width: "3.5rem",
                       height: "3.5rem",
                       borderRadius: "1rem",
-                      border: "2px solid hsl(var(--navy))",
-                      background: `color-mix(in srgb, ${service.color} 15%, transparent)`,
+                      border: `1px solid ${service.color}33`,
+                      background: `color-mix(in srgb, ${service.color} 12%, transparent)`,
+                      boxShadow: `0 4px 15px color-mix(in srgb, ${service.color} 10%, transparent)`,
                       fontSize: "1.75rem",
                     }}
                   >
@@ -155,10 +156,10 @@ export default function ServicesPage() {
                   </div>
 
                   <div style={{ display: "flex", flexDirection: "column", gap: "0.5rem" }}>
-                    <h3 style={{ fontFamily: "var(--font-display)", fontSize: "1.35rem", fontWeight: 700 }}>
+                    <h3 style={{ fontFamily: "var(--font-display)", fontSize: "1.35rem", fontWeight: 700, color: "#fff" }}>
                       {service.title}
                     </h3>
-                    <p style={{ fontSize: "0.875rem", lineHeight: 1.6, color: "hsl(var(--ink-soft))" }}>
+                    <p style={{ fontSize: "0.875rem", lineHeight: 1.6, color: "rgba(255, 255, 255, 0.65)" }}>
                       {service.desc}
                     </p>
                   </div>
@@ -170,15 +171,16 @@ export default function ServicesPage() {
                         key={idx}
                         style={{
                           display: "inline-block",
-                          background: `color-mix(in srgb, ${service.color} 15%, transparent)`,
-                          color: "hsl(var(--ink))",
-                          border: `1.5px solid color-mix(in srgb, ${service.color} 40%, transparent)`,
+                          background: `color-mix(in srgb, ${service.color} 10%, rgba(255, 255, 255, 0.02))`,
+                          color: "rgba(255, 255, 255, 0.9)",
+                          border: `1px solid color-mix(in srgb, ${service.color} 25%, rgba(255, 255, 255, 0.1))`,
                           paddingInline: "0.625rem",
                           paddingBlock: "0.25rem",
-                          fontSize: "0.7rem",
-                          fontWeight: 700,
+                          fontSize: "0.725rem",
+                          fontWeight: 500,
                           borderRadius: "9999px",
                           whiteSpace: "nowrap",
+                          backdropFilter: "blur(4px)",
                         }}
                       >
                         {t}
@@ -187,7 +189,7 @@ export default function ServicesPage() {
                   </div>
                 </div>
 
-                <div style={{ marginTop: "1.75rem", paddingTop: "1rem", borderTop: "2px dashed hsl(var(--navy) / 0.08)" }}>
+                <div style={{ marginTop: "1.75rem", paddingTop: "1rem", borderTop: "1px dashed rgba(255, 255, 255, 0.08)" }}>
                   <Link href="/contact" className="btn-secondary" style={{ width: "100%", textAlign: "center" }}>
                     Request Quote →
                   </Link>
@@ -201,7 +203,7 @@ export default function ServicesPage() {
       {/* CTA Section */}
       <section
         style={{
-          background: "hsl(var(--navy))",
+          background: "transparent",
           textAlign: "center",
           position: "relative",
           overflow: "hidden",
@@ -211,15 +213,28 @@ export default function ServicesPage() {
       >
         <div className="absolute inset-0 bg-grid pointer-events-none opacity-5" />
         <div className="container" style={{ position: "relative", zIndex: 10 }}>
-          <h2 style={{ color: "hsl(var(--paper))", marginBottom: "1rem" }}>
-            Unsure which service <span className="em-italic">you need</span>?
-          </h2>
-          <p style={{ marginBottom: "2.5rem", marginInline: "auto", color: "hsl(var(--paper) / 0.6)", maxWidth: "450px" }}>
-            Book a 15-minute free strategy call. We will discuss your goals, outline requirements, and recommend the best technical route.
-          </p>
-          <Link href="/contact" className="btn-primary btn-orange" style={{ padding: "1rem 2.5rem" }}>
-            Book a Strategy Call →
-          </Link>
+          <div
+            className="glass"
+            style={{
+              padding: "4rem 2rem",
+              borderRadius: "24px",
+              background: "rgba(255, 255, 255, 0.02)",
+              border: "1px solid rgba(255, 255, 255, 0.08)",
+              boxShadow: "0 15px 45px rgba(0, 0, 0, 0.3)",
+              maxWidth: "800px",
+              marginInline: "auto",
+            }}
+          >
+            <h2 style={{ color: "#fff", marginBottom: "1rem" }}>
+              Unsure which service <span className="em-italic">you need</span>?
+            </h2>
+            <p style={{ marginBottom: "2.5rem", marginInline: "auto", color: "rgba(255, 255, 255, 0.6)", maxWidth: "450px" }}>
+              Book a 15-minute free strategy call. We will discuss your goals, outline requirements, and recommend the best technical route.
+            </p>
+            <Link href="/contact" className="btn-primary btn-orange" style={{ padding: "1rem 2.5rem" }}>
+              Book a Strategy Call →
+            </Link>
+          </div>
         </div>
       </section>
     </main>

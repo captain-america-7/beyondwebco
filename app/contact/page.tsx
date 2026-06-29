@@ -86,7 +86,7 @@ export default function ContactPage() {
   return (
     <main>
       {/* Page Header */}
-      <section className="section-pad" style={{ background: "hsl(var(--cream))", paddingTop: "5rem" }}>
+      <section className="section-pad" style={{ background: "transparent", paddingTop: "5rem" }}>
         <div className="container">
           <span className="eyebrow" style={{ color: "hsl(var(--orange))" }}>
             GET IN TOUCH
@@ -97,7 +97,7 @@ export default function ContactPage() {
               marginBottom: "1rem",
               fontFamily: "var(--font-display)",
               fontWeight: 900,
-              color: "hsl(var(--navy))",
+              color: "#fff",
               fontSize: "clamp(2.5rem, 5vw, 4rem)",
               lineHeight: 1.1,
             }}
@@ -107,7 +107,7 @@ export default function ContactPage() {
           <p
             style={{
               fontSize: "clamp(1.05rem, 1.8vw, 1.25rem)",
-              color: "hsl(var(--navy))",
+              color: "rgba(255, 255, 255, 0.7)",
               fontWeight: 500,
               lineHeight: 1.6,
               maxWidth: "600px",
@@ -119,36 +119,39 @@ export default function ContactPage() {
       </section>
 
       {/* Form and info split */}
-      <section className="section-pad" style={{ background: "hsl(var(--paper))", borderTop: "2px solid hsl(var(--navy))" }}>
+      <section className="section-pad" style={{ background: "transparent", borderTop: "1px solid rgba(255, 255, 255, 0.08)" }}>
         <div className="container" style={{ display: "grid", gridTemplateColumns: "1fr", gap: "3rem" }} id="contact-split">
           {/* Left Column: Form Card */}
           <div
             className="card"
             style={{
               padding: "clamp(1.25rem, 4vw, 2.5rem)",
-              boxShadow: "7px 7px 0 0 hsl(var(--navy))",
+              boxShadow: "0 10px 45px rgba(0, 0, 0, 0.3)",
+              background: "rgba(255, 255, 255, 0.03)",
+              border: "1px solid rgba(255, 255, 255, 0.08)",
             }}
           >
-            <h2 style={{ fontFamily: "var(--font-display)", fontSize: "1.5rem", fontWeight: 700, marginBottom: "1.5rem" }}>
+            <h2 style={{ fontFamily: "var(--font-display)", fontSize: "1.5rem", fontWeight: 700, marginBottom: "1.5rem", color: "#fff" }}>
               Request a quote
             </h2>
 
             {success ? (
               <div
                 style={{
-                  border: "2px solid hsl(var(--teal))",
-                  background: "hsl(var(--teal) / 0.08)",
+                  border: "1px solid rgba(20, 184, 166, 0.3)",
+                  background: "rgba(20, 184, 166, 0.06)",
                   borderRadius: "0.75rem",
                   padding: "1.5rem",
-                  color: "hsl(var(--navy))",
+                  color: "#fff",
                   textAlign: "center",
+                  backdropFilter: "blur(8px)",
                 }}
               >
                 <div style={{ fontSize: "2.5rem", marginBottom: "0.5rem" }}>🎉</div>
-                <h3 style={{ color: "hsl(var(--navy))", fontSize: "1.25rem", fontWeight: 700, marginBottom: "0.5rem" }}>
+                <h3 style={{ color: "#fff", fontSize: "1.25rem", fontWeight: 700, marginBottom: "0.5rem" }}>
                   Inquiry Received!
                 </h3>
-                <p style={{ fontSize: "0.9rem", color: "hsl(var(--ink-soft))", margin: 0 }}>
+                <p style={{ fontSize: "0.9rem", color: "rgba(255, 255, 255, 0.7)", margin: 0 }}>
                   Thank you for reaching out. A senior partner from BeyondWebCo will review your project requirements and follow up with scheduling links or scoped details shortly.
                 </p>
                 <button
@@ -164,12 +167,12 @@ export default function ContactPage() {
                 {error && (
                   <div
                     style={{
-                      border: "2px solid hsl(var(--coral))",
-                      background: "hsl(var(--coral) / 0.08)",
+                      border: "1px solid rgba(244, 63, 94, 0.3)",
+                      background: "rgba(244, 63, 94, 0.06)",
                       borderRadius: "0.5rem",
                       padding: "0.875rem",
                       fontSize: "0.875rem",
-                      color: "hsl(var(--navy))",
+                      color: "#fff",
                       fontWeight: 600,
                     }}
                   >
@@ -179,7 +182,7 @@ export default function ContactPage() {
 
                 <div style={{ display: "grid", gridTemplateColumns: "1fr", gap: "1rem" }} className="form-row-2">
                   <div>
-                    <label htmlFor="name" style={{ display: "block", fontSize: "0.8rem", fontWeight: 700, textTransform: "uppercase", color: "hsl(var(--navy))", marginBottom: "0.4rem" }}>
+                    <label htmlFor="name" style={{ display: "block", fontSize: "0.8rem", fontWeight: 700, textTransform: "uppercase", color: "rgba(255, 255, 255, 0.8)", marginBottom: "0.4rem" }}>
                       Full Name *
                     </label>
                     <input
@@ -195,7 +198,7 @@ export default function ContactPage() {
                   </div>
 
                   <div>
-                    <label htmlFor="email" style={{ display: "block", fontSize: "0.8rem", fontWeight: 700, textTransform: "uppercase", color: "hsl(var(--navy))", marginBottom: "0.4rem" }}>
+                    <label htmlFor="email" style={{ display: "block", fontSize: "0.8rem", fontWeight: 700, textTransform: "uppercase", color: "rgba(255, 255, 255, 0.8)", marginBottom: "0.4rem" }}>
                       Email Address *
                     </label>
                     <input
@@ -213,7 +216,7 @@ export default function ContactPage() {
 
                 <div style={{ display: "grid", gridTemplateColumns: "1fr", gap: "1rem" }} className="form-row-2">
                   <div>
-                    <label htmlFor="phone" style={{ display: "block", fontSize: "0.8rem", fontWeight: 700, textTransform: "uppercase", color: "hsl(var(--navy))", marginBottom: "0.4rem" }}>
+                    <label htmlFor="phone" style={{ display: "block", fontSize: "0.8rem", fontWeight: 700, textTransform: "uppercase", color: "rgba(255, 255, 255, 0.8)", marginBottom: "0.4rem" }}>
                       Phone Number (Optional)
                     </label>
                     <input
@@ -228,7 +231,7 @@ export default function ContactPage() {
                   </div>
 
                   <div>
-                    <label htmlFor="service" style={{ display: "block", fontSize: "0.8rem", fontWeight: 700, textTransform: "uppercase", color: "hsl(var(--navy))", marginBottom: "0.4rem" }}>
+                    <label htmlFor="service" style={{ display: "block", fontSize: "0.8rem", fontWeight: 700, textTransform: "uppercase", color: "rgba(255, 255, 255, 0.8)", marginBottom: "0.4rem" }}>
                       Service Needed *
                     </label>
                     <select
@@ -250,7 +253,7 @@ export default function ContactPage() {
                 </div>
 
                 <div>
-                  <label htmlFor="budget" style={{ display: "block", fontSize: "0.8rem", fontWeight: 700, textTransform: "uppercase", color: "hsl(var(--navy))", marginBottom: "0.4rem" }}>
+                  <label htmlFor="budget" style={{ display: "block", fontSize: "0.8rem", fontWeight: 700, textTransform: "uppercase", color: "rgba(255, 255, 255, 0.8)", marginBottom: "0.4rem" }}>
                     Project Budget *
                   </label>
                   <select
@@ -271,7 +274,7 @@ export default function ContactPage() {
                 </div>
 
                 <div>
-                  <label htmlFor="message" style={{ display: "block", fontSize: "0.8rem", fontWeight: 700, textTransform: "uppercase", color: "hsl(var(--navy))", marginBottom: "0.4rem" }}>
+                  <label htmlFor="message" style={{ display: "block", fontSize: "0.8rem", fontWeight: 700, textTransform: "uppercase", color: "rgba(255, 255, 255, 0.8)", marginBottom: "0.4rem" }}>
                     Project Details
                   </label>
                   <textarea
@@ -303,12 +306,13 @@ export default function ContactPage() {
               className="card"
               style={{
                 padding: "2rem",
-                background: "hsl(var(--navy))",
-                color: "hsl(var(--paper))",
-                boxShadow: "5px 5px 0 0 hsl(var(--orange))",
+                background: "rgba(255, 255, 255, 0.03)",
+                border: "1px solid rgba(255, 255, 255, 0.08)",
+                boxShadow: "0 10px 40px rgba(0, 0, 0, 0.3)",
+                color: "#fff",
               }}
             >
-              <h3 style={{ color: "hsl(var(--paper))", fontFamily: "var(--font-display)", fontWeight: 700, marginBottom: "1.25rem" }}>
+              <h3 style={{ color: "#fff", fontFamily: "var(--font-display)", fontWeight: 700, marginBottom: "1.25rem" }}>
                 What happens next?
               </h3>
               <ol style={{ listStyleType: "none", padding: 0, display: "flex", flexDirection: "column", gap: "1.25rem" }}>
@@ -317,8 +321,8 @@ export default function ContactPage() {
                     1
                   </span>
                   <div>
-                    <strong style={{ display: "block", fontSize: "0.9rem", color: "hsl(var(--paper))" }}>Project Discovery & Scoping</strong>
-                    <span style={{ display: "block", fontSize: "0.8rem", color: "hsl(var(--paper) / 0.6)", marginTop: "0.2rem" }}>We review your inquiry and schedule a 15-minute alignment call within 24 hours.</span>
+                    <strong style={{ display: "block", fontSize: "0.9rem", color: "#fff" }}>Project Discovery & Scoping</strong>
+                    <span style={{ display: "block", fontSize: "0.8rem", color: "rgba(255, 255, 255, 0.6)", marginTop: "0.2rem" }}>We review your inquiry and schedule a 15-minute alignment call within 24 hours.</span>
                   </div>
                 </li>
                 <li style={{ display: "flex", gap: "0.875rem" }}>
@@ -326,8 +330,8 @@ export default function ContactPage() {
                     2
                   </span>
                   <div>
-                    <strong style={{ display: "block", fontSize: "0.9rem", color: "hsl(var(--paper))" }}>Custom Scoping Proposal</strong>
-                    <span style={{ display: "block", fontSize: "0.8rem", color: "hsl(var(--paper) / 0.6)", marginTop: "0.2rem" }}>We draft a detailed milestone checklist, tech stack recommendation, and timeline estimate.</span>
+                    <strong style={{ display: "block", fontSize: "0.9rem", color: "#fff" }}>Custom Scoping Proposal</strong>
+                    <span style={{ display: "block", fontSize: "0.8rem", color: "rgba(255, 255, 255, 0.6)", marginTop: "0.2rem" }}>We draft a detailed milestone checklist, tech stack recommendation, and timeline estimate.</span>
                   </div>
                 </li>
                 <li style={{ display: "flex", gap: "0.875rem" }}>
@@ -335,8 +339,8 @@ export default function ContactPage() {
                     3
                   </span>
                   <div>
-                    <strong style={{ display: "block", fontSize: "0.9rem", color: "hsl(var(--paper))" }}>Engineering Roadmap Definition</strong>
-                    <span style={{ display: "block", fontSize: "0.8rem", color: "hsl(var(--paper) / 0.6)", marginTop: "0.2rem" }}>We outline sprints, wireframe designs, and deploy staging build loops on day one.</span>
+                    <strong style={{ display: "block", fontSize: "0.9rem", color: "#fff" }}>Engineering Roadmap Definition</strong>
+                    <span style={{ display: "block", fontSize: "0.8rem", color: "rgba(255, 255, 255, 0.6)", marginTop: "0.2rem" }}>We outline sprints, wireframe designs, and deploy staging build loops on day one.</span>
                   </div>
                 </li>
               </ol>
@@ -344,22 +348,22 @@ export default function ContactPage() {
 
             {/* Direct Contact info box */}
             <div className="card" style={{ padding: "1.5rem" }}>
-              <h3 style={{ fontFamily: "var(--font-display)", fontSize: "1.15rem", fontWeight: 700, marginBottom: "0.75rem" }}>
+              <h3 style={{ fontFamily: "var(--font-display)", fontSize: "1.15rem", fontWeight: 700, marginBottom: "0.75rem", color: "#fff" }}>
                 Direct Channels
               </h3>
-              <p style={{ fontSize: "0.875rem", color: "hsl(var(--ink-soft))", marginBottom: "1rem" }}>
+              <p style={{ fontSize: "0.875rem", color: "rgba(255, 255, 255, 0.6)", marginBottom: "1rem" }}>
                 Need help immediately? Email or call our senior partners directly.
               </p>
               <ul style={{ display: "flex", flexDirection: "column", gap: "0.5rem", listStyleType: "none", padding: 0 }}>
                 <li style={{ display: "flex", alignItems: "center", gap: "0.5rem", fontSize: "0.875rem" }}>
                   <span style={{ color: "hsl(var(--orange))" }}>✉</span>
-                  <a href="mailto:hello@beyondwebco.com" style={{ color: "hsl(var(--navy))", fontWeight: 700, textDecoration: "underline" }}>
+                  <a href="mailto:hello@beyondwebco.com" style={{ color: "#fff", fontWeight: 700, textDecoration: "underline" }}>
                     hello@beyondwebco.com
                   </a>
                 </li>
                 <li style={{ display: "flex", alignItems: "center", gap: "0.5rem", fontSize: "0.875rem" }}>
                   <span style={{ color: "hsl(var(--orange))" }}>📞</span>
-                  <a href="tel:+18883219320" style={{ color: "hsl(var(--navy))", fontWeight: 700, textDecoration: "underline" }}>
+                  <a href="tel:+18883219320" style={{ color: "#fff", fontWeight: 700, textDecoration: "underline" }}>
                     +1 (888) 321-9320
                   </a>
                 </li>

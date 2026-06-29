@@ -24,13 +24,13 @@ export default async function BlogPostPage({ params }: BlogPostParams) {
   }
 
   return (
-    <main style={{ background: "hsl(var(--paper))" }}>
+    <main style={{ background: "transparent" }}>
       {/* Breadcrumbs Banner */}
       <section
         style={{
-          background: "hsl(var(--cream))",
+          background: "transparent",
           paddingBlock: "2rem",
-          borderBottom: "2px solid hsl(var(--navy) / 0.1)",
+          borderBottom: "1px solid rgba(255, 255, 255, 0.08)",
         }}
       >
         <div className="container">
@@ -42,14 +42,14 @@ export default async function BlogPostPage({ params }: BlogPostParams) {
               fontWeight: 700,
               textTransform: "uppercase",
               letterSpacing: "0.08em",
-              color: "hsl(var(--ink-soft))",
+              color: "rgba(255, 255, 255, 0.5)",
             }}
           >
-            <Link href="/" style={{ color: "hsl(var(--navy))" }}>
+            <Link href="/" style={{ color: "#fff" }}>
               Home
             </Link>
             <span>/</span>
-            <Link href="/blog" style={{ color: "hsl(var(--navy))" }}>
+            <Link href="/blog" style={{ color: "#fff" }}>
               Blog
             </Link>
             <span>/</span>
@@ -66,9 +66,9 @@ export default async function BlogPostPage({ params }: BlogPostParams) {
             <span
               className="eyebrow"
               style={{
-                background: `color-mix(in srgb, ${post.color} 15%, transparent)`,
-                color: "hsl(var(--navy))",
-                border: `1.5px solid ${post.color}`,
+                background: `color-mix(in srgb, ${post.color} 10%, rgba(255, 255, 255, 0.02))`,
+                color: "rgba(255, 255, 255, 0.9)",
+                border: `1px solid color-mix(in srgb, ${post.color} 25%, rgba(255, 255, 255, 0.1))`,
                 paddingInline: "0.75rem",
                 paddingBlock: "0.25rem",
                 borderRadius: "9999px",
@@ -83,7 +83,7 @@ export default async function BlogPostPage({ params }: BlogPostParams) {
                 fontWeight: 900,
                 fontSize: "clamp(2rem, 4.5vw, 3.25rem)",
                 lineHeight: 1.15,
-                color: "hsl(var(--navy))",
+                color: "#fff",
                 marginTop: "1rem",
                 marginBottom: "1.25rem",
               }}
@@ -97,7 +97,7 @@ export default async function BlogPostPage({ params }: BlogPostParams) {
                 display: "flex",
                 alignItems: "center",
                 gap: "1rem",
-                borderBottom: "2px dashed hsl(var(--navy) / 0.12)",
+                borderBottom: "1px dashed rgba(255, 255, 255, 0.12)",
                 paddingBottom: "1.5rem",
               }}
             >
@@ -107,22 +107,23 @@ export default async function BlogPostPage({ params }: BlogPostParams) {
                   width: "44px",
                   height: "44px",
                   borderRadius: "50%",
-                  border: "2px solid hsl(var(--navy))",
+                  border: "1px solid rgba(255, 255, 255, 0.2)",
                   background: post.color,
                   display: "grid",
                   placeItems: "center",
                   fontWeight: 800,
                   fontSize: "1.1rem",
                   color: "#fff",
+                  boxShadow: `0 4px 15px color-mix(in srgb, ${post.color} 25%, transparent)`,
                 }}
               >
                 {post.icon}
               </div>
               <div>
-                <span style={{ display: "block", fontWeight: 700, color: "hsl(var(--navy))", fontSize: "0.9rem" }}>
+                <span style={{ display: "block", fontWeight: 700, color: "#fff", fontSize: "0.9rem" }}>
                   {post.author}
                 </span>
-                <span style={{ fontSize: "0.8rem", color: "hsl(var(--ink-soft))" }}>
+                <span style={{ fontSize: "0.8rem", color: "rgba(255, 255, 255, 0.5)" }}>
                   Published on {post.date} · 5 min read
                 </span>
               </div>
@@ -136,19 +137,20 @@ export default async function BlogPostPage({ params }: BlogPostParams) {
             style={{
               fontSize: "1.05rem",
               lineHeight: 1.75,
-              color: "hsl(var(--ink))",
+              color: "rgba(255, 255, 255, 0.8)",
             }}
           />
 
           {/* Lead-Gen CTA Block */}
           <div
-            className="card"
+            className="glass"
             style={{
               marginTop: "4rem",
               padding: "clamp(1.5rem, 4vw, 2.5rem)",
-              background: "hsl(var(--navy))",
-              color: "hsl(var(--paper))",
-              boxShadow: "7px 7px 0 0 hsl(var(--orange))",
+              borderRadius: "24px",
+              background: "rgba(255, 255, 255, 0.02)",
+              border: "1px solid rgba(255, 255, 255, 0.08)",
+              boxShadow: "0 15px 45px rgba(0, 0, 0, 0.3)",
               textAlign: "center",
             }}
           >
@@ -156,14 +158,14 @@ export default async function BlogPostPage({ params }: BlogPostParams) {
               style={{
                 fontFamily: "var(--font-display)",
                 fontWeight: 700,
-                color: "hsl(var(--paper))",
+                color: "#fff",
                 fontSize: "1.35rem",
                 marginBottom: "0.75rem",
               }}
             >
               Ready to build your local lead generator or custom CRM portal?
             </h3>
-            <p style={{ color: "hsl(var(--paper) / 0.7)", fontSize: "0.95rem", marginBottom: "1.75rem" }}>
+            <p style={{ color: "rgba(255, 255, 255, 0.6)", fontSize: "0.95rem", marginBottom: "1.75rem" }}>
               Consult with our senior designers & engineers. We build responsive, high-performance web platform architectures.
             </p>
             <div style={{ display: "flex", flexWrap: "wrap", justifyContent: "center", gap: "1rem" }}>
@@ -184,7 +186,7 @@ export default async function BlogPostPage({ params }: BlogPostParams) {
           font-family: var(--font-display);
           font-size: 1.6rem;
           font-weight: 700;
-          color: hsl(var(--navy));
+          color: #fff;
           margin-top: 2rem;
           margin-bottom: 0.75rem;
         }
@@ -192,7 +194,7 @@ export default async function BlogPostPage({ params }: BlogPostParams) {
           font-family: var(--font-display);
           font-size: 1.25rem;
           font-weight: 700;
-          color: hsl(var(--navy));
+          color: #fff;
           margin-top: 1.75rem;
           margin-bottom: 0.5rem;
         }

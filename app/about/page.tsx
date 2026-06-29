@@ -31,7 +31,7 @@ export default function AboutPage() {
   return (
     <main>
       {/* Page Header */}
-      <section className="section-pad" style={{ background: "hsl(var(--cream))", paddingTop: "5rem" }}>
+      <section className="section-pad" style={{ background: "transparent", paddingTop: "5rem" }}>
         <div className="container">
           <span className="eyebrow" style={{ color: "hsl(var(--orange))" }}>
             WHO WE ARE
@@ -42,7 +42,7 @@ export default function AboutPage() {
               marginBottom: "1.5rem",
               fontFamily: "var(--font-display)",
               fontWeight: 900,
-              color: "hsl(var(--navy))",
+              color: "#fff",
               fontSize: "clamp(2.5rem, 5vw, 4.5rem)",
               lineHeight: 1.1,
             }}
@@ -52,7 +52,7 @@ export default function AboutPage() {
           <p
             style={{
               fontSize: "clamp(1.125rem, 2vw, 1.35rem)",
-              color: "hsl(var(--navy))",
+              color: "rgba(255, 255, 255, 0.9)",
               fontWeight: 500,
               lineHeight: 1.6,
               maxWidth: "750px",
@@ -64,17 +64,17 @@ export default function AboutPage() {
       </section>
 
       {/* Our Story / Philosophy */}
-      <section className="section-pad" style={{ background: "hsl(var(--paper))", borderTop: "2px solid hsl(var(--navy))" }}>
+      <section className="section-pad" style={{ background: "transparent", borderTop: "1px solid rgba(255, 255, 255, 0.08)" }}>
         <div className="container" style={{ display: "grid", gridTemplateColumns: "1fr", gap: "3rem" }} id="story-grid">
           <div>
             <span className="eyebrow">OUR STORY</span>
-            <h2 style={{ marginTop: "0.5rem", marginBottom: "1rem" }}>
+            <h2 style={{ marginTop: "0.5rem", marginBottom: "1rem", color: "#fff" }}>
               Developers and designers <span className="em-italic">in command</span>.
             </h2>
-            <p style={{ marginBottom: "1.5rem" }}>
+            <p style={{ marginBottom: "1.5rem", color: "rgba(255, 255, 255, 0.7)" }}>
               BeyondWebCo was founded with a simple realization: the traditional agency model is broken. Clients are often sold products by sales reps, only to have their projects handed off to junior offshore developers managed by non-technical middle managers. This leads to bloated codebases, delayed timelines, and misaligned layouts.
             </p>
-            <p>
+            <p style={{ color: "rgba(255, 255, 255, 0.7)" }}>
               We did away with all of that. BeyondWebCo is a partner-led studio. When you work with us, you work directly with senior engineers and senior UI designers. We build state-of-the-art web products using modern technologies like Next.js 15, React, Node.js, and Tailwind CSS.
             </p>
           </div>
@@ -83,15 +83,16 @@ export default function AboutPage() {
             className="card"
             style={{
               padding: "clamp(1.5rem, 4vw, 2.5rem)",
-              background: "hsl(var(--navy))",
-              color: "hsl(var(--paper))",
-              boxShadow: "6px 6px 0 0 hsl(var(--orange))",
+              background: "rgba(255, 255, 255, 0.03)",
+              border: "1px solid rgba(255, 255, 255, 0.08)",
+              boxShadow: "0 10px 40px rgba(0, 0, 0, 0.3)",
+              color: "#fff",
               display: "flex",
               flexDirection: "column",
               justifyContent: "center",
             }}
           >
-            <h3 style={{ color: "hsl(var(--paper))", fontFamily: "var(--font-display)", fontWeight: 700, marginBottom: "1rem" }}>
+            <h3 style={{ color: "#fff", fontFamily: "var(--font-display)", fontWeight: 700, marginBottom: "1rem" }}>
               Why choose BeyondWebCo?
             </h3>
             <ul style={{ listStyleType: "none", padding: 0, display: "flex", flexDirection: "column", gap: "1rem" }}>
@@ -109,7 +110,7 @@ export default function AboutPage() {
               </li>
               <li style={{ display: "flex", alignItems: "flex-start", gap: "0.5rem", fontSize: "0.95rem" }}>
                 <span style={{ color: "hsl(var(--orange))" }}>✦</span>
-                <span>High-converting Brutalist layouts that stand out and win customer trust.</span>
+                <span>High-converting Glassmorphic layouts that stand out and win customer trust.</span>
               </li>
             </ul>
           </div>
@@ -117,11 +118,11 @@ export default function AboutPage() {
       </section>
 
       {/* Core Principles */}
-      <section className="section-pad" style={{ background: "hsl(var(--cream))", borderTop: "2px solid hsl(var(--navy))" }}>
+      <section className="section-pad" style={{ background: "transparent", borderTop: "1px solid rgba(255, 255, 255, 0.08)" }}>
         <div className="container">
           <div style={{ marginBottom: "3rem", textAlign: "center" }}>
             <span className="eyebrow">OUR CORE PRINCIPLES</span>
-            <h2 style={{ marginTop: "0.5rem" }}>
+            <h2 style={{ marginTop: "0.5rem", color: "#fff" }}>
               How we guarantee <span className="em-italic">excellence</span>
             </h2>
           </div>
@@ -144,17 +145,17 @@ export default function AboutPage() {
                       fontFamily: "var(--font-display)",
                       fontWeight: 900,
                       fontSize: "1.75rem",
-                      color: "hsl(var(--navy) / 0.15)",
+                      color: "rgba(255, 255, 255, 0.08)",
                     }}
                   >
                     {pr.num}
                   </span>
-                  <span style={{ fontSize: "1.5rem" }}>✺</span>
+                  <span style={{ fontSize: "1.5rem", color: pr.color }}>✺</span>
                 </div>
-                <h3 style={{ fontFamily: "var(--font-display)", fontSize: "1.25rem", fontWeight: 700 }}>
+                <h3 style={{ fontFamily: "var(--font-display)", fontSize: "1.25rem", fontWeight: 700, color: "#fff" }}>
                   {pr.title}
                 </h3>
-                <p style={{ fontSize: "0.875rem", lineHeight: 1.6, color: "hsl(var(--ink-soft))" }}>
+                <p style={{ fontSize: "0.875rem", lineHeight: 1.6, color: "rgba(255, 255, 255, 0.6)" }}>
                   {pr.desc}
                 </p>
               </div>
@@ -166,7 +167,7 @@ export default function AboutPage() {
       {/* Team Redirect CTA */}
       <section
         style={{
-          background: "hsl(var(--navy))",
+          background: "transparent",
           textAlign: "center",
           position: "relative",
           overflow: "hidden",
@@ -176,19 +177,32 @@ export default function AboutPage() {
       >
         <div className="absolute inset-0 bg-grid pointer-events-none opacity-5" />
         <div className="container" style={{ position: "relative", zIndex: 10 }}>
-          <h2 style={{ color: "hsl(var(--paper))", marginBottom: "1rem" }}>
-            Want to meet our <span className="em-italic">engineering crew</span>?
-          </h2>
-          <p style={{ marginBottom: "2.5rem", marginInline: "auto", color: "hsl(var(--paper) / 0.6)", maxWidth: "450px" }}>
-            Check out our profiles, experience, and the core technologies we use to build your custom software.
-          </p>
-          <div style={{ display: "flex", flexWrap: "wrap", justifyContent: "center", gap: "1rem" }}>
-            <Link href="/team" className="btn-primary btn-orange">
-              Meet the Crew →
-            </Link>
-            <Link href="/contact" className="btn-secondary-on-dark">
-              Work With Us
-            </Link>
+          <div
+            className="glass"
+            style={{
+              padding: "4rem 2rem",
+              borderRadius: "24px",
+              background: "rgba(255, 255, 255, 0.02)",
+              border: "1px solid rgba(255, 255, 255, 0.08)",
+              boxShadow: "0 15px 45px rgba(0, 0, 0, 0.3)",
+              maxWidth: "800px",
+              marginInline: "auto",
+            }}
+          >
+            <h2 style={{ color: "#fff", marginBottom: "1rem" }}>
+              Want to meet our <span className="em-italic">engineering crew</span>?
+            </h2>
+            <p style={{ marginBottom: "2.5rem", marginInline: "auto", color: "rgba(255, 255, 255, 0.6)", maxWidth: "450px" }}>
+              Check out our profiles, experience, and the core technologies we use to build your custom software.
+            </p>
+            <div style={{ display: "flex", flexWrap: "wrap", justifyContent: "center", gap: "1rem" }}>
+              <Link href="/team" className="btn-primary btn-orange">
+                Meet the Crew →
+              </Link>
+              <Link href="/contact" className="btn-secondary-on-dark">
+                Work With Us
+              </Link>
+            </div>
           </div>
         </div>
       </section>

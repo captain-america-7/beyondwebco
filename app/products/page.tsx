@@ -42,7 +42,7 @@ export default function ProductsPage() {
   return (
     <main>
       {/* Page Header */}
-      <section className="section-pad" style={{ background: "hsl(var(--cream))", paddingTop: "5rem" }}>
+      <section className="section-pad" style={{ background: "transparent", paddingTop: "5rem" }}>
         <div className="container">
           <span className="eyebrow" style={{ color: "hsl(var(--orange))" }}>
             OUR PRODUCTS
@@ -53,7 +53,7 @@ export default function ProductsPage() {
               marginBottom: "1.5rem",
               fontFamily: "var(--font-display)",
               fontWeight: 900,
-              color: "hsl(var(--navy))",
+              color: "#fff",
               fontSize: "clamp(2.5rem, 5vw, 4.5rem)",
               lineHeight: 1.1,
             }}
@@ -63,7 +63,7 @@ export default function ProductsPage() {
           <p
             style={{
               fontSize: "clamp(1.125rem, 2vw, 1.35rem)",
-              color: "hsl(var(--navy))",
+              color: "rgba(255, 255, 255, 0.7)",
               fontWeight: 500,
               lineHeight: 1.6,
               maxWidth: "750px",
@@ -75,7 +75,7 @@ export default function ProductsPage() {
       </section>
 
       {/* Products list */}
-      <section className="section-pad" style={{ background: "hsl(var(--paper))", borderTop: "2px solid hsl(var(--navy))" }}>
+      <section className="section-pad" style={{ background: "transparent", borderTop: "1px solid rgba(255, 255, 255, 0.08)" }}>
         <div className="container">
           <div style={{ display: "grid", gridTemplateColumns: "1fr", gap: "2.5rem" }} className="products-list-grid">
             {products.map((product, idx) => (
@@ -87,7 +87,8 @@ export default function ProductsPage() {
                   display: "grid",
                   gridTemplateColumns: "1fr",
                   gap: "2rem",
-                  boxShadow: `7px 7px 0 0 ${product.color}`,
+                  border: "1px solid rgba(255, 255, 255, 0.08)",
+                  boxShadow: `0 10px 40px -10px rgba(0, 0, 0, 0.4), 0 0 20px color-mix(in srgb, ${product.color} 5%, transparent)`,
                 }}
               >
                 {/* Visual Icon */}
@@ -98,10 +99,10 @@ export default function ProductsPage() {
                     fontSize: "3.5rem",
                     width: "5.5rem",
                     height: "5.5rem",
-                    border: "3px solid hsl(var(--navy))",
+                    border: `1px solid ${product.color}33`,
                     borderRadius: "1.25rem",
-                    background: `color-mix(in srgb, ${product.color} 15%, transparent)`,
-                    boxShadow: "3px 3px 0 0 hsl(var(--navy))",
+                    background: `color-mix(in srgb, ${product.color} 12%, transparent)`,
+                    boxShadow: `0 4px 15px color-mix(in srgb, ${product.color} 10%, transparent)`,
                   }}
                 >
                   {product.icon}
@@ -109,10 +110,10 @@ export default function ProductsPage() {
 
                 {/* Details */}
                 <div style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
-                  <h2 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(1.5rem, 3vw, 2.2rem)", fontWeight: 900 }}>
+                  <h2 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(1.5rem, 3vw, 2.2rem)", fontWeight: 900, color: "#fff" }}>
                     {product.title}
                   </h2>
-                  <p style={{ fontSize: "1rem", lineHeight: 1.6, color: "hsl(var(--ink-soft))" }}>
+                  <p style={{ fontSize: "1rem", lineHeight: 1.6, color: "rgba(255, 255, 255, 0.65)" }}>
                     {product.desc}
                   </p>
 
@@ -123,7 +124,7 @@ export default function ProductsPage() {
                     </span>
                     <ul style={{ listStyleType: "none", padding: 0, display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))", gap: "0.5rem" }}>
                       {product.features.map((feat, fidx) => (
-                        <li key={fidx} style={{ fontSize: "0.85rem", fontWeight: 600, color: "hsl(var(--navy))", display: "flex", alignItems: "center", gap: "0.5rem" }}>
+                        <li key={fidx} style={{ fontSize: "0.85rem", fontWeight: 600, color: "#fff", display: "flex", alignItems: "center", gap: "0.5rem" }}>
                           <span style={{ color: product.color }}>✔</span>
                           {feat}
                         </li>
@@ -133,7 +134,7 @@ export default function ProductsPage() {
 
                   {/* Demo actions */}
                   <div style={{ display: "flex", gap: "1rem", marginTop: "1.5rem", flexWrap: "wrap" }}>
-                    <Link href="/contact" className="btn-primary" style={{ boxShadow: `4px 4px 0 0 ${product.color}` }}>
+                    <Link href="/contact" className="btn-primary" style={{ border: `1px solid ${product.color}33`, boxShadow: `0 4px 12px color-mix(in srgb, ${product.color} 10%, transparent)` }}>
                       Book Product Demo
                     </Link>
                     <Link href="/contact" className="btn-secondary">
@@ -150,7 +151,7 @@ export default function ProductsPage() {
       {/* CTA Section */}
       <section
         style={{
-          background: "hsl(var(--navy))",
+          background: "transparent",
           textAlign: "center",
           position: "relative",
           overflow: "hidden",
@@ -160,27 +161,48 @@ export default function ProductsPage() {
       >
         <div className="absolute inset-0 bg-grid pointer-events-none opacity-5" />
         <div className="container" style={{ position: "relative", zIndex: 10 }}>
-          <h2 style={{ color: "hsl(var(--paper))", marginBottom: "1rem" }}>
-            Need a custom white-label <span className="em-italic">modification</span>?
-          </h2>
-          <p style={{ marginBottom: "2.5rem", marginInline: "auto", color: "hsl(var(--paper) / 0.6)", maxWidth: "450px" }}>
-            Our senior developers can customize, integrate, and deploy our pre-built software suites to match your custom company processes exactly.
-          </p>
-          <Link href="/contact" className="btn-primary btn-orange" style={{ padding: "1rem 2.5rem" }}>
-            Book a Strategy Call →
-          </Link>
+          <div
+            className="glass"
+            style={{
+              padding: "4rem 2rem",
+              borderRadius: "24px",
+              background: "rgba(255, 255, 255, 0.02)",
+              border: "1px solid rgba(255, 255, 255, 0.08)",
+              boxShadow: "0 15px 45px rgba(0, 0, 0, 0.3)",
+              maxWidth: "800px",
+              marginInline: "auto",
+            }}
+          >
+            <h2 style={{ color: "#fff", marginBottom: "1rem" }}>
+              Need a custom white-label <span className="em-italic">modification</span>?
+            </h2>
+            <p style={{ marginBottom: "2.5rem", marginInline: "auto", color: "rgba(255, 255, 255, 0.6)", maxWidth: "450px" }}>
+              Our senior developers can customize, integrate, and deploy our pre-built software suites to match your custom company processes exactly.
+            </p>
+            <Link href="/contact" className="btn-primary btn-orange" style={{ padding: "1rem 2.5rem" }}>
+              Book a Strategy Call →
+            </Link>
+          </div>
         </div>
       </section>
 
       <style dangerouslySetInnerHTML={{ __html: `
         .product-brutal-card {
-          background: hsl(var(--paper));
-          border: 3px solid hsl(var(--navy));
-          border-radius: 1.5rem;
-          transition: transform 0.2s, box-shadow 0.2s;
+          background: rgba(255, 255, 255, 0.03) !important;
+          border: 1px solid rgba(255, 255, 255, 0.08) !important;
+          border-radius: 1.5rem !important;
+          box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.3) !important;
+          backdrop-filter: blur(14px) !important;
+          -webkit-backdrop-filter: blur(14px) !important;
           display: flex !important;
           flex-direction: column !important;
           align-items: flex-start !important;
+          transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), border-color 0.3s ease !important;
+        }
+        .product-brutal-card:hover {
+          transform: translateY(-4px) !important;
+          border-color: rgba(255, 255, 255, 0.18) !important;
+          box-shadow: 0 20px 50px -10px rgba(0, 0, 0, 0.5) !important;
         }
         @media (min-width: 768px) {
           .product-brutal-card {

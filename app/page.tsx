@@ -115,7 +115,7 @@ export default function HomePage() {
         style={{
           position: "relative",
           overflow: "hidden",
-          background: "hsl(var(--cream))",
+          background: "transparent",
           minHeight: "clamp(580px, calc(100vh - var(--header-h, 72px)), 960px)",
           display: "flex",
           flexDirection: "column",
@@ -175,15 +175,16 @@ export default function HomePage() {
                 alignItems: "center",
                 gap: "0.4rem",
                 borderRadius: "9999px",
-                border: "1.5px solid hsl(var(--navy) / 0.15)",
-                background: "hsl(var(--paper))",
+                border: "1.5px solid rgba(255, 255, 255, 0.1)",
+                background: "rgba(255, 255, 255, 0.03)",
                 paddingInline: "0.75rem",
                 paddingBlock: "0.3rem",
                 fontSize: "0.7rem",
                 fontWeight: 700,
                 letterSpacing: "0.12em",
                 textTransform: "uppercase",
-                color: "hsl(var(--ink-soft))",
+                color: "rgba(255, 255, 255, 0.7)",
+                backdropFilter: "blur(4px)",
               }}
             >
               <span
@@ -227,7 +228,7 @@ export default function HomePage() {
               lineHeight: 1.05,
               letterSpacing: "-0.025em",
               fontSize: "clamp(2.2rem, 5.5vw, 5rem)",
-              color: "hsl(var(--navy))",
+              color: "#fff",
               maxWidth: "860px",
               marginBottom: "clamp(1.25rem, 3vw, 2rem)",
               wordBreak: "keep-all",
@@ -243,7 +244,7 @@ export default function HomePage() {
               fontSize: "clamp(1rem, 2.2vw, 1.2rem)",
               lineHeight: 1.7,
               maxWidth: "600px",
-              color: "hsl(var(--ink-soft))",
+              color: "rgba(255, 255, 255, 0.7)",
               marginBottom: "clamp(2rem, 4vw, 3rem)",
             }}
           >
@@ -272,12 +273,12 @@ export default function HomePage() {
 
           {/* Stats strip */}
           <div
-            className="animate-fade-up-custom hero-stats-strip"
+            className="animate-fade-up-custom hero-stats-strip glass"
             style={{
               borderRadius: "1rem",
-              border: "2px solid hsl(var(--navy) / 0.1)",
-              background: "hsl(var(--paper))",
-              boxShadow: "5px 5px 0 0 hsl(var(--navy))",
+              border: "1px solid rgba(255, 255, 255, 0.08)",
+              background: "rgba(255, 255, 255, 0.02)",
+              boxShadow: "0 8px 32px rgba(0, 0, 0, 0.2)",
               overflow: "hidden",
             }}
           >
@@ -301,7 +302,7 @@ export default function HomePage() {
                     fontWeight: 700,
                     textTransform: "uppercase",
                     letterSpacing: "0.1em",
-                    color: "hsl(var(--ink-soft))",
+                    color: "rgba(255, 255, 255, 0.6)",
                   }}
                 >
                   {stat.label}
@@ -335,7 +336,7 @@ export default function HomePage() {
             flexDirection: "column",
             alignItems: "center",
             gap: "0.4rem",
-            color: "hsl(var(--ink-soft))",
+            color: "rgba(255, 255, 255, 0.5)",
           }}
         >
           <span style={{ fontSize: "0.65rem", fontWeight: 600, letterSpacing: "0.15em", textTransform: "uppercase" }}>
@@ -346,7 +347,7 @@ export default function HomePage() {
               width: "20px",
               height: "32px",
               borderRadius: "10px",
-              border: "2px solid hsl(var(--navy) / 0.2)",
+              border: "1.5px solid rgba(255, 255, 255, 0.2)",
               display: "flex",
               alignItems: "flex-start",
               justifyContent: "center",
@@ -386,7 +387,7 @@ export default function HomePage() {
             justify-content: center;
           }
           .hero-stat-item:not(:last-child) {
-            border-right: 2px solid hsl(var(--navy) / 0.08);
+            border-right: 1px solid rgba(255, 255, 255, 0.08);
           }
           @media (max-width: 640px) {
             .hero-stats-strip {
@@ -399,10 +400,10 @@ export default function HomePage() {
               border-bottom: none !important;
             }
             .hero-stat-item:nth-child(odd) {
-              border-right: 2px solid hsl(var(--navy) / 0.08) !important;
+              border-right: 1px solid rgba(255, 255, 255, 0.08) !important;
             }
-            .hero-stat-item:nth-child(-n+2) {
-              border-bottom: 2px solid hsl(var(--navy) / 0.08) !important;
+            .hero-stat-item:navy-child(-n+2) {
+              border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
             }
           }
           @media (max-height: 820px) {
@@ -415,14 +416,14 @@ export default function HomePage() {
       </section>
 
       {/* What We Build Section */}
-      <section className="section-pad" style={{ background: "hsl(var(--paper))" }}>
+      <section className="section-pad" style={{ background: "transparent" }}>
         <div className="container">
           <div style={{ textAlign: "center", marginBottom: "clamp(2rem, 5vw, 3rem)" }}>
             <span className="eyebrow">WHAT WE DESIGN & BUILD</span>
-            <h2 style={{ marginTop: "0.5rem" }}>
+            <h2 style={{ marginTop: "0.5rem", color: "#fff" }}>
               Integrated software <span className="em-italic">solutions</span>
             </h2>
-            <p style={{ marginTop: "0.75rem", marginInline: "auto", maxWidth: "520px" }}>
+            <p style={{ marginTop: "0.75rem", marginInline: "auto", maxWidth: "520px", color: "rgba(255, 255, 255, 0.6)" }}>
               End-to-end product design and engineering across web, mobile, and cloud. Elite partners only — no offshore hand-offs.
             </p>
           </div>
@@ -450,8 +451,9 @@ export default function HomePage() {
                       width: "3.25rem",
                       height: "3.25rem",
                       borderRadius: "0.875rem",
-                      border: "2px solid hsl(var(--navy))",
-                      background: `color-mix(in srgb, ${service.color} 15%, transparent)`,
+                      border: `1px solid ${service.color}33`,
+                      background: `color-mix(in srgb, ${service.color} 12%, transparent)`,
+                      boxShadow: `0 4px 15px color-mix(in srgb, ${service.color} 10%, transparent)`,
                       fontSize: "1.5rem",
                       flexShrink: 0,
                     }}
@@ -464,13 +466,13 @@ export default function HomePage() {
                         fontFamily: "var(--font-display)",
                         fontSize: "clamp(1.1rem, 2vw, 1.25rem)",
                         fontWeight: 700,
-                        color: "hsl(var(--navy))",
+                        color: "#fff",
                         lineHeight: 1.2,
                       }}
                     >
                       {service.title}
                     </h3>
-                    <p style={{ fontSize: "0.9rem", color: "hsl(var(--ink-soft))", lineHeight: 1.6 }}>
+                    <p style={{ fontSize: "0.9rem", color: "rgba(255, 255, 255, 0.6)", lineHeight: 1.6 }}>
                       {service.desc}
                     </p>
                   </div>
@@ -480,15 +482,16 @@ export default function HomePage() {
                         key={chipIdx}
                         style={{
                           display: "inline-block",
-                          background: `color-mix(in srgb, ${service.color} 15%, transparent)`,
-                          color: "hsl(var(--ink))",
-                          border: `1.5px solid color-mix(in srgb, ${service.color} 40%, transparent)`,
+                          background: `color-mix(in srgb, ${service.color} 10%, rgba(255, 255, 255, 0.02))`,
+                          color: "rgba(255, 255, 255, 0.9)",
+                          border: `1px solid color-mix(in srgb, ${service.color} 25%, rgba(255, 255, 255, 0.1))`,
                           paddingInline: "0.625rem",
                           paddingBlock: "0.25rem",
-                          fontSize: "0.75rem",
-                          fontWeight: 600,
+                          fontSize: "0.725rem",
+                          fontWeight: 500,
                           borderRadius: "9999px",
                           whiteSpace: "nowrap",
+                          backdropFilter: "blur(4px)",
                         }}
                       >
                         {chip}
@@ -504,7 +507,7 @@ export default function HomePage() {
                     gap: "0.25rem",
                     marginTop: "1.25rem",
                     paddingTop: "1rem",
-                    borderTop: `1px solid color-mix(in srgb, ${service.color} 20%, transparent)`,
+                    borderTop: `1px solid rgba(255, 255, 255, 0.06)`,
                     fontWeight: 700,
                     fontSize: "0.875rem",
                     color: service.color,
@@ -527,11 +530,9 @@ export default function HomePage() {
       {/* Marquee Section */}
       <section
         style={{
-          background: "hsl(var(--navy))",
+          background: "transparent",
           paddingTop: "4rem",
           paddingBottom: "1.5rem",
-          borderTop: "2px solid hsl(var(--navy))",
-          borderBottom: "2px solid hsl(var(--navy))",
           overflow: "hidden",
         }}
       >
@@ -541,11 +542,11 @@ export default function HomePage() {
               <span className="eyebrow" style={{ color: "hsl(var(--orange))" }}>
                 RECENT WORK · LOCKED IN
               </span>
-              <h2 style={{ marginTop: "0.5rem", color: "hsl(var(--paper))" }}>
+              <h2 style={{ marginTop: "0.5rem", color: "#fff" }}>
                 Real builds. <span className="em-italic">Real results.</span>
               </h2>
             </div>
-            <span style={{ fontSize: "0.875rem", color: "hsl(var(--paper) / 0.5)", fontWeight: 500, fontFamily: "var(--font-sans)" }}>
+            <span style={{ fontSize: "0.875rem", color: "rgba(255, 255, 255, 0.4)", fontWeight: 500, fontFamily: "var(--font-sans)" }}>
               Drag to explore ✺ Click card to visit site
             </span>
           </div>
@@ -561,7 +562,7 @@ export default function HomePage() {
               bottom: 0,
               left: 0,
               width: "8%",
-              background: "linear-gradient(to right, hsl(var(--navy)) 20%, transparent)",
+              background: "linear-gradient(to right, hsl(var(--cream)) 20%, transparent)",
               zIndex: 10,
               pointerEvents: "none",
             }}
@@ -574,7 +575,7 @@ export default function HomePage() {
               bottom: 0,
               right: 0,
               width: "8%",
-              background: "linear-gradient(to left, hsl(var(--navy)) 20%, transparent)",
+              background: "linear-gradient(to left, hsl(var(--cream)) 20%, transparent)",
               zIndex: 10,
               pointerEvents: "none",
             }}
@@ -591,14 +592,14 @@ export default function HomePage() {
                   rel="noopener noreferrer"
                   className={`project-card project-card-0${(index % 6) + 1}`}
                   style={{
-                    background: project.bg,
-                    border: `2px solid color-mix(in srgb, ${project.color} 25%, transparent)`,
-                    boxShadow: `4px 4px 0 0 color-mix(in srgb, ${project.color} 35%, transparent)`,
+                    background: "rgba(255, 255, 255, 0.02)",
+                    border: "1px solid rgba(255, 255, 255, 0.08)",
+                    boxShadow: "0 8px 30px rgba(0, 0, 0, 0.3)",
                   }}
                 >
                   <div>
                     <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: "1rem" }}>
-                      <span style={{ fontFamily: "var(--font-display)", fontWeight: 900, fontSize: "1.5rem", color: "hsl(var(--paper) / 0.15)", lineHeight: 1 }}>
+                      <span style={{ fontFamily: "var(--font-display)", fontWeight: 900, fontSize: "1.5rem", color: "rgba(255, 255, 255, 0.08)", lineHeight: 1 }}>
                         {project.num}
                       </span>
                       <span
@@ -609,9 +610,9 @@ export default function HomePage() {
                           fontWeight: 700,
                           textTransform: "uppercase",
                           letterSpacing: "0.08em",
-                          border: `1.5px solid ${project.color}`,
+                          border: `1px solid color-mix(in srgb, ${project.color} 30%, rgba(255,255,255,0.15))`,
                           color: project.color,
-                          background: `color-mix(in srgb, ${project.color} 12%, transparent)`,
+                          background: `color-mix(in srgb, ${project.color} 10%, rgba(255, 255, 255, 0.02))`,
                         }}
                       >
                         {project.type}
@@ -622,14 +623,14 @@ export default function HomePage() {
                         fontFamily: "var(--font-display)",
                         fontWeight: 700,
                         fontSize: "clamp(1.2rem, 2vw, 1.45rem)",
-                        color: "hsl(var(--paper))",
+                        color: "#fff",
                         lineHeight: 1.25,
                         marginBottom: "0.5rem",
                       }}
                     >
                       {project.title}
                     </h3>
-                    <p style={{ fontSize: "0.85rem", color: "hsl(var(--paper) / 0.65)", lineHeight: 1.5, minHeight: "4.5rem" }}>
+                    <p style={{ fontSize: "0.85rem", color: "rgba(255, 255, 255, 0.65)", lineHeight: 1.5, minHeight: "4.5rem" }}>
                       {project.desc}
                     </p>
                   </div>
@@ -639,13 +640,13 @@ export default function HomePage() {
                       alignItems: "center",
                       justifyContent: "space-between",
                       paddingTop: "0.75rem",
-                      borderTop: "1px solid hsl(var(--paper) / 0.08)",
+                      borderTop: "1px solid rgba(255, 255, 255, 0.06)",
                       fontSize: "0.75rem",
                       fontWeight: 600,
-                      color: "hsl(var(--paper) / 0.5)",
+                      color: "rgba(255, 255, 255, 0.4)",
                     }}
                   >
-                    <span style={{ fontSize: "0.7rem", color: "hsl(var(--paper) / 0.6)" }}>{project.tech}</span>
+                    <span style={{ fontSize: "0.7rem", color: "rgba(255, 255, 255, 0.5)" }}>{project.tech}</span>
                     <span style={{ display: "inline-flex", alignItems: "center", gap: "2px", color: project.color, fontWeight: "700" }}>
                       Visit Link
                       <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" style={{ marginLeft: "1px" }}>
@@ -662,9 +663,9 @@ export default function HomePage() {
       </section>
 
       {/* Clients Section */}
-      <section className="section-pad-sm" style={{ borderTop: "2px solid hsl(var(--navy) / 0.08)", background: "hsl(var(--cream))", overflow: "hidden" }}>
+      <section className="section-pad-sm" style={{ background: "transparent", overflow: "hidden" }}>
         <div className="container">
-          <p style={{ fontSize: "0.75rem", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.15em", color: "hsl(var(--ink-soft))", textAlign: "center", marginBottom: "1.5rem" }}>
+          <p style={{ fontSize: "0.75rem", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.15em", color: "rgba(255, 255, 255, 0.4)", textAlign: "center", marginBottom: "1.5rem" }}>
             TRUSTED BY RECENT PROJECTS & CLIENTS
           </p>
           <div style={{ display: "flex", flexWrap: "wrap", justifyContent: "center", alignItems: "center", gap: "0.75rem" }}>
@@ -673,31 +674,41 @@ export default function HomePage() {
                 key={idx}
                 style={{
                   padding: "0.625rem 1.25rem",
-                  border: "2px solid hsl(var(--navy))",
-                  background: "hsl(var(--paper))",
+                  border: "1px solid rgba(255, 255, 255, 0.08)",
+                  background: "rgba(255, 255, 255, 0.03)",
                   borderRadius: "0.5rem",
                   fontSize: "0.8rem",
-                  fontWeight: 700,
-                  boxShadow: "3px 3px 0 0 hsl(var(--navy))",
-                  color: "hsl(var(--navy))",
+                  fontWeight: 600,
+                  color: "rgba(255, 255, 255, 0.8)",
+                  backdropFilter: "blur(4px)",
+                  WebkitBackdropFilter: "blur(4px)",
+                  transition: "all 0.2s ease",
                 }}
+                className="client-tag-item"
               >
                 {client}
               </div>
             ))}
           </div>
         </div>
+        <style dangerouslySetInnerHTML={{ __html: `
+          .client-tag-item:hover {
+            background: rgba(255, 255, 255, 0.08) !important;
+            border-color: rgba(255, 255, 255, 0.18) !important;
+            transform: translateY(-2px);
+          }
+        `}} />
       </section>
 
       {/* Client Testimonial Social Proof Section */}
-      <section className="section-pad" style={{ background: "hsl(var(--paper))" }}>
+      <section className="section-pad" style={{ background: "transparent" }}>
         <div className="container">
           <div style={{ textAlign: "center", marginBottom: "3rem" }}>
             <span className="eyebrow">WHAT CLIENTS SAY</span>
-            <h2 style={{ marginTop: "0.5rem" }}>
+            <h2 style={{ marginTop: "0.5rem", color: "#fff" }}>
               Over 200+ satisfied <span className="em-italic">inquiries</span>
             </h2>
-            <p style={{ marginTop: "0.75rem", marginInline: "auto", maxWidth: "520px" }}>
+            <p style={{ marginTop: "0.75rem", marginInline: "auto", maxWidth: "520px", color: "rgba(255, 255, 255, 0.6)" }}>
               Highly responsive project scheduling, clear engineering timelines, and beautiful Brutalist UI design.
             </p>
           </div>
@@ -705,23 +716,23 @@ export default function HomePage() {
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: "1.5rem" }}>
             <div className="card" style={{ padding: "2rem" }}>
               <div style={{ fontSize: "1.5rem", color: "hsl(var(--orange))", marginBottom: "1rem" }}>★★★★★</div>
-              <p style={{ fontStyle: "italic", marginBottom: "1.5rem", fontSize: "0.95rem", color: "hsl(var(--navy))", lineHeight: "1.6" }}>
+              <p style={{ fontStyle: "italic", marginBottom: "1.5rem", fontSize: "0.95rem", color: "rgba(255, 255, 255, 0.85)", lineHeight: "1.6" }}>
                 &ldquo;BeyondWebCo restructured our logistics dispatch portal. Their senior engineers delivered the Next.js platform in under 10 weeks, reducing dispatch latency to near zero. A phenomenal agency!&rdquo;
               </p>
               <div>
-                <strong style={{ display: "block", color: "hsl(var(--navy))", fontSize: "0.9rem" }}>Founder & CEO</strong>
-                <span style={{ fontSize: "0.8rem", color: "hsl(var(--ink-soft))" }}>Malik Logistics Group</span>
+                <strong style={{ display: "block", color: "#fff", fontSize: "0.9rem" }}>Founder & CEO</strong>
+                <span style={{ fontSize: "0.8rem", color: "rgba(255, 255, 255, 0.5)" }}>Malik Logistics Group</span>
               </div>
             </div>
 
             <div className="card" style={{ padding: "2rem" }}>
               <div style={{ fontSize: "1.5rem", color: "hsl(var(--teal))", marginBottom: "1rem" }}>★★★★★</div>
-              <p style={{ fontStyle: "italic", marginBottom: "1.5rem", fontSize: "0.95rem", color: "hsl(var(--navy))", lineHeight: "1.6" }}>
+              <p style={{ fontStyle: "italic", marginBottom: "1.5rem", fontSize: "0.95rem", color: "rgba(255, 255, 255, 0.85)", lineHeight: "1.6" }}>
                 &ldquo;Their design system matches premium aesthetics perfectly. The e-commerce portal loads in under 2 seconds and handles complex checkout sequences flawlessly. Absolute professionals.&rdquo;
               </p>
               <div>
-                <strong style={{ display: "block", color: "hsl(var(--navy))", fontSize: "0.9rem" }}>E-Commerce Director</strong>
-                <span style={{ fontSize: "0.8rem", color: "hsl(var(--ink-soft))" }}>Woodvilla Luxury Catalog</span>
+                <strong style={{ display: "block", color: "#fff", fontSize: "0.9rem" }}>E-Commerce Director</strong>
+                <span style={{ fontSize: "0.8rem", color: "rgba(255, 255, 255, 0.5)" }}>Woodvilla Luxury Catalog</span>
               </div>
             </div>
           </div>
@@ -731,7 +742,7 @@ export default function HomePage() {
       {/* CTA Section */}
       <section
         style={{
-          background: "hsl(var(--navy))",
+          background: "transparent",
           textAlign: "center",
           position: "relative",
           overflow: "hidden",
@@ -741,15 +752,28 @@ export default function HomePage() {
       >
         <div className="absolute inset-0 bg-grid pointer-events-none opacity-5" />
         <div className="container" style={{ position: "relative", zIndex: 10 }}>
-          <h2 style={{ color: "hsl(var(--paper))", marginBottom: "1rem" }}>
-            Ready to build your <span className="em-italic">custom product</span>?
-          </h2>
-          <p style={{ marginBottom: "2.5rem", marginInline: "auto", color: "hsl(var(--paper) / 0.6)", maxWidth: "450px" }}>
-            Book a strategy call to discuss your project requirements, get a custom estimate, and consult with our senior builders.
-          </p>
-          <Link href="/contact" className="btn-primary btn-orange" style={{ padding: "1rem 2.5rem" }}>
-            Book a Strategy Call →
-          </Link>
+          <div
+            className="glass"
+            style={{
+              padding: "4rem 2rem",
+              borderRadius: "24px",
+              background: "rgba(255, 255, 255, 0.02)",
+              border: "1px solid rgba(255, 255, 255, 0.08)",
+              boxShadow: "0 15px 45px rgba(0, 0, 0, 0.3)",
+              maxWidth: "800px",
+              marginInline: "auto",
+            }}
+          >
+            <h2 style={{ color: "#fff", marginBottom: "1rem" }}>
+              Ready to build your <span className="em-italic">custom product</span>?
+            </h2>
+            <p style={{ marginBottom: "2.5rem", marginInline: "auto", color: "rgba(255, 255, 255, 0.6)", maxWidth: "450px" }}>
+              Book a strategy call to discuss your project requirements, get a custom estimate, and consult with our senior builders.
+            </p>
+            <Link href="/contact" className="btn-primary btn-orange" style={{ padding: "1rem 2.5rem" }}>
+              Book a Strategy Call →
+            </Link>
+          </div>
         </div>
       </section>
     </main>

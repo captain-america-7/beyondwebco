@@ -71,19 +71,26 @@ export default function Footer() {
   return (
     <footer
       style={{
-        background: "hsl(var(--navy))",
-        color: "hsl(var(--paper))",
-        borderTop: "3px solid hsl(var(--orange))",
+        background: "rgba(255, 255, 255, 0.02)",
+        color: "rgba(255, 255, 255, 0.9)",
+        border: "1px solid rgba(255, 255, 255, 0.08)",
+        borderRadius: "24px",
+        margin: "3rem auto",
+        width: "calc(100% - 2rem)",
+        maxWidth: "var(--container-wide-max, 88rem)",
         overflow: "hidden",
+        backdropFilter: "blur(14px)",
+        WebkitBackdropFilter: "blur(14px)",
+        boxShadow: "0 10px 45px rgba(0, 0, 0, 0.25)",
       }}
     >
       <div
         style={{
-          borderBottom: "2px solid hsl(var(--paper) / 0.08)",
+          borderBottom: "1px solid rgba(255, 255, 255, 0.06)",
           padding: "clamp(2rem, 5vw, 3rem) 0",
         }}
       >
-        <div className="container-wide">
+        <div className="container-wide" style={{ paddingInline: "clamp(1.25rem, 4vw, 2.5rem)" }}>
           <div
             style={{
               display: "flex",
@@ -98,9 +105,9 @@ export default function Footer() {
                 href="/"
                 style={{
                   fontFamily: "var(--font-display)",
-                  fontSize: "clamp(1.4rem, 3.5vw, 1.75rem)",
+                  fontSize: "clamp(1.35rem, 3.5vw, 1.6rem)",
                   fontWeight: 900,
-                  color: "hsl(var(--paper))",
+                  color: "#fff",
                   letterSpacing: "-0.03em",
                   lineHeight: 1,
                   display: "inline-block",
@@ -112,8 +119,8 @@ export default function Footer() {
               </Link>
               <p
                 style={{
-                  fontSize: "0.875rem",
-                  color: "hsl(var(--paper) / 0.55)",
+                  fontSize: "0.85rem",
+                  color: "rgba(255, 255, 255, 0.6)",
                   maxWidth: "340px",
                   lineHeight: 1.6,
                   marginBottom: "1.25rem",
@@ -225,8 +232,8 @@ export default function Footer() {
             gap: "0.5rem",
             alignItems: "center",
             textAlign: "center",
-            fontSize: "0.875rem",
-            color: "hsl(var(--paper) / 0.4)",
+            fontSize: "0.85rem",
+            color: "rgba(255, 255, 255, 0.4)",
           }}
         >
           <p>© {currentYear} BeyondWebCo. All Rights Reserved.</p>

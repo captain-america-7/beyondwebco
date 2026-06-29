@@ -46,25 +46,33 @@ export default function Header() {
       <header
         className="sticky top-0 z-40 transition-all duration-300"
         style={{
-          minHeight: "var(--header-h, 72px)",
-          background: scrolled ? "hsl(var(--paper))" : "hsl(var(--cream))",
-          borderBottom: scrolled
-            ? "2px solid hsl(var(--navy) / 0.12)"
-            : "2px solid transparent",
-          boxShadow: scrolled
-            ? "0 2px 20px hsl(var(--navy) / 0.06)"
-            : "none",
+          margin: scrolled ? "0.75rem auto" : "1.25rem auto",
+          width: "calc(100% - 2rem)",
+          maxWidth: scrolled ? "1000px" : "1200px",
+          borderRadius: "9999px",
+          minHeight: scrolled ? "56px" : "68px",
+          display: "flex",
+          alignItems: "center",
+          background: scrolled ? "rgba(255, 255, 255, 0.06)" : "rgba(255, 255, 255, 0.02)",
+          border: scrolled ? "1px solid rgba(255, 255, 255, 0.12)" : "1px solid rgba(255, 255, 255, 0.06)",
+          boxShadow: scrolled ? "0 10px 30px rgba(0, 0, 0, 0.3)" : "0 4px 20px rgba(0, 0, 0, 0.1)",
+          backdropFilter: "blur(16px) saturate(150%)",
+          WebkitBackdropFilter: "blur(16px) saturate(150%)",
+          paddingInline: "1.25rem",
+          position: "fixed",
+          left: "50%",
+          transform: "translateX(-50%)",
         }}
       >
         <div
           className="container-wide"
           style={{
             height: "100%",
-            minHeight: "var(--header-h, 72px)",
             display: "flex",
             alignItems: "center",
             justifyContent: "space-between",
             gap: "1rem",
+            width: "100%",
           }}
         >
           {/* Logo */}
@@ -81,9 +89,9 @@ export default function Header() {
             <span
               style={{
                 fontFamily: "var(--font-display)",
-                fontSize: "clamp(1.4rem, 3.5vw, 1.75rem)",
+                fontSize: "clamp(1.25rem, 3.5vw, 1.55rem)",
                 fontWeight: 900,
-                color: "hsl(var(--navy))",
+                color: "#fff",
                 letterSpacing: "-0.03em",
                 lineHeight: 1,
               }}
@@ -114,17 +122,21 @@ export default function Header() {
                   style={{
                     display: "inline-block",
                     borderRadius: "9999px",
-                    fontSize: "0.9rem",
+                    fontSize: "0.85rem",
                     fontWeight: 600,
-                    transition: "color 0.15s, background 0.15s",
-                    color: active ? "hsl(var(--orange))" : "hsl(var(--ink))",
+                    transition: "color 0.2s, background 0.2s, border-color 0.2s",
+                    color: active ? "#fff" : "rgba(255, 255, 255, 0.7)",
                     background: active
-                      ? "hsl(var(--orange) / 0.08)"
+                      ? "rgba(255, 255, 255, 0.08)"
                       : "transparent",
-                    paddingInline: "1rem",
-                    paddingBlock: "0.5rem",
+                    border: active
+                      ? "1px solid rgba(255, 255, 255, 0.12)"
+                      : "1px solid transparent",
+                    paddingInline: "0.9rem",
+                    paddingBlock: "0.4rem",
                     whiteSpace: "nowrap",
                   }}
+                  className="nav-item-link"
                 >
                   {link.label}
                 </Link>
@@ -144,15 +156,17 @@ export default function Header() {
                 alignItems: "center",
                 gap: "0.5rem",
                 borderRadius: "9999px",
-                border: "2px solid hsl(var(--navy))",
-                fontSize: "0.875rem",
-                fontWeight: 700,
-                transition: "background 0.15s, color 0.15s",
-                background: "hsl(var(--paper))",
-                color: "hsl(var(--ink))",
-                paddingInline: "1.125rem",
-                paddingBlock: "0.5rem",
+                border: "1px solid rgba(255, 255, 255, 0.1)",
+                fontSize: "0.85rem",
+                fontWeight: 600,
+                transition: "background 0.15s, color 0.15s, border-color 0.15s",
+                background: "rgba(255, 255, 255, 0.03)",
+                color: "rgba(255, 255, 255, 0.8)",
+                paddingInline: "1rem",
+                paddingBlock: "0.45rem",
                 whiteSpace: "nowrap",
+                backdropFilter: "blur(8px)",
+                WebkitBackdropFilter: "blur(8px)",
               }}
             >
               <svg
@@ -207,8 +221,11 @@ export default function Header() {
               className="btn-primary quote-btn"
               style={{
                 paddingInline: "1.125rem",
-                paddingBlock: "0.625rem",
-                fontSize: "0.875rem",
+                paddingBlock: "0.55rem",
+                fontSize: "0.85rem",
+                background: "linear-gradient(135deg, hsl(var(--orange) / 0.85), hsl(var(--coral) / 0.7))",
+                border: "1px solid rgba(255, 255, 255, 0.15)",
+                boxShadow: "0 4px 15px rgba(242, 107, 42, 0.15)",
               }}
             >
               Book a Strategy Call
@@ -224,12 +241,11 @@ export default function Header() {
               style={{
                 display: "grid",
                 placeItems: "center",
-                width: "44px",
-                height: "44px",
+                width: "40px",
+                height: "40px",
                 borderRadius: "12px",
-                border: "2px solid hsl(var(--navy))",
-                background: "hsl(var(--paper))",
-                boxShadow: "3px 3px 0 0 hsl(var(--navy))",
+                border: "1px solid rgba(255, 255, 255, 0.1)",
+                background: "rgba(255, 255, 255, 0.04)",
                 cursor: "pointer",
                 flexShrink: 0,
               }}
@@ -249,7 +265,7 @@ export default function Header() {
                     height: "2px",
                     width: menuOpen ? "20px" : "22px",
                     borderRadius: "2px",
-                    background: "hsl(var(--ink))",
+                    background: "#fff",
                     transition: "all 0.25s",
                     transform: menuOpen ? "translateY(7px) rotate(45deg)" : "none",
                   }}
@@ -273,7 +289,7 @@ export default function Header() {
                     height: "2px",
                     width: menuOpen ? "20px" : "22px",
                     borderRadius: "2px",
-                    background: "hsl(var(--ink))",
+                    background: "#fff",
                     transition: "all 0.25s",
                     transform: menuOpen ? "translateY(-7px) rotate(-45deg)" : "none",
                   }}
@@ -292,6 +308,10 @@ export default function Header() {
           @media (min-width: 1024px) {
             .phone-btn { display: inline-flex !important; }
           }
+          .nav-item-link:hover {
+            color: #fff !important;
+            background: rgba(255,255,255,0.04) !important;
+          }
         `}} />
       </header>
 
@@ -306,7 +326,9 @@ export default function Header() {
           zIndex: 50,
           display: "flex",
           flexDirection: "column",
-          background: "hsl(var(--navy))",
+          background: "rgba(9, 13, 22, 0.85)",
+          backdropFilter: "blur(20px) saturate(160%)",
+          WebkitBackdropFilter: "blur(20px) saturate(160%)",
           opacity: menuOpen ? 1 : 0,
           pointerEvents: menuOpen ? "all" : "none",
           transform: menuOpen ? "translateY(0)" : "translateY(-16px)",
@@ -322,15 +344,15 @@ export default function Header() {
             alignItems: "center",
             justifyContent: "space-between",
             padding: "1.25rem 1.5rem",
-            borderBottom: "1.5px solid hsl(var(--paper) / 0.12)",
+            borderBottom: "1px solid rgba(255, 255, 255, 0.08)",
           }}
         >
           <span
             style={{
               fontFamily: "var(--font-display)",
-              fontSize: "1.5rem",
+              fontSize: "1.35rem",
               fontWeight: 900,
-              color: "hsl(var(--paper))",
+              color: "#fff",
               letterSpacing: "-0.03em",
             }}
           >
@@ -341,15 +363,14 @@ export default function Header() {
             onClick={() => setMenuOpen(false)}
             aria-label="Close menu"
             style={{
-              width: "40px",
-              height: "40px",
+              width: "36px",
+              height: "36px",
               borderRadius: "10px",
-              border: "2px solid hsl(var(--paper))",
-              background: "hsl(var(--orange))",
-              color: "white",
+              border: "1px solid rgba(255, 255, 255, 0.15)",
+              background: "rgba(255, 255, 255, 0.05)",
+              color: "#fff",
               display: "grid",
               placeItems: "center",
-              boxShadow: "3px 3px 0 0 hsl(var(--paper))",
               cursor: "pointer",
             }}
           >
@@ -359,7 +380,7 @@ export default function Header() {
               viewBox="0 0 24 24"
               fill="none"
               stroke="currentColor"
-              strokeWidth="3"
+              strokeWidth="2.5"
               strokeLinecap="round"
             >
               <path d="M18 6L6 18M6 6l12 12" />
@@ -394,16 +415,18 @@ export default function Header() {
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "space-between",
-                    padding: "0.875rem 1.25rem",
+                    padding: "0.75rem 1.25rem",
                     borderRadius: "12px",
-                    border: `2px solid ${active ? "hsl(var(--orange))" : "hsl(var(--paper) / 0.15)"}`,
+                    border: active
+                      ? "1px solid rgba(242, 107, 42, 0.3)"
+                      : "1px solid rgba(255, 255, 255, 0.08)",
                     background: active
-                      ? "hsl(var(--orange) / 0.08)"
-                      : "hsl(var(--paper) / 0.03)",
-                    color: active ? "hsl(var(--orange))" : "hsl(var(--paper))",
+                      ? "rgba(242, 107, 42, 0.08)"
+                      : "rgba(255, 255, 255, 0.02)",
+                    color: active ? "hsl(var(--orange))" : "rgba(255, 255, 255, 0.9)",
                     fontFamily: "var(--font-display)",
-                    fontSize: "1.25rem",
-                    fontWeight: 800,
+                    fontSize: "1.15rem",
+                    fontWeight: 700,
                     transition: "all 0.15s ease",
                     textDecoration: "none",
                   }}
@@ -431,8 +454,8 @@ export default function Header() {
             style={{
               padding: "1.25rem",
               borderRadius: "1rem",
-              border: "2px solid hsl(var(--paper) / 0.15)",
-              background: "hsl(var(--paper) / 0.02)",
+              border: "1px solid rgba(255, 255, 255, 0.08)",
+              background: "rgba(255, 255, 255, 0.02)",
               display: "flex",
               flexDirection: "column",
               gap: "1rem",
@@ -441,10 +464,10 @@ export default function Header() {
             <div style={{ display: "flex", flexDirection: "column", gap: "0.25rem" }}>
               <span
                 style={{
-                  fontSize: 0.75 + "rem",
+                  fontSize: "0.7rem",
                   fontWeight: 700,
                   textTransform: "uppercase",
-                  color: "hsl(var(--paper) / 0.5)",
+                  color: "rgba(255, 255, 255, 0.4)",
                   letterSpacing: "0.1em",
                 }}
               >
@@ -452,8 +475,8 @@ export default function Header() {
               </span>
               <p
                 style={{
-                  fontSize: 0.85 + "rem",
-                  color: "hsl(var(--paper) / 0.8)",
+                  fontSize: "0.8rem",
+                  color: "rgba(255, 255, 255, 0.7)",
                   fontWeight: 500,
                   lineHeight: 1.4,
                   margin: 0,
@@ -470,11 +493,11 @@ export default function Header() {
                 gap: "0.75rem",
                 padding: "0.75rem 1.125rem",
                 borderRadius: "9999px",
-                border: "2px solid hsl(var(--paper))",
-                background: "hsl(var(--paper))",
-                color: "hsl(var(--navy))",
-                fontSize: "0.875rem",
-                fontWeight: 800,
+                border: "1px solid rgba(255, 255, 255, 0.15)",
+                background: "rgba(255, 255, 255, 0.05)",
+                color: "#fff",
+                fontSize: "0.85rem",
+                fontWeight: 600,
                 textDecoration: "none",
               }}
             >
@@ -529,14 +552,14 @@ export default function Header() {
               style={{
                 display: "block",
                 textAlign: "center",
-                paddingBlock: "0.75rem",
+                paddingBlock: "0.65rem",
                 borderRadius: "9999px",
-                border: "2px solid hsl(var(--paper))",
-                background: "hsl(var(--orange))",
+                border: "1px solid rgba(255, 255, 255, 0.15)",
+                background: "linear-gradient(135deg, hsl(var(--orange) / 0.85), hsl(var(--coral) / 0.7))",
                 color: "white",
-                fontWeight: 800,
-                fontSize: "0.9rem",
-                boxShadow: "3px 3px 0 0 hsl(var(--paper))",
+                fontWeight: 700,
+                fontSize: "0.85rem",
+                boxShadow: "0 4px 15px rgba(242, 107, 42, 0.15)",
                 textDecoration: "none",
               }}
             >

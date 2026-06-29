@@ -77,7 +77,7 @@ export default function BlogPage() {
   return (
     <main>
       {/* Page Header */}
-      <section className="section-pad" style={{ background: "hsl(var(--cream))", paddingTop: "5rem" }}>
+      <section className="section-pad" style={{ background: "transparent", paddingTop: "5rem" }}>
         <div className="container">
           <span className="eyebrow" style={{ color: "hsl(var(--orange))" }}>
             LATEST INSIGHTS & ARTICLES
@@ -88,7 +88,7 @@ export default function BlogPage() {
               marginBottom: "1rem",
               fontFamily: "var(--font-display)",
               fontWeight: 900,
-              color: "hsl(var(--navy))",
+              color: "#fff",
               fontSize: "clamp(2.5rem, 5vw, 4rem)",
               lineHeight: 1.1,
             }}
@@ -98,7 +98,7 @@ export default function BlogPage() {
           <p
             style={{
               fontSize: "clamp(1.05rem, 1.8vw, 1.25rem)",
-              color: "hsl(var(--navy))",
+              color: "rgba(255, 255, 255, 0.7)",
               fontWeight: 500,
               lineHeight: 1.6,
               maxWidth: "600px",
@@ -110,7 +110,7 @@ export default function BlogPage() {
       </section>
 
       {/* Blog Grid */}
-      <section className="section-pad" style={{ background: "hsl(var(--paper))", borderTop: "2px solid hsl(var(--navy))" }}>
+      <section className="section-pad" style={{ background: "transparent", borderTop: "1px solid rgba(255, 255, 255, 0.08)" }}>
         <div className="container">
           <div className="blog-premium-grid">
             {blogPosts.map((post) => (
@@ -124,7 +124,7 @@ export default function BlogPage() {
                   <div
                     className="blog-card-media"
                     style={{
-                      background: "hsl(var(--cream))",
+                      background: "rgba(255, 255, 255, 0.01)",
                       display: "flex",
                       alignItems: "center",
                       justifyContent: "center",
@@ -136,12 +136,12 @@ export default function BlogPage() {
                         width: "80px",
                         height: "80px",
                         borderRadius: "50%",
-                        border: "3.5px solid hsl(var(--navy))",
+                        border: "1px solid rgba(255, 255, 255, 0.2)",
                         background: post.color,
                         display: "grid",
                         placeItems: "center",
                         fontSize: "2.5rem",
-                        boxShadow: "3px 3px 0 0 hsl(var(--navy))",
+                        boxShadow: `0 8px 25px color-mix(in srgb, ${post.color} 30%, transparent)`,
                       }}
                     >
                       {post.icon}

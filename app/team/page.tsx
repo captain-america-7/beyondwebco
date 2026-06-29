@@ -71,7 +71,7 @@ export default function TeamPage() {
   return (
     <main>
       {/* Page Header */}
-      <section className="section-pad" style={{ background: "hsl(var(--cream))", paddingTop: "5rem" }}>
+      <section className="section-pad" style={{ background: "transparent", paddingTop: "5rem" }}>
         <div className="container">
           <span className="eyebrow" style={{ color: "hsl(var(--orange))" }}>
             MEET THE TEAM
@@ -82,7 +82,7 @@ export default function TeamPage() {
               marginBottom: "1rem",
               fontFamily: "var(--font-display)",
               fontWeight: 900,
-              color: "hsl(var(--navy))",
+              color: "#fff",
               fontSize: "clamp(2.5rem, 5vw, 4rem)",
               lineHeight: 1.1,
             }}
@@ -92,7 +92,7 @@ export default function TeamPage() {
           <p
             style={{
               fontSize: "clamp(1.05rem, 1.8vw, 1.25rem)",
-              color: "hsl(var(--navy))",
+              color: "rgba(255, 255, 255, 0.7)",
               fontWeight: 500,
               lineHeight: 1.6,
               maxWidth: "600px",
@@ -104,7 +104,7 @@ export default function TeamPage() {
       </section>
 
       {/* Grid statistics */}
-      <section className="section-pad" style={{ background: "hsl(var(--paper))", borderTop: "2px solid hsl(var(--navy))" }}>
+      <section className="section-pad" style={{ background: "transparent", borderTop: "1px solid rgba(255, 255, 255, 0.08)" }}>
         <div className="container">
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))", gap: "1.5rem", marginBottom: "4rem" }}>
             {[
@@ -119,16 +119,16 @@ export default function TeamPage() {
                 style={{
                   padding: "1.5rem 1rem",
                   textAlign: "center",
-                  background: "hsl(var(--paper))",
-                  border: "2px solid hsl(var(--navy))",
+                  background: "rgba(255, 255, 255, 0.03)",
+                  border: "1px solid rgba(255, 255, 255, 0.08)",
                   borderRadius: "1rem",
-                  boxShadow: "4px 4px 0 0 hsl(var(--navy))",
+                  boxShadow: "0 8px 30px rgba(0, 0, 0, 0.25)",
                 }}
               >
                 <div style={{ fontFamily: "var(--font-display)", fontSize: "clamp(2rem, 4vw, 2.75rem)", fontWeight: 900, color: "hsl(var(--orange))", marginBottom: "0.25rem", lineHeight: 1.1 }}>
                   {stat.value}
                 </div>
-                <div style={{ fontSize: "0.75rem", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.08em", color: "hsl(var(--navy) / 0.6)" }}>
+                <div style={{ fontSize: "0.75rem", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.08em", color: "rgba(255, 255, 255, 0.5)" }}>
                   {stat.label}
                 </div>
               </div>
@@ -146,11 +146,11 @@ export default function TeamPage() {
                   overflow: "hidden",
                   display: "flex",
                   flexDirection: "column",
-                  background: "hsl(var(--paper))",
-                  border: "2px solid hsl(var(--navy))",
+                  background: "rgba(255, 255, 255, 0.03)",
+                  border: "1px solid rgba(255, 255, 255, 0.08)",
                   borderRadius: "1rem",
-                  transition: "transform 0.2s ease, box-shadow 0.2s ease",
-                  boxShadow: `6px 6px 0 0 ${member.color}`,
+                  transition: "transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease",
+                  boxShadow: `0 8px 30px rgba(0,0,0,0.3), 0 0 15px color-mix(in srgb, ${member.color} 5%, transparent)`,
                 }}
               >
                 {/* Visual Initials Avatar */}
@@ -159,8 +159,8 @@ export default function TeamPage() {
                   style={{
                     position: "relative",
                     aspectRatio: "1/1",
-                    background: "hsl(var(--cream))",
-                    borderBottom: "2px solid hsl(var(--navy))",
+                    background: "rgba(255, 255, 255, 0.01)",
+                    borderBottom: "1px solid rgba(255, 255, 255, 0.08)",
                     overflow: "hidden",
                     display: "flex",
                     alignItems: "center",
@@ -178,11 +178,11 @@ export default function TeamPage() {
                         fontWeight: 900,
                         textTransform: "uppercase",
                         letterSpacing: "0.08em",
-                        background: "hsl(var(--orange))",
+                        background: "hsl(var(--orange) / 0.85)",
                         color: "#fff",
                         padding: "4px 10px",
-                        border: "2px solid hsl(var(--navy))",
-                        boxShadow: "2px 2px 0 0 hsl(var(--navy))",
+                        border: "1px solid rgba(255, 255, 255, 0.2)",
+                        boxShadow: "0 4px 12px rgba(242, 107, 42, 0.2)",
                         borderRadius: "4px",
                       }}
                     >
@@ -195,7 +195,7 @@ export default function TeamPage() {
                       width: "120px",
                       height: "120px",
                       borderRadius: "50%",
-                      border: "3px solid hsl(var(--navy))",
+                      border: "1px solid rgba(255, 255, 255, 0.2)",
                       background: member.color,
                       display: "grid",
                       placeItems: "center",
@@ -203,7 +203,7 @@ export default function TeamPage() {
                       fontSize: "3rem",
                       fontWeight: 900,
                       color: "#fff",
-                      boxShadow: "4px 4px 0 0 hsl(var(--navy))",
+                      boxShadow: `0 10px 25px color-mix(in srgb, ${member.color} 20%, transparent)`,
                     }}
                   >
                     {member.initials}
@@ -212,13 +212,13 @@ export default function TeamPage() {
 
                 {/* Member Details */}
                 <div className="member-details" style={{ padding: "1.5rem", display: "flex", flexDirection: "column", flex: 1 }}>
-                  <h3 style={{ fontFamily: "var(--font-display)", fontWeight: 700, fontSize: "clamp(1.2rem, 2.5vw, 1.4rem)", color: "hsl(var(--navy))", marginBottom: "0.25rem" }}>
+                  <h3 style={{ fontFamily: "var(--font-display)", fontWeight: 700, fontSize: "clamp(1.2rem, 2.5vw, 1.4rem)", color: "#fff", marginBottom: "0.25rem" }}>
                     {member.name}
                   </h3>
                   <span style={{ fontSize: "0.75rem", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.08em", color: member.color, marginBottom: "0.75rem", display: "inline-block" }}>
                     {member.role}
                   </span>
-                  <p style={{ fontSize: "0.875rem", color: "hsl(var(--ink-soft))", lineHeight: 1.6, margin: 0 }}>
+                  <p style={{ fontSize: "0.875rem", color: "rgba(255, 255, 255, 0.65)", lineHeight: 1.6, margin: 0 }}>
                     {member.desc}
                   </p>
 
@@ -226,7 +226,7 @@ export default function TeamPage() {
                   {member.highlights.length > 0 && (
                     <ul style={{ listStyleType: "none", padding: 0, margin: "1.25rem 0", display: "flex", flexDirection: "column", gap: "0.5rem" }}>
                       {member.highlights.map((high, hIdx) => (
-                        <li key={hIdx} style={{ fontSize: "0.85rem", color: "hsl(var(--navy))", fontWeight: 600, display: "flex", alignItems: "center", gap: "0.5rem" }}>
+                        <li key={hIdx} style={{ fontSize: "0.85rem", color: "#fff", fontWeight: 600, display: "flex", alignItems: "center", gap: "0.5rem" }}>
                           <span style={{ color: member.color }}>⚡</span>
                           {high}
                         </li>
@@ -237,7 +237,7 @@ export default function TeamPage() {
                   {/* Skills tags */}
                   <div style={{ display: "flex", flexWrap: "wrap", gap: "0.4rem", marginTop: "1.25rem" }}>
                     {member.skills.map((skill, sIdx) => (
-                      <span key={sIdx} style={{ fontSize: "0.7rem", fontWeight: 700, padding: "2px 8px", border: "1.5px solid hsl(var(--navy))", borderRadius: "6px", background: "hsl(var(--cream-deep))", color: "hsl(var(--navy))" }}>
+                      <span key={sIdx} style={{ fontSize: "0.7rem", fontWeight: 700, padding: "2px 8px", border: "1px solid rgba(255, 255, 255, 0.1)", borderRadius: "6px", background: "rgba(255, 255, 255, 0.05)", color: "rgba(255, 255, 255, 0.8)" }}>
                         {skill}
                       </span>
                     ))}
@@ -248,8 +248,8 @@ export default function TeamPage() {
           </div>
 
           {/* Privacy Note */}
-          <div style={{ marginTop: "4rem", textAlign: "center", padding: "1.5rem", background: "hsl(var(--paper))", border: "2px dashed hsl(var(--navy) / 0.3)", borderRadius: "1rem", maxWidth: "700px", marginInline: "auto" }}>
-            <p style={{ fontSize: "0.875rem", color: "hsl(var(--ink-soft))", lineHeight: 1.5, margin: 0, display: "flex", alignItems: "center", justifyContent: "center", gap: "0.5rem" }}>
+          <div style={{ marginTop: "4rem", textAlign: "center", padding: "1.5rem", background: "rgba(255, 255, 255, 0.02)", border: "1px dashed rgba(255, 255, 255, 0.15)", borderRadius: "1rem", maxWidth: "700px", marginInline: "auto" }}>
+            <p style={{ fontSize: "0.875rem", color: "rgba(255, 255, 255, 0.5)", lineHeight: 1.5, margin: 0, display: "flex", alignItems: "center", justifyContent: "center", gap: "0.5rem" }}>
               🔒 <span>For confidentiality and privacy reasons, some team member details have been abstracted. Our team consists of active senior designers & engineers.</span>
             </p>
           </div>
@@ -259,7 +259,7 @@ export default function TeamPage() {
       {/* CTA Section */}
       <section
         style={{
-          background: "hsl(var(--navy))",
+          background: "transparent",
           textAlign: "center",
           position: "relative",
           overflow: "hidden",
@@ -269,15 +269,28 @@ export default function TeamPage() {
       >
         <div className="absolute inset-0 bg-grid pointer-events-none opacity-0.04" />
         <div className="container" style={{ position: "relative", zIndex: 10 }}>
-          <h2 style={{ color: "hsl(var(--paper))" }}>
-            Want to work with <span className="em-italic">us</span>?
-          </h2>
-          <p style={{ marginTop: "1rem", marginBottom: "2rem", marginInline: "auto", color: "hsl(var(--paper) / 0.6)", maxWidth: "440px" }}>
-            Get senior-level development and strategy directly. No middle management, no hassle.
-          </p>
-          <Link href="/contact" className="btn-primary btn-orange">
-            Work With Our Team →
-          </Link>
+          <div
+            className="glass"
+            style={{
+              padding: "4rem 2rem",
+              borderRadius: "24px",
+              background: "rgba(255, 255, 255, 0.02)",
+              border: "1px solid rgba(255, 255, 255, 0.08)",
+              boxShadow: "0 15px 45px rgba(0, 0, 0, 0.3)",
+              maxWidth: "800px",
+              marginInline: "auto",
+            }}
+          >
+            <h2 style={{ color: "#fff", marginBottom: "1rem" }}>
+              Want to work with <span className="em-italic">us</span>?
+            </h2>
+            <p style={{ marginBottom: "2rem", marginInline: "auto", color: "rgba(255, 255, 255, 0.6)", maxWidth: "440px" }}>
+              Get senior-level development and strategy directly. No middle management, no hassle.
+            </p>
+            <Link href="/contact" className="btn-primary btn-orange">
+              Work With Our Team →
+            </Link>
+          </div>
         </div>
       </section>
 
@@ -307,7 +320,7 @@ export default function TeamPage() {
           .founder-card .member-image-wrapper {
             width: 40% !important;
             border-bottom: none !important;
-            border-right: 2px solid hsl(var(--navy)) !important;
+            border-right: 1px solid rgba(255, 255, 255, 0.08) !important;
             aspect-ratio: auto !important;
           }
           .founder-card .member-details {
@@ -317,10 +330,12 @@ export default function TeamPage() {
           }
         }
         .team-card {
-          transition: transform 0.2s ease, box-shadow 0.2s ease;
+          transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1) !important;
         }
         .team-card:hover {
-          transform: translateY(-8px);
+          transform: translateY(-8px) !important;
+          border-color: rgba(255, 255, 255, 0.18) !important;
+          box-shadow: 0 20px 45px rgba(0, 0, 0, 0.45) !important;
         }
       `}} />
     </main>
