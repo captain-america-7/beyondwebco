@@ -46,22 +46,22 @@ export default function Header() {
       <header
         className="sticky top-0 z-40 transition-all duration-300"
         style={{
-          margin: scrolled ? "0.75rem auto" : "1.25rem auto",
-          width: "calc(100% - 1rem)",
-          maxWidth: scrolled ? "1000px" : "1200px",
-          borderRadius: "9999px",
-          minHeight: scrolled ? "56px" : "68px",
+          margin: 0,
+          width: "100%",
+          borderRadius: 0,
+          minHeight: scrolled ? "56px" : "70px",
           display: "flex",
           alignItems: "center",
-          background: scrolled ? "rgba(255, 255, 255, 0.06)" : "rgba(255, 255, 255, 0.02)",
-          border: scrolled ? "1px solid rgba(255, 255, 255, 0.12)" : "1px solid rgba(255, 255, 255, 0.06)",
-          boxShadow: scrolled ? "0 10px 30px rgba(0, 0, 0, 0.3)" : "0 4px 20px rgba(0, 0, 0, 0.1)",
+          background: scrolled ? "rgba(9, 13, 22, 0.85)" : "rgba(9, 13, 22, 0.4)",
+          borderBottom: "1px solid rgba(255, 255, 255, 0.08)",
+          boxShadow: scrolled ? "0 8px 32px rgba(0, 0, 0, 0.4)" : "none",
           backdropFilter: "blur(16px) saturate(150%)",
           WebkitBackdropFilter: "blur(16px) saturate(150%)",
-          paddingInline: "1.25rem",
+          paddingInline: "clamp(1rem, 5vw, 3rem)",
           position: "fixed",
-          left: "50%",
-          transform: "translateX(-50%)",
+          top: 0,
+          left: 0,
+          right: 0,
         }}
       >
         <div
