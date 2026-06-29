@@ -26,7 +26,7 @@ export default function Navbar() {
         scrolled ? "py-3 shadow-2xl bg-surface/50 dark:bg-surface/80" : "py-4 bg-surface/30 dark:bg-surface/60"
       )}
     >
-      <Link href="/" className="font-display-lg-mobile text-[32px] md:text-display-lg-mobile font-bold text-on-surface tracking-tighter hover:text-primary transition-colors">
+      <Link href="/" className="font-display-lg-mobile text-[32px] md:text-display-lg-mobile font-bold text-on-surface tracking-tighter hover:text-[#186ede] transition-colors">
         BeyondWebCo
       </Link>
       
