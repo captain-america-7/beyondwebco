@@ -37,8 +37,16 @@ export default function LoadingScreen({
             initial={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.6, ease: "easeInOut" }}
-            className="fixed inset-0 z-[100] flex items-center justify-center bg-surface"
+            className="fixed inset-0 z-[100] flex flex-col items-center justify-center bg-surface"
           >
+            <motion.h1
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
+              className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-4"
+            >
+              BeyondWebCo
+            </motion.h1>
             <div className="w-64 h-64 max-w-full max-h-full">
               <DotLottieReact
                 src="/loading.lottie"
