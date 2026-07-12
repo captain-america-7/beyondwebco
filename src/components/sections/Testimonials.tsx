@@ -5,22 +5,22 @@ import { GlassCard } from "@/components/ui/GlassCard";
 
 const testimonials = [
   {
-    quote: "BeyondWebCo took our legacy architecture and completely revitalized it into a cloud-native SaaS that tripled our throughput in 6 months.",
-    author: "Jason Drax",
-    role: "CTO, Aether Systems",
-    initials: "JD"
-  },
-  {
-    quote: "The precision and attention to detail is unmatched. It's rare to find a studio that truly understands the business logic behind the code.",
-    author: "Sarah Lin",
-    role: "Founder, Velo App",
+    quote: "BeyondWebCo built a modern website for Sri Lakshmi Automobiles that perfectly represents our business. The team was responsive, delivered on time, and created a fast, professional website that our customers love.",
+    author: "Sri Lakshmi Automobiles",
+    role: "Automotive Business",
     initials: "SL"
   },
   {
-    quote: "Their engineering-first approach saved us over $200k in potential technical debt. They are truly strategic partners.",
-    author: "Mark Kovak",
-    role: "Head of Product, Quantix",
-    initials: "MK"
+    quote: "Our portfolio finally feels premium. BeyondWebCo understood our creative vision and designed a website that beautifully showcases our photography and has already helped us attract new clients.",
+    author: "Pavani Studios",
+    role: "Creative Studio",
+    initials: "PS"
+  },
+  {
+    quote: "The website exceeded my expectations. It is clean, professional, mobile-friendly, and makes it much easier for patients to learn about my services and get in touch.",
+    author: "Dr. Varun",
+    role: "Medical Practitioner",
+    initials: "DV"
   }
 ];
 
