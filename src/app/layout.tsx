@@ -17,8 +17,34 @@ const interTight = Inter_Tight({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://www.beyondwebco.com"),
   title: "BeyondWebCo | Premium Web Design & Development",
-  description: "We build fast, beautiful, responsive websites with exceptional user experience.",
+  description: "We build fast, modern, SEO-friendly websites that help businesses grow online.",
+  icons: {
+    icon: "/logo.png",
+    apple: "/logo.png",
+  },
+  openGraph: {
+    type: "website",
+    url: "https://www.beyondwebco.com",
+    title: "BeyondWebCo | Premium Web Design & Development",
+    description: "We build fast, modern, SEO-friendly websites that help businesses grow online.",
+    siteName: "BeyondWebCo",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "BeyondWebCo Social Preview",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "BeyondWebCo | Premium Web Design & Development",
+    description: "We build fast, modern, SEO-friendly websites that help businesses grow online.",
+    images: ["/og-image.png"],
+  },
 };
 
 export default function RootLayout({
