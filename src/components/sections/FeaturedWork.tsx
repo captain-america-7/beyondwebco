@@ -6,16 +6,34 @@ import Image from "next/image";
 
 const projects = [
   {
-    title: "FinFlow NeoBank",
-    description: "Global FinTech Disruptor",
-    image: "https://lh3.googleusercontent.com/aida-public/AB6AXuB5Pyrmc640ucBThJjLVZp7Tsah_2qyO5u86bQuit0OH1gg6Vm5Sdqw1Quvz7M04GjYX73a7kUfn5NCO-Bd4r-8ngEo2nv5qBir-neiZLE531KZxhTciGa2AuEP6wo2OAxsuYT-JK-W6rUOsMcJeErLi7bgL55NIodK_fjfV2y08OtobI0GpY0lV0937OStyJIAj-uWJAD0Q_F2mXphZPv902QbT7VGQgGJd10JRGNDwi-1rNCcmIcv",
-    tags: ["NEXT.JS", "AWS LAMBDA", "WEB3"]
+    title: "Sri Lakshmi Automobiles",
+    description: "Modern Business Website",
+    image: "/projects/sri_lakshmi_automobiles.png",
+    tags: ["Next.js", "React", "Responsive Design"]
   },
   {
-    title: "LuxeCart Engine",
-    description: "Enterprise Commerce Solution",
-    image: "https://lh3.googleusercontent.com/aida-public/AB6AXuBhiS7Ffaqax2DoVIyyXWYyV2zHx4CqLSu2Gu9uTdejhT6ZoKvhW4x99vY3UMP3Z14IG085iclVDKtC3zjXJNdopn3Q7BQYS296VEpOH78kIO8ez-95dJ9DEJGswzASnmgixLXwdC-kJi07TVtb0MfzncfUxOSX1HDZB-78Vkw7MZXm41DPQ9Rh5KPuRre5ORRTl9UExmRt9FcboFu1gCYbrYDRAtGNxUpzY-rFOjO5cLJzdxu91zOW",
-    tags: ["FLUTTER", "NODE.JS", "STRIPE"]
+    title: "Pavani Studios",
+    description: "Photography Portfolio Website",
+    image: "/projects/pavani_studios.png",
+    tags: ["React", "GSAP", "Responsive Design"]
+  },
+  {
+    title: "Dr. Varun",
+    description: "Medical Clinic Website",
+    image: "/projects/dr_varun.png",
+    tags: ["Next.js", "SEO", "Appointment Integration"]
+  },
+  {
+    title: "Restaurant Website",
+    description: "Restaurant Landing Page",
+    image: "/projects/restaurant_website.png",
+    tags: ["React", "Responsive Design"]
+  },
+  {
+    title: "Portfolio Website",
+    description: "Personal Portfolio",
+    image: "/projects/portfolio_website.png",
+    tags: ["Next.js", "Framer Motion"]
   }
 ];
 

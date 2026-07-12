@@ -23,11 +23,11 @@ export default function Hero() {
         </span>
         
         <h1 className="font-display-xl text-[64px] leading-[1.1] md:text-display-xl max-w-5xl mx-auto mb-stack-lg">
-          We build Web. Mobile. SaaS. <span className="text-[#9D4EDD]">Scale.</span>
+          We Build Websites That <span className="text-[#9D4EDD]">Grow Businesses.</span>
         </h1>
         
         <p className="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto mb-12">
-          High-performance digital products engineered by senior developers. No junior bloat. Just scalable, resilient architecture that powers modern business.
+          High-performance websites and digital products engineered for speed, scalability, SEO, and exceptional user experience.
         </p>
         
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center w-full sm:w-auto">
@@ -55,8 +55,8 @@ export default function Hero() {
           <span className="text-on-surface-variant font-label-caps text-label-caps">CLIENT SATISFACTION</span>
         </div>
         <div className="flex flex-col items-center">
-          <span className="font-display-lg text-display-lg text-[#9D4EDD]">8+</span>
-          <span className="text-on-surface-variant font-label-caps text-label-caps">YEARS EXPERIENCE</span>
+          <span className="font-display-lg text-display-lg text-[#9D4EDD]">2+</span>
+          <span className="text-on-surface-variant font-label-caps text-label-caps">YEARS OF EXPERIENCE</span>
         </div>
       </motion.div>
     </section>

@@ -7,19 +7,19 @@ const services = [
   {
     icon: "desktop_windows",
     title: "Custom Web Apps",
-    description: "React & Next.js architectures optimized for conversion, speed, and deep interactivity. Built for the modern web.",
+    description: "Custom websites and web applications built with React and Next.js for speed, SEO, and exceptional user experience.",
     tags: ["React", "Node.js", "GraphQL"],
   },
   {
     icon: "smartphone",
     title: "Mobile Apps",
-    description: "Native-feel performance on iOS and Android. We build fluid, high-engagement experiences with Flutter and Swift.",
+    description: "Beautiful, high-performance mobile applications for iOS and Android.",
     tags: ["Flutter", "Swift", "Kotlin"],
   },
   {
     icon: "cloud_done",
     title: "SaaS Platforms",
-    description: "Multi-tenant infrastructures, billing integration, and automated scaling. Engineered to turn your vision into revenue.",
+    description: "Scalable SaaS platforms with authentication, payments, dashboards, and cloud infrastructure built for growth.",
     tags: ["AWS", "Stripe", "PostgreSQL"],
   }
 ];

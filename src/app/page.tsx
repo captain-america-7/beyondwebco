@@ -1,6 +1,5 @@
 import Hero from "@/components/sections/Hero";
 import Services from "@/components/sections/Services";
-import Marquee from "@/components/sections/Marquee";
 import FeaturedWork from "@/components/sections/FeaturedWork";
 import AboutPreview from "@/components/sections/AboutPreview";
 import Process from "@/components/sections/Process";
@@ -13,7 +12,6 @@ export default function Home() {
     <>
       <Hero />
       <Services />
-      <Marquee />
       <FeaturedWork />
       <AboutPreview />
       <Process />

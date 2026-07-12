@@ -19,16 +19,16 @@ export default function AboutPreview() {
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mt-20 text-left">
           <div>
-            <h4 className="font-bold text-xl mb-4 text-primary">Senior-Only Talent</h4>
-            <p className="text-on-surface-variant">Every line of code is written by developers with 8+ years of industry experience in scaling massive systems.</p>
+            <h4 className="font-bold text-xl mb-4 text-primary">Experienced Development</h4>
+            <p className="text-on-surface-variant">Every project is crafted using modern development practices, clean code, and attention to performance.</p>
           </div>
           <div>
             <h4 className="font-bold text-xl mb-4 text-primary">Performance Obsessed</h4>
-            <p className="text-on-surface-variant">We don't just build features; we build assets. Every product is optimized for sub-second response times.</p>
+            <p className="text-on-surface-variant">Every website is optimized for speed, SEO, accessibility, and Core Web Vitals.</p>
           </div>
           <div>
             <h4 className="font-bold text-xl mb-4 text-primary">Scale-Ready Architecture</h4>
-            <p className="text-on-surface-variant">Avoid technical debt from day one. Our modular approach ensures your platform grows with your user base.</p>
+            <p className="text-on-surface-variant">We build maintainable websites and applications that are easy to expand as your business grows.</p>
           </div>
         </div>
       </motion.div>

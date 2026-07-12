@@ -6,11 +6,11 @@ import { GlassCard } from "@/components/ui/GlassCard";
 const faqs = [
   {
     q: "How long does a typical project take?",
-    a: "Depending on the scope, most projects take between 4 to 12 weeks from strategy to deployment."
+    a: "Depending on the scope, most projects take between 2 to 8 weeks from planning to launch."
   },
   {
     q: "Do you work with startups or enterprise clients?",
-    a: "We work with both. Our architecture is designed to scale, whether you are finding product-market fit or serving millions of users."
+    a: "We work with startups, local businesses, and growing companies looking for modern digital solutions."
   },
   {
     q: "What technologies do you use?",

@@ -9,7 +9,7 @@ export default function Footer() {
             BeyondWebCo
           </div>
           <p className="text-on-surface-variant max-w-md text-lg">
-            We Build Websites. Fast, beautiful, responsive websites with exceptional user experience and performance-first engineering.
+            We build fast, modern, SEO-friendly websites that help businesses grow online.
           </p>
           <div className="flex gap-6 mt-12">
             <Link href="#" className="text-on-surface-variant hover:text-primary transition-colors">

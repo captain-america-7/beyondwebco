@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 const steps = [
   { num: "01", title: "Discovery & Strategy", desc: "We analyze your business goals, target audience, and technical requirements to form a comprehensive blueprint." },
-  { num: "02", title: "Architecture & Design", desc: "Creating the visual language and system architecture ensuring scalability and a premium user experience." },
+  { num: "02", title: "Design & Development Planning", desc: "Planning the UI/UX visual language and system architecture to ensure scalability and a premium user experience." },
   { num: "03", title: "Engineering", desc: "Our senior developers build your product using modern, high-performance tech stacks with clean, maintainable code." },
   { num: "04", title: "Launch & Scale", desc: "Rigorous testing, optimized deployment, and ongoing support to ensure your product grows with your business." }
 ];

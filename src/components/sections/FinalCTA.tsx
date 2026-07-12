@@ -23,7 +23,7 @@ export default function FinalCTA() {
           Ready to build something exceptional?
         </h2>
         <p className="font-body-lg text-[20px] text-on-surface-variant mb-12">
-          Let's discuss your project. Our senior engineers are ready to architect your vision into reality.
+          Let's discuss your project and build a fast, modern website that helps your business stand out online.
         </p>
         
         <div className="flex flex-col sm:flex-row gap-6 justify-center">

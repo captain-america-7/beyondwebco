@@ -13,13 +13,13 @@ const testimonials = [
   {
     quote: "Our portfolio finally feels premium. BeyondWebCo understood our creative vision and designed a website that beautifully showcases our photography and has already helped us attract new clients.",
     author: "Pavani Studios",
-    role: "Creative Studio",
+    role: "Photography Studio",
     initials: "PS"
   },
   {
     quote: "The website exceeded my expectations. It is clean, professional, mobile-friendly, and makes it much easier for patients to learn about my services and get in touch.",
     author: "Dr. Varun",
-    role: "Medical Practitioner",
+    role: "Healthcare Professional",
     initials: "DV"
   }
 ];
