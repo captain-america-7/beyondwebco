@@ -1,20 +1,29 @@
+"use client";
+
 import Link from "next/link";
 import Image from "next/image";
+import { motion, useScroll, useTransform } from "framer-motion";
 
 export default function Footer() {
+  const { scrollY } = useScroll();
+  const rotate = useTransform(scrollY, [0, 2000], [0, 360]);
   return (
     <footer className="bg-surface-container-lowest py-[160px] w-full border-t border-outline-variant mt-auto">
       <div className="max-w-[1440px] mx-auto px-[24px] md:px-[80px] grid grid-cols-12 gap-[32px]">
         <div className="col-span-12 md:col-span-6 mb-16 md:mb-0">
           <div className="flex items-center gap-4 font-display-lg text-[48px] md:text-display-lg font-black text-on-surface opacity-10 leading-none mb-8 select-none">
-            <Image
-              src="/arunchalam.png"
-              alt="BeyondWebCo Logo"
-              width={38}
-              height={48}
-              className="h-12 w-auto object-contain"
-              unoptimized
-            />
+            <div className="relative w-20 h-20 md:w-24 md:h-24 flex items-center justify-center flex-shrink-0">
+              <motion.div style={{ rotate }} className="flex items-center justify-center">
+                <Image
+                  src="/arunchalam.png"
+                  alt="BeyondWebCo Logo"
+                  width={64}
+                  height={80}
+                  className="h-16 md:h-20 w-auto object-contain"
+                  unoptimized
+                />
+              </motion.div>
+            </div>
             <span>BeyondWebCo</span>
           </div>
           <p className="text-on-surface-variant max-w-md text-lg">
