@@ -76,6 +76,7 @@
   --font-label-caps: "Inter", sans-serif;
   --font-body-md: "Inter", sans-serif;
   --font-sans: "Inter", sans-serif;
+  --font-montserrat: var(--font-montserrat), sans-serif;
 
   --text-display-lg-mobile: 48px;
   --text-display-lg-mobile--line-height: 1.1;
