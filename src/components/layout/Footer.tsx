@@ -24,7 +24,7 @@ export default function Footer() {
                 />
               </motion.div>
             </div>
-            <span>BeyondWebCo</span>
+            <span className="font-montserrat">BeyondWebCo</span>
           </div>
           <p className="text-on-surface-variant max-w-md text-lg">
             We build fast, modern, SEO-friendly websites that help businesses grow online.
@@ -67,7 +67,7 @@ export default function Footer() {
         </div>
         
         <div className="col-span-12 mt-24 border-t border-white/5 pt-12 flex flex-col md:flex-row justify-between text-on-surface-variant text-sm">
-          <p>© {new Date().getFullYear()} BeyondWebCo. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} <span className="font-montserrat font-medium">BeyondWebCo</span>. All rights reserved.</p>
           <p>Designed with precision.</p>
         </div>
       </div>
