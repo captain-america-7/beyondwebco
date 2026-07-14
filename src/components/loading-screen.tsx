@@ -43,7 +43,7 @@ export default function LoadingScreen({
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, ease: "easeOut" }}
-              className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-4"
+              className="text-4xl md:text-5xl lg:text-6xl font-light font-montserrat tracking-tight mb-4"
             >
               BeyondWebCo
             </motion.h1>

@@ -18,6 +18,7 @@ const interTight = Inter_Tight({
 
 const montserrat = Montserrat({
   subsets: ["latin"],
+  weight: "300",
   variable: "--font-montserrat",
 });
 

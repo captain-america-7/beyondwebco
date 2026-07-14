@@ -13,7 +13,7 @@ export default function AboutPage() {
           transition={{ duration: 0.8, ease: [0.2, 1, 0.3, 1] }}
           className="font-display-xl text-[64px] md:text-[96px] leading-tight mb-6"
         >
-          We are <span className="text-primary">BeyondWebCo.</span>
+          We are <span className="text-primary font-montserrat font-light">BeyondWebCo.</span>
         </motion.h1>
         <motion.p 
           initial={{ opacity: 0, y: 30 }}
