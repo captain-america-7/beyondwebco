@@ -43,15 +43,15 @@ export default function Navbar() {
             />
           </motion.div>
         </div>
-        <span>BeyondWebCo</span>
+        <span className="font-montserrat">BeyondWebCo</span>
       </Link>
       
       <div className="hidden md:flex gap-8 items-center">
-        <Link href="/" className="text-on-surface-variant hover:text-on-surface transition-colors font-body-md font-medium">Home</Link>
-        <Link href="/about" className="text-on-surface-variant hover:text-on-surface transition-colors font-body-md font-medium">About</Link>
-        <Link href="/services" className="text-on-surface-variant hover:text-on-surface transition-colors font-body-md font-medium">Services</Link>
-        <Link href="/work" className="text-on-surface-variant hover:text-on-surface transition-colors font-body-md font-medium">Work</Link>
-        <Link href="/contact" className="text-on-surface-variant hover:text-on-surface transition-colors font-body-md font-medium">Contact</Link>
+        <Link href="/" className="text-on-surface-variant hover:text-on-surface transition-colors font-body-md font-medium font-montserrat">Home</Link>
+        <Link href="/about" className="text-on-surface-variant hover:text-on-surface transition-colors font-body-md font-medium font-montserrat">About</Link>
+        <Link href="/services" className="text-on-surface-variant hover:text-on-surface transition-colors font-body-md font-medium font-montserrat">Services</Link>
+        <Link href="/work" className="text-on-surface-variant hover:text-on-surface transition-colors font-body-md font-medium font-montserrat">Work</Link>
+        <Link href="/contact" className="text-on-surface-variant hover:text-on-surface transition-colors font-body-md font-medium font-montserrat">Contact</Link>
       </div>
 
       <div className="flex items-center gap-6">
@@ -66,7 +66,7 @@ export default function Navbar() {
             </span>
           </button>
         )}
-        <Link href="/contact" className="hidden lg:block bg-primary text-black px-6 py-2 rounded-xl font-bold hover:scale-95 active:scale-90 transition-transform">
+        <Link href="/contact" className="hidden lg:block bg-primary text-black px-6 py-2 rounded-xl font-bold font-montserrat hover:scale-95 active:scale-90 transition-transform">
           Start a Project
         </Link>
       </div>
