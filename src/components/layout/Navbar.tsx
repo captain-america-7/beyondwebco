@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
 import clsx from "clsx";
@@ -26,8 +27,16 @@ export default function Navbar() {
         scrolled ? "py-3 shadow-2xl bg-surface/50 dark:bg-surface/80" : "py-4 bg-surface/30 dark:bg-surface/60"
       )}
     >
-      <Link href="/" className="font-display-lg-mobile text-[32px] md:text-display-lg-mobile font-bold text-on-surface tracking-tighter hover:text-[#186ede] transition-colors">
-        BeyondWebCo
+      <Link href="/" className="flex items-center gap-3 font-display-lg-mobile text-[32px] md:text-display-lg-mobile font-bold text-on-surface tracking-tighter hover:text-[#186ede] transition-colors group">
+        <Image
+          src="/arunchalam.png"
+          alt="BeyondWebCo Logo"
+          width={32}
+          height={40}
+          className="h-8 md:h-10 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
+          unoptimized
+        />
+        <span>BeyondWebCo</span>
       </Link>
       
       <div className="hidden md:flex gap-8 items-center">

@@ -1,12 +1,21 @@
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Footer() {
   return (
     <footer className="bg-surface-container-lowest py-[160px] w-full border-t border-outline-variant mt-auto">
       <div className="max-w-[1440px] mx-auto px-[24px] md:px-[80px] grid grid-cols-12 gap-[32px]">
         <div className="col-span-12 md:col-span-6 mb-16 md:mb-0">
-          <div className="font-display-lg text-[48px] md:text-display-lg font-black text-on-surface opacity-10 leading-none mb-8 select-none">
-            BeyondWebCo
+          <div className="flex items-center gap-4 font-display-lg text-[48px] md:text-display-lg font-black text-on-surface opacity-10 leading-none mb-8 select-none">
+            <Image
+              src="/arunchalam.png"
+              alt="BeyondWebCo Logo"
+              width={38}
+              height={48}
+              className="h-12 w-auto object-contain"
+              unoptimized
+            />
+            <span>BeyondWebCo</span>
           </div>
           <p className="text-on-surface-variant max-w-md text-lg">
             We build fast, modern, SEO-friendly websites that help businesses grow online.
