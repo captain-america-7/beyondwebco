@@ -47,11 +47,11 @@ export default function Navbar() {
       </Link>
       
       <div className="hidden md:flex gap-8 items-center">
-        <Link href="/" className="text-on-surface-variant hover:text-on-surface transition-colors font-body-md font-medium">Home</Link>
-        <Link href="/about" className="text-on-surface-variant hover:text-on-surface transition-colors font-body-md font-medium">About</Link>
-        <Link href="/services" className="text-on-surface-variant hover:text-on-surface transition-colors font-body-md font-medium">Services</Link>
-        <Link href="/work" className="text-on-surface-variant hover:text-on-surface transition-colors font-body-md font-medium">Work</Link>
-        <Link href="/contact" className="text-on-surface-variant hover:text-on-surface transition-colors font-body-md font-medium">Contact</Link>
+        <Link href="/" className="text-on-surface-variant hover:text-on-surface transition-colors text-lg font-medium">Home</Link>
+        <Link href="/about" className="text-on-surface-variant hover:text-on-surface transition-colors text-lg font-medium">About</Link>
+        <Link href="/services" className="text-on-surface-variant hover:text-on-surface transition-colors text-lg font-medium">Services</Link>
+        <Link href="/work" className="text-on-surface-variant hover:text-on-surface transition-colors text-lg font-medium">Work</Link>
+        <Link href="/contact" className="text-on-surface-variant hover:text-on-surface transition-colors text-lg font-medium">Contact</Link>
       </div>
 
       <div className="flex items-center gap-6">
@@ -61,12 +61,12 @@ export default function Navbar() {
             className="p-2 rounded-full hover:bg-white/10 transition-colors text-on-surface-variant hover:text-on-surface"
             aria-label="Toggle Dark Mode"
           >
-            <span className="material-symbols-outlined text-[20px]">
+            <span className="material-symbols-outlined text-[24px]">
               {theme === "dark" ? "light_mode" : "dark_mode"}
             </span>
           </button>
         )}
-        <Link href="/contact" className="hidden lg:block bg-primary text-black px-6 py-2 rounded-xl font-bold hover:scale-95 active:scale-90 transition-transform">
+        <Link href="/contact" className="hidden lg:block bg-primary text-black px-7 py-3 text-lg rounded-xl font-bold hover:scale-95 active:scale-90 transition-transform">
           Start a Project
         </Link>
       </div>
