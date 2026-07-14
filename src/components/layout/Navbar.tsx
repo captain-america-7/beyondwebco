@@ -5,11 +5,14 @@ import Image from "next/image";
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
 import clsx from "clsx";
+import { motion, useScroll, useTransform } from "framer-motion";
 
 export default function Navbar() {
   const { theme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const { scrollY } = useScroll();
+  const rotate = useTransform(scrollY, [0, 2000], [0, 360]);
 
   useEffect(() => {
     setMounted(true);
@@ -28,14 +31,18 @@ export default function Navbar() {
       )}
     >
       <Link href="/" className="flex items-center gap-3 font-display-lg-mobile text-[32px] md:text-display-lg-mobile font-bold text-on-surface tracking-tighter hover:text-[#186ede] transition-colors group">
-        <Image
-          src="/arunchalam.png"
-          alt="BeyondWebCo Logo"
-          width={32}
-          height={40}
-          className="h-8 md:h-10 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
-          unoptimized
-        />
+        <div className="relative w-14 h-14 md:w-16 md:h-16 flex items-center justify-center flex-shrink-0">
+          <motion.div style={{ rotate }} className="flex items-center justify-center">
+            <Image
+              src="/arunchalam.png"
+              alt="BeyondWebCo Logo"
+              width={45}
+              height={56}
+              className="h-12 md:h-14 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
+              unoptimized
+            />
+          </motion.div>
+        </div>
         <span>BeyondWebCo</span>
       </Link>
       
