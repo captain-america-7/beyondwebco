@@ -3,6 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { motion, useScroll, useTransform } from "framer-motion";
+import { Globe, Mail, Camera } from "lucide-react";
 
 export default function Footer() {
   const { scrollY } = useScroll();
@@ -13,14 +14,15 @@ export default function Footer() {
       <div className="max-w-[1440px] mx-auto px-[24px] md:px-[80px] grid grid-cols-12 gap-[32px]">
         {/* Company Info */}
         <div className="col-span-12 md:col-span-6 mb-12 md:mb-0">
-          <div className="flex items-center gap-4 font-display-lg text-[36px] md:text-[48px] font-black text-on-surface opacity-20 leading-none mb-6 select-none">
+          <div className="flex items-center gap-4 font-display-lg text-[36px] md:text-[48px] font-black text-on-surface opacity-30 leading-none mb-6 select-none">
             <div className="relative w-16 h-16 md:w-20 md:h-20 flex items-center justify-center flex-shrink-0">
               <motion.div style={{ rotate }} className="flex items-center justify-center">
                 <Image
-                  src="/arunchalam.png"
+                  src="/arunchalam.webp"
                   alt="BeyondWebCo Footer Logo"
                   width={64}
                   height={80}
+                  quality={80}
                   className="h-16 md:h-20 w-auto object-contain"
                 />
               </motion.div>
@@ -36,14 +38,14 @@ export default function Footer() {
               aria-label="BeyondWebCo Website" 
               className="text-on-surface-variant hover:text-primary transition-colors p-2 bg-surface-container-high rounded-full"
             >
-              <span className="material-symbols-outlined text-xl">public</span>
+              <Globe className="w-5 h-5" />
             </a>
             <a 
               href="mailto:beyondwebco@gmail.com" 
               aria-label="Email BeyondWebCo" 
               className="text-on-surface-variant hover:text-primary transition-colors p-2 bg-surface-container-high rounded-full"
             >
-              <span className="material-symbols-outlined text-xl">mail</span>
+              <Mail className="w-5 h-5" />
             </a>
             <a 
               href="https://instagram.com/beyondwebco" 
@@ -52,7 +54,7 @@ export default function Footer() {
               aria-label="BeyondWebCo Instagram" 
               className="text-on-surface-variant hover:text-primary transition-colors p-2 bg-surface-container-high rounded-full"
             >
-              <span className="material-symbols-outlined text-xl">photo_camera</span>
+              <Camera className="w-5 h-5" />
             </a>
           </div>
         </div>

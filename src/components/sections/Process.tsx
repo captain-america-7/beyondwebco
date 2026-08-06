@@ -34,7 +34,7 @@ export default function Process() {
             transition={{ duration: 0.8, delay: index * 0.1, ease: [0.2, 1, 0.3, 1] }}
             className="flex flex-col relative"
           >
-            <span className="font-display-lg text-[80px] text-primary/20 dark:text-black leading-none mb-4 font-black">{step.num}</span>
+            <span className="font-display-lg text-[80px] text-primary/60 dark:text-primary/70 leading-none mb-4 font-black">{step.num}</span>
             <h3 className="font-headline-md text-[24px] mb-4">{step.title}</h3>
             <p className="text-on-surface-variant">{step.desc}</p>
           </motion.div>

@@ -6,6 +6,7 @@ import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
 import clsx from "clsx";
 import { motion, useScroll, useTransform } from "framer-motion";
+import { Sun, Moon } from "lucide-react";
 
 export default function Navbar() {
   const { theme, setTheme } = useTheme();
@@ -39,11 +40,12 @@ export default function Navbar() {
         <div className="relative w-14 h-14 md:w-16 md:h-16 flex items-center justify-center flex-shrink-0">
           <motion.div style={{ rotate }} className="flex items-center justify-center">
             <Image
-              src="/arunchalam.png"
+              src="/arunchalam.webp"
               alt="BeyondWebCo Official Logo"
               width={64}
               height={64}
               priority
+              quality={80}
               className="h-12 md:h-14 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
             />
           </motion.div>
@@ -76,9 +78,7 @@ export default function Navbar() {
             className="p-2 rounded-full hover:bg-white/10 transition-colors text-on-surface-variant hover:text-on-surface"
             aria-label={theme === "dark" ? "Switch to Light Theme" : "Switch to Dark Theme"}
           >
-            <span className="material-symbols-outlined text-[24px]">
-              {theme === "dark" ? "light_mode" : "dark_mode"}
-            </span>
+            {theme === "dark" ? <Sun className="w-6 h-6" /> : <Moon className="w-6 h-6" />}
           </button>
         )}
         <Link 

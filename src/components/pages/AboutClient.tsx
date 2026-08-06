@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { GlassCard } from "@/components/ui/GlassCard";
+import { Code2, Zap, SearchCheck } from "lucide-react";
 
 export default function AboutClient() {
   return (
@@ -89,7 +90,7 @@ export default function AboutClient() {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <GlassCard className="!p-8">
-            <span className="material-symbols-outlined text-primary text-4xl mb-6">code</span>
+            <Code2 className="w-10 h-10 text-primary mb-6" />
             <h3 className="font-headline-md text-[24px] mb-4">Senior Engineering</h3>
             <p className="text-on-surface-variant text-sm leading-relaxed mb-4">
               We eliminate technical debt before it happens. All codebases are architected by experienced engineers utilizing strict TypeScript, clean modular structure, and automated testing patterns.
@@ -102,7 +103,7 @@ export default function AboutClient() {
           </GlassCard>
 
           <GlassCard className="!p-8">
-            <span className="material-symbols-outlined text-primary text-4xl mb-6">speed</span>
+            <Zap className="w-10 h-10 text-primary mb-6" />
             <h3 className="font-headline-md text-[24px] mb-4">Performance Obsession</h3>
             <p className="text-on-surface-variant text-sm leading-relaxed mb-4">
               Speed is directly correlated to conversion rate and search rankings. We optimize asset sizes, bundle splits, web fonts, and dynamic caching strategies to guarantee 95+ Lighthouse scores.
@@ -115,7 +116,7 @@ export default function AboutClient() {
           </GlassCard>
 
           <GlassCard className="!p-8">
-            <span className="material-symbols-outlined text-primary text-4xl mb-6">search_check</span>
+            <SearchCheck className="w-10 h-10 text-primary mb-6" />
             <h3 className="font-headline-md text-[24px] mb-4">Technical SEO Built-In</h3>
             <p className="text-on-surface-variant text-sm leading-relaxed mb-4">
               SEO is never an afterthought. We implement semantic HTML5, custom metadata controls, JSON-LD structured data, dynamic XML sitemaps, and canonical link configurations out of the box.

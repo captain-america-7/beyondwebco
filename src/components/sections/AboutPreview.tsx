@@ -14,7 +14,7 @@ export default function AboutPreview() {
       >
         <h2 className="font-display-lg text-[40px] md:text-[72px] leading-tight mb-stack-lg">
           Engineering-first methodology. <br />
-          <span className="text-on-surface-variant/40">No junior developers. No outsourcing.</span>
+          <span className="text-on-surface-variant font-medium">No junior developers. No outsourcing.</span>
         </h2>
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mt-20 text-left">

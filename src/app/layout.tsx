@@ -8,6 +8,7 @@ import LoadingScreen from "@/components/loading-screen";
 
 const inter = Inter({
   subsets: ["latin"],
+  weight: ["400", "600", "700"],
   variable: "--font-inter",
   display: "swap",
 });
@@ -37,6 +38,9 @@ export const metadata: Metadata = {
   authors: [{ name: "BeyondWebCo", url: "https://www.beyondwebco.com" }],
   creator: "BeyondWebCo",
   publisher: "BeyondWebCo",
+  verification: {
+    google: "0-NGjg76iZChw9kl6ncjClegyYrAGaWytVtLPx00W2k",
+  },
   formatDetection: {
     email: false,
     address: false,
@@ -56,8 +60,8 @@ export const metadata: Metadata = {
     },
   },
   icons: {
-    icon: "/logo.png",
-    apple: "/logo.png",
+    icon: "/logo.webp",
+    apple: "/logo.webp",
   },
   openGraph: {
     type: "website",
@@ -67,7 +71,7 @@ export const metadata: Metadata = {
     siteName: "BeyondWebCo",
     images: [
       {
-        url: "/og-image.png",
+        url: "/og-image.webp",
         width: 1200,
         height: 630,
         alt: "BeyondWebCo Digital Studio Showcase",
@@ -78,7 +82,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "BeyondWebCo | Premium Web Design & Development Studio",
     description: "BeyondWebCo is a modern web design & engineering studio crafting high-performance, SEO-optimized, and scalable websites for growing businesses.",
-    images: ["/og-image.png"],
+    images: ["/og-image.webp"],
   },
 };
 
@@ -90,7 +94,7 @@ const jsonLd = {
       "@id": "https://www.beyondwebco.com/#organization",
       name: "BeyondWebCo",
       url: "https://www.beyondwebco.com",
-      logo: "https://www.beyondwebco.com/logo.png",
+      logo: "https://www.beyondwebco.com/logo.webp",
       sameAs: [
         "https://instagram.com/beyondwebco",
       ],
@@ -114,7 +118,7 @@ const jsonLd = {
       "@type": "ProfessionalService",
       "@id": "https://www.beyondwebco.com/#service",
       name: "BeyondWebCo Web Development",
-      image: "https://www.beyondwebco.com/og-image.png",
+      image: "https://www.beyondwebco.com/og-image.webp",
       priceRange: "$$$",
       telephone: "+91-7993597172",
       email: "beyondwebco@gmail.com",
@@ -134,12 +138,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning className="scroll-smooth">
       <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap"
-          rel="stylesheet"
-        />
+        <meta name="google-site-verification" content="0-NGjg76iZChw9kl6ncjClegyYrAGaWytVtLPx00W2k" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}

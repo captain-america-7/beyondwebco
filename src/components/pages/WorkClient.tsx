@@ -4,13 +4,14 @@ import { motion } from "framer-motion";
 import { GlassCard } from "@/components/ui/GlassCard";
 import Image from "next/image";
 import Link from "next/link";
+import { ArrowUpRight } from "lucide-react";
 
 const projects = [
   {
     title: "Sri Lakshmi Automobiles",
     category: "Automotive Business Platform",
     description: "A sleek modern corporate website created for Sri Lakshmi Automobiles. Built with Next.js and Tailwind CSS, providing sub-second load times and seamless customer engagement.",
-    image: "/projects/sri_lakshmi_automobiles.png",
+    image: "/projects/sri_lakshmi_automobiles.webp",
     tags: ["Next.js", "React", "SEO", "Responsive UI"],
     width: 800,
     height: 450
@@ -19,7 +20,7 @@ const projects = [
     title: "Pavani Studios",
     category: "Creative Photography Showcase",
     description: "An elegant interactive portfolio website designed for Pavani Studios. Features full-screen gallery showcases, smooth micro-animations, and client inquiry workflows.",
-    image: "/projects/pavani_studios.png",
+    image: "/projects/pavani_studios.webp",
     tags: ["React", "Framer Motion", "Portfolio UI", "Optimized Media"],
     width: 800,
     height: 450
@@ -28,7 +29,7 @@ const projects = [
     title: "Dr. Varun Healthcare",
     category: "Medical Clinic Website",
     description: "A professional medical consultation platform for Dr. Varun. Integrated with online appointment requests, patient educational resources, and local SEO optimizations.",
-    image: "/projects/dr_varun.png",
+    image: "/projects/dr_varun.webp",
     tags: ["Next.js", "Healthcare", "Appointment Flow", "Local SEO"],
     width: 800,
     height: 450
@@ -37,7 +38,7 @@ const projects = [
     title: "Savoria Gourmet Restaurant",
     category: "Hospitality & Restaurant Platform",
     description: "A vibrant dining experience website featuring online menu navigation, table reservation integration, and responsive mobile-first visual design.",
-    image: "/projects/restaurant_website.png",
+    image: "/projects/restaurant_website.webp",
     tags: ["React", "Reservation Flow", "Mobile UI", "Performance"],
     width: 800,
     height: 450
@@ -46,7 +47,7 @@ const projects = [
     title: "Executive Developer Portfolio",
     category: "Personal Brand & Showcase",
     description: "A minimalist personal portfolio showcase featuring modern dark mode aesthetics, interactive case study cards, and direct contact scheduling.",
-    image: "/projects/portfolio_website.png",
+    image: "/projects/portfolio_website.webp",
     tags: ["Next.js", "TypeScript", "Glassmorphism", "Micro-Animations"],
     width: 800,
     height: 450
@@ -93,6 +94,7 @@ export default function WorkClient() {
                       alt={`${project.title} - ${project.category}`}
                       width={project.width}
                       height={project.height}
+                      quality={75}
                       sizes="(max-width: 768px) 100vw, 50vw"
                       loading={index < 2 ? "eager" : "lazy"}
                     />
@@ -102,7 +104,12 @@ export default function WorkClient() {
                     <span className="text-xs text-primary font-bold uppercase tracking-widest block mb-2">
                       {project.category}
                     </span>
-                    <h3 className="font-headline-md text-headline-md mb-3">{project.title}</h3>
+                    <div className="flex justify-between items-start mb-3">
+                      <h3 className="font-headline-md text-headline-md">{project.title}</h3>
+                      <Link href="/work" aria-label={`View ${project.title}`} className="p-2 text-on-surface-variant hover:text-primary transition-colors">
+                        <ArrowUpRight className="w-5 h-5" />
+                      </Link>
+                    </div>
                     <p className="text-on-surface-variant text-sm mb-6 leading-relaxed">
                       {project.description}
                     </p>

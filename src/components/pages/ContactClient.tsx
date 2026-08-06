@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { GlassCard } from "@/components/ui/GlassCard";
 import { useState } from "react";
+import { CheckCircle2, Mail, Phone, Camera } from "lucide-react";
 
 export default function ContactClient() {
   const [submitted, setSubmitted] = useState(false);
@@ -39,7 +40,7 @@ export default function ContactClient() {
             <h2 className="font-display-lg text-[28px] mb-6">Send Us a Message</h2>
             {submitted ? (
               <div className="py-12 text-center text-primary">
-                <span className="material-symbols-outlined text-6xl mb-4">check_circle</span>
+                <CheckCircle2 className="w-16 h-16 mx-auto mb-4" />
                 <h3 className="font-bold text-2xl mb-2 text-on-surface">Message Received!</h3>
                 <p className="text-on-surface-variant text-sm">Thank you for reaching out. A senior engineer will review your inquiry and respond shortly.</p>
               </div>
@@ -123,7 +124,7 @@ export default function ContactClient() {
               <h2 className="font-bold text-2xl mb-4 text-on-surface">Direct Contact Details</h2>
               <div className="space-y-4">
                 <div className="flex items-center gap-4 text-on-surface-variant">
-                  <span className="material-symbols-outlined text-primary">mail</span>
+                  <Mail className="w-5 h-5 text-primary" />
                   <div>
                     <p className="text-xs uppercase tracking-wider font-bold text-on-surface-variant">Email</p>
                     <a href="mailto:beyondwebco@gmail.com" className="text-on-surface font-medium hover:text-primary transition-colors">
@@ -132,7 +133,7 @@ export default function ContactClient() {
                   </div>
                 </div>
                 <div className="flex items-center gap-4 text-on-surface-variant">
-                  <span className="material-symbols-outlined text-primary">call</span>
+                  <Phone className="w-5 h-5 text-primary" />
                   <div>
                     <p className="text-xs uppercase tracking-wider font-bold text-on-surface-variant">Phone / WhatsApp</p>
                     <a href="tel:+917993597172" className="text-on-surface font-medium hover:text-primary transition-colors">
@@ -153,7 +154,7 @@ export default function ContactClient() {
                   aria-label="BeyondWebCo Instagram Profile"
                   className="px-6 py-3 rounded-xl bg-surface-container-high hover:bg-primary/20 hover:text-primary transition-all font-medium flex items-center gap-2"
                 >
-                  <span className="material-symbols-outlined text-xl">photo_camera</span>
+                  <Camera className="w-5 h-5" />
                   <span>Instagram: @beyondwebco</span>
                 </a>
               </div>

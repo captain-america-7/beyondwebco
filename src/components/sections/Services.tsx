@@ -2,22 +2,23 @@
 
 import { motion } from "framer-motion";
 import { GlassCard } from "@/components/ui/GlassCard";
+import { Monitor, Smartphone, Cloud } from "lucide-react";
 
 const services = [
   {
-    icon: "desktop_windows",
+    icon: Monitor,
     title: "Custom Web Apps",
     description: "Custom websites and web applications built with React and Next.js for speed, SEO, and exceptional user experience.",
     tags: ["React", "Node.js", "GraphQL"],
   },
   {
-    icon: "smartphone",
+    icon: Smartphone,
     title: "Mobile Apps",
     description: "Beautiful, high-performance mobile applications for iOS and Android.",
     tags: ["Flutter", "Swift", "Kotlin"],
   },
   {
-    icon: "cloud_done",
+    icon: Cloud,
     title: "SaaS Platforms",
     description: "Scalable SaaS platforms with authentication, payments, dashboards, and cloud infrastructure built for growth.",
     tags: ["AWS", "Stripe", "PostgreSQL"],
@@ -41,30 +42,31 @@ export default function Services() {
       </div>
       
       <div className="grid grid-cols-1 md:grid-cols-3 gap-[32px]">
-        {services.map((service, index) => (
-          <motion.div
-            key={index}
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.8, delay: index * 0.1, ease: [0.2, 1, 0.3, 1] }}
-          >
-            <GlassCard>
-              <span className="material-symbols-outlined text-primary text-6xl mb-8 group-hover:scale-110 transition-transform duration-500">
-                {service.icon}
-              </span>
-              <h3 className="font-headline-md text-headline-md mb-4">{service.title}</h3>
-              <p className="text-on-surface-variant mb-10 flex-grow">{service.description}</p>
-              <div className="flex flex-wrap gap-2">
-                {service.tags.map(tag => (
-                  <span key={tag} className="px-3 py-1 bg-surface-container-high rounded text-[10px] font-bold tracking-widest uppercase">
-                    {tag}
-                  </span>
-                ))}
-              </div>
-            </GlassCard>
-          </motion.div>
-        ))}
+        {services.map((service, index) => {
+          const Icon = service.icon;
+          return (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.8, delay: index * 0.1, ease: [0.2, 1, 0.3, 1] }}
+            >
+              <GlassCard>
+                <Icon className="w-12 h-12 text-primary mb-8 group-hover:scale-110 transition-transform duration-500" />
+                <h3 className="font-headline-md text-headline-md mb-4">{service.title}</h3>
+                <p className="text-on-surface-variant mb-10 flex-grow">{service.description}</p>
+                <div className="flex flex-wrap gap-2">
+                  {service.tags.map(tag => (
+                    <span key={tag} className="px-3 py-1 bg-surface-container-high rounded text-[10px] font-bold tracking-widest uppercase">
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+              </GlassCard>
+            </motion.div>
+          );
+        })}
       </div>
     </section>
   );
