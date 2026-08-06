@@ -25,21 +25,26 @@ export default function Navbar() {
 
   return (
     <nav
+      aria-label="Main Navigation"
       className={clsx(
         "fixed top-4 left-1/2 -translate-x-1/2 w-[90%] max-w-[1440px] rounded-full backdrop-blur-xl border border-white/10 z-50 flex justify-between items-center px-[32px] transition-all duration-300",
         scrolled ? "py-3 shadow-2xl bg-surface/50 dark:bg-surface/80" : "py-4 bg-surface/30 dark:bg-surface/60"
       )}
     >
-      <Link href="/" className="flex items-center gap-3 font-display-lg-mobile text-[32px] md:text-display-lg-mobile font-bold text-on-surface tracking-tighter hover:text-[#186ede] transition-colors group">
+      <Link 
+        href="/" 
+        aria-label="BeyondWebCo Home"
+        className="flex items-center gap-3 font-display-lg-mobile text-[32px] md:text-display-lg-mobile font-bold text-on-surface tracking-tighter hover:text-[#186ede] transition-colors group"
+      >
         <div className="relative w-14 h-14 md:w-16 md:h-16 flex items-center justify-center flex-shrink-0">
           <motion.div style={{ rotate }} className="flex items-center justify-center">
             <Image
               src="/arunchalam.png"
-              alt="BeyondWebCo Logo"
-              width={45}
-              height={56}
+              alt="BeyondWebCo Official Logo"
+              width={64}
+              height={64}
+              priority
               className="h-12 md:h-14 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
-              unoptimized
             />
           </motion.div>
         </div>
@@ -47,11 +52,21 @@ export default function Navbar() {
       </Link>
       
       <div className="hidden md:flex gap-8 items-center">
-        <Link href="/" className="text-on-surface-variant hover:text-on-surface transition-colors text-lg font-medium">Home</Link>
-        <Link href="/about" className="text-on-surface-variant hover:text-on-surface transition-colors text-lg font-medium">About</Link>
-        <Link href="/services" className="text-on-surface-variant hover:text-on-surface transition-colors text-lg font-medium">Services</Link>
-        <Link href="/work" className="text-on-surface-variant hover:text-on-surface transition-colors text-lg font-medium">Work</Link>
-        <Link href="/contact" className="text-on-surface-variant hover:text-on-surface transition-colors text-lg font-medium">Contact</Link>
+        <Link href="/" className="text-on-surface-variant hover:text-on-surface transition-colors text-lg font-medium">
+          Home
+        </Link>
+        <Link href="/about" className="text-on-surface-variant hover:text-on-surface transition-colors text-lg font-medium">
+          About
+        </Link>
+        <Link href="/services" className="text-on-surface-variant hover:text-on-surface transition-colors text-lg font-medium">
+          Services
+        </Link>
+        <Link href="/work" className="text-on-surface-variant hover:text-on-surface transition-colors text-lg font-medium">
+          Work
+        </Link>
+        <Link href="/contact" className="text-on-surface-variant hover:text-on-surface transition-colors text-lg font-medium">
+          Contact
+        </Link>
       </div>
 
       <div className="flex items-center gap-6">
@@ -59,14 +74,18 @@ export default function Navbar() {
           <button
             onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
             className="p-2 rounded-full hover:bg-white/10 transition-colors text-on-surface-variant hover:text-on-surface"
-            aria-label="Toggle Dark Mode"
+            aria-label={theme === "dark" ? "Switch to Light Theme" : "Switch to Dark Theme"}
           >
             <span className="material-symbols-outlined text-[24px]">
               {theme === "dark" ? "light_mode" : "dark_mode"}
             </span>
           </button>
         )}
-        <Link href="/contact" className="hidden lg:block bg-primary text-black px-7 py-3 text-lg rounded-xl font-bold hover:scale-95 active:scale-90 transition-transform">
+        <Link 
+          href="/contact" 
+          aria-label="Start a New Project"
+          className="hidden lg:block bg-primary text-black px-7 py-3 text-lg rounded-xl font-bold hover:scale-95 active:scale-90 transition-transform"
+        >
           Start a Project
         </Link>
       </div>
