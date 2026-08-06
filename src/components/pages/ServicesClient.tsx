@@ -3,60 +3,71 @@
 import { motion } from "framer-motion";
 import { GlassCard } from "@/components/ui/GlassCard";
 import Link from "next/link";
+import { 
+  Building2, 
+  Globe, 
+  Image as ImageIcon, 
+  Store, 
+  AppWindow, 
+  Palette, 
+  RefreshCw, 
+  Zap, 
+  SearchCheck 
+} from "lucide-react";
 
 const servicesList = [
   { 
     title: "Custom Business Websites", 
     desc: "Enterprise-grade corporate websites optimized for brand trust, rapid load speeds, and high conversion lead generation.", 
-    icon: "domain",
+    icon: Building2,
     details: ["Next.js & React Core", "Custom CMS Integration", "95+ Lighthouse Score"]
   },
   { 
     title: "High-Conversion Landing Pages", 
     desc: "Single-page marketing engines tailored for paid ad campaigns, product launches, and fast customer acquisition.", 
-    icon: "web",
+    icon: Globe,
     details: ["A/B Testing Ready", "Fast Interactive Load", "Conversion Focused UI"]
   },
   { 
     title: "Creative Showcase Portfolios", 
     desc: "Premium interactive showcases for agencies, photographers, executives, and creative professionals.", 
-    icon: "photo_library",
+    icon: ImageIcon,
     details: ["Smooth Micro-Animations", "High-Res Image Optimization", "Mobile First Design"]
   },
   { 
     title: "Custom E-Commerce Platforms", 
     desc: "High-performance custom storefronts integrated with Stripe, Shopify Headless, and custom inventory workflows.", 
-    icon: "storefront",
+    icon: Store,
     details: ["Secure Checkout Flow", "Headless Commerce Architecture", "Sub-second Page Load"]
   },
   { 
     title: "Web Applications & SaaS", 
     desc: "Complex web applications, SaaS dashboards, and workflow tools built with modern frameworks and robust backend APIs.", 
-    icon: "app_shortcut",
+    icon: AppWindow,
     details: ["Role-Based Authentication", "Real-Time Cloud Backends", "Scalable SQL/NoSQL Databases"]
   },
   { 
     title: "UI/UX & Product Design", 
     desc: "User-centric design systems, wireframes, interactive prototypes, and modern interface visual design.", 
-    icon: "design_services",
+    icon: Palette,
     details: ["Comprehensive Design Systems", "Figma Design Tokens", "Accessibility WCAG Compliance"]
   },
   { 
     title: "Website Redesign & Modernization", 
     desc: "Transforming slow, outdated websites into fast, responsive, modern digital assets built on contemporary technology stacks.", 
-    icon: "update",
+    icon: RefreshCw,
     details: ["Zero Downtime Migration", "Preserved SEO Rankings", "Modern Tech Stack Upgrade"]
   },
   { 
     title: "Speed & Performance Optimization", 
     desc: "Auditing and optimizing existing web codebases to dramatically boost Core Web Vitals, LCP, INP, and CLS scores.", 
-    icon: "speed",
+    icon: Zap,
     details: ["Bundle & Asset Reduction", "Server-Side Caching", "Image Compression Pipeline"]
   },
   { 
     title: "Technical SEO & Architecture", 
     desc: "Engineering site structure, semantic markup, schema headers, dynamic sitemaps, and indexing optimizations for search engines.", 
-    icon: "search",
+    icon: SearchCheck,
     details: ["Rich JSON-LD Schemas", "Canonical Tag Management", "Robots & Sitemap Optimization"]
   }
 ];
@@ -84,29 +95,32 @@ export default function ServicesClient() {
           Specialized Engineering Capabilities
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {servicesList.map((service, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.8, delay: (index % 3) * 0.1, ease: [0.2, 1, 0.3, 1] }}
-            >
-              <GlassCard className="!p-8 flex flex-col h-full">
-                <span className="material-symbols-outlined text-primary text-4xl mb-6">{service.icon}</span>
-                <h3 className="font-headline-md text-[24px] mb-3">{service.title}</h3>
-                <p className="text-on-surface-variant text-sm mb-6 flex-grow leading-relaxed">{service.desc}</p>
-                <div className="pt-4 border-t border-white/10 flex flex-col gap-2">
-                  {service.details.map((detail, idx) => (
-                    <div key={idx} className="flex items-center gap-2 text-xs text-on-surface-variant font-medium">
-                      <span className="w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0"></span>
-                      <span>{detail}</span>
-                    </div>
-                  ))}
-                </div>
-              </GlassCard>
-            </motion.div>
-          ))}
+          {servicesList.map((service, index) => {
+            const Icon = service.icon;
+            return (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-100px" }}
+                transition={{ duration: 0.8, delay: (index % 3) * 0.1, ease: [0.2, 1, 0.3, 1] }}
+              >
+                <GlassCard className="!p-8 flex flex-col h-full">
+                  <Icon className="w-10 h-10 text-primary mb-6" />
+                  <h3 className="font-headline-md text-[24px] mb-3">{service.title}</h3>
+                  <p className="text-on-surface-variant text-sm mb-6 flex-grow leading-relaxed">{service.desc}</p>
+                  <div className="pt-4 border-t border-white/10 flex flex-col gap-2">
+                    {service.details.map((detail, idx) => (
+                      <div key={idx} className="flex items-center gap-2 text-xs text-on-surface-variant font-medium">
+                        <span className="w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0"></span>
+                        <span>{detail}</span>
+                      </div>
+                    ))}
+                  </div>
+                </GlassCard>
+              </motion.div>
+            );
+          })}
         </div>
       </div>
 

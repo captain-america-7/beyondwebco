@@ -22,8 +22,12 @@ const securityHeaders = [
     value: "strict-origin-when-cross-origin",
   },
   {
+    key: "Cross-Origin-Opener-Policy",
+    value: "same-origin",
+  },
+  {
     key: "Permissions-Policy",
-    value: "camera=(), microphone=(), geolocation=(), interest-cohort=()",
+    value: "camera=(), microphone=(), geolocation=()",
   },
   {
     key: "Content-Security-Policy",
@@ -46,6 +50,15 @@ const nextConfig: NextConfig = {
       {
         source: "/:path*",
         headers: securityHeaders,
+      },
+      {
+        source: "/:path*\\.(webp|avif|png|jpg|jpeg|svg|woff|woff2)",
+        headers: [
+          {
+            key: "Cache-Control",
+            value: "public, max-age=31536000, immutable",
+          },
+        ],
       },
     ];
   },

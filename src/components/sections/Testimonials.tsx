@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { GlassCard } from "@/components/ui/GlassCard";
+import { Star } from "lucide-react";
 
 const testimonials = [
   {
@@ -56,9 +57,7 @@ export default function Testimonials() {
                 <div>
                   <div className="flex gap-1 text-primary mb-6" aria-label="5 out of 5 stars rating">
                     {[...Array(5)].map((_, i) => (
-                      <span key={i} className="material-symbols-outlined text-2xl" style={{ fontVariationSettings: "'FILL' 1" }}>
-                        star
-                      </span>
+                      <Star key={i} className="w-5 h-5 fill-primary text-primary" />
                     ))}
                   </div>
                   <p className="text-on-surface italic mb-8 text-base md:text-lg leading-relaxed">"{test.quote}"</p>

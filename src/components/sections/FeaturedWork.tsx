@@ -3,12 +3,13 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
+import { ArrowUpRight } from "lucide-react";
 
 const projects = [
   {
     title: "Sri Lakshmi Automobiles",
     description: "Modern Business Website",
-    image: "/projects/sri_lakshmi_automobiles.png",
+    image: "/projects/sri_lakshmi_automobiles.webp",
     tags: ["Next.js", "React", "Responsive Design"],
     width: 700,
     height: 400
@@ -16,7 +17,7 @@ const projects = [
   {
     title: "Pavani Studios",
     description: "Photography Portfolio Website",
-    image: "/projects/pavani_studios.png",
+    image: "/projects/pavani_studios.webp",
     tags: ["React", "GSAP", "Responsive Design"],
     width: 700,
     height: 400
@@ -24,7 +25,7 @@ const projects = [
   {
     title: "Dr. Varun Healthcare",
     description: "Medical Clinic Website",
-    image: "/projects/dr_varun.png",
+    image: "/projects/dr_varun.webp",
     tags: ["Next.js", "SEO", "Appointment Integration"],
     width: 700,
     height: 400
@@ -32,7 +33,7 @@ const projects = [
   {
     title: "Restaurant Website",
     description: "Restaurant Landing Page",
-    image: "/projects/restaurant_website.png",
+    image: "/projects/restaurant_website.webp",
     tags: ["React", "Responsive Design"],
     width: 700,
     height: 400
@@ -40,7 +41,7 @@ const projects = [
   {
     title: "Portfolio Showcase",
     description: "Personal Portfolio Platform",
-    image: "/projects/portfolio_website.png",
+    image: "/projects/portfolio_website.webp",
     tags: ["Next.js", "Framer Motion"],
     width: 700,
     height: 400
@@ -76,6 +77,7 @@ export default function FeaturedWork() {
                         alt={`${project.title} - ${project.description}`}
                         width={project.width}
                         height={project.height}
+                        quality={75}
                         sizes="(max-width: 768px) 85vw, 700px"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-60"></div>
@@ -91,7 +93,7 @@ export default function FeaturedWork() {
                           aria-label={`View details for ${project.title}`}
                           className="p-4 border border-white/10 rounded-full hover:bg-primary hover:text-on-primary-container transition-all"
                         >
-                          <span className="material-symbols-outlined">north_east</span>
+                          <ArrowUpRight className="w-6 h-6" />
                         </Link>
                       </div>
                       <div className="flex gap-2">
