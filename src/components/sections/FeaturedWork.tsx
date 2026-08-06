@@ -1,39 +1,49 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { GlassCard } from "@/components/ui/GlassCard";
 import Image from "next/image";
+import Link from "next/link";
 
 const projects = [
   {
     title: "Sri Lakshmi Automobiles",
     description: "Modern Business Website",
     image: "/projects/sri_lakshmi_automobiles.png",
-    tags: ["Next.js", "React", "Responsive Design"]
+    tags: ["Next.js", "React", "Responsive Design"],
+    width: 700,
+    height: 400
   },
   {
     title: "Pavani Studios",
     description: "Photography Portfolio Website",
     image: "/projects/pavani_studios.png",
-    tags: ["React", "GSAP", "Responsive Design"]
+    tags: ["React", "GSAP", "Responsive Design"],
+    width: 700,
+    height: 400
   },
   {
-    title: "Dr. Varun",
+    title: "Dr. Varun Healthcare",
     description: "Medical Clinic Website",
     image: "/projects/dr_varun.png",
-    tags: ["Next.js", "SEO", "Appointment Integration"]
+    tags: ["Next.js", "SEO", "Appointment Integration"],
+    width: 700,
+    height: 400
   },
   {
     title: "Restaurant Website",
     description: "Restaurant Landing Page",
     image: "/projects/restaurant_website.png",
-    tags: ["React", "Responsive Design"]
+    tags: ["React", "Responsive Design"],
+    width: 700,
+    height: 400
   },
   {
-    title: "Portfolio Website",
-    description: "Personal Portfolio",
+    title: "Portfolio Showcase",
+    description: "Personal Portfolio Platform",
     image: "/projects/portfolio_website.png",
-    tags: ["Next.js", "Framer Motion"]
+    tags: ["Next.js", "Framer Motion"],
+    width: 700,
+    height: 400
   }
 ];
 
@@ -59,16 +69,16 @@ export default function FeaturedWork() {
               {projects.map((project, idx) => (
                 <div key={`${i}-${idx}`} className="w-[85vw] md:w-[700px] flex-shrink-0">
                   <div className="glass-card rounded-xl overflow-hidden group">
-                    <div className="aspect-[16/9] relative overflow-hidden">
+                    <div className="aspect-[16/9] relative overflow-hidden bg-surface-container-high">
                       <Image 
                         className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" 
                         src={project.image}
-                        alt={project.title}
-                        width={700}
-                        height={400}
-                        unoptimized
+                        alt={`${project.title} - ${project.description}`}
+                        width={project.width}
+                        height={project.height}
+                        sizes="(max-width: 768px) 85vw, 700px"
                       />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-60"></div>
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-60"></div>
                     </div>
                     <div className="p-8 relative z-10">
                       <div className="flex justify-between items-start mb-4">
@@ -76,9 +86,13 @@ export default function FeaturedWork() {
                           <h3 className="font-headline-md text-headline-md mb-2">{project.title}</h3>
                           <p className="text-on-surface-variant">{project.description}</p>
                         </div>
-                        <button className="p-4 border border-white/10 rounded-full hover:bg-primary hover:text-on-primary-container transition-all">
+                        <Link 
+                          href="/work" 
+                          aria-label={`View details for ${project.title}`}
+                          className="p-4 border border-white/10 rounded-full hover:bg-primary hover:text-on-primary-container transition-all"
+                        >
                           <span className="material-symbols-outlined">north_east</span>
-                        </button>
+                        </Link>
                       </div>
                       <div className="flex gap-2">
                         {project.tags.map(tag => (
