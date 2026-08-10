@@ -2,93 +2,118 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { useTheme } from "next-themes";
-import { useEffect, useState } from "react";
-import clsx from "clsx";
-import { motion, useScroll, useTransform } from "framer-motion";
-import { Sun, Moon } from "lucide-react";
+import { useState } from "react";
+import { Menu, X } from "lucide-react";
 
 export default function Navbar() {
-  const { theme, setTheme } = useTheme();
-  const [mounted, setMounted] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
-  const { scrollY } = useScroll();
-  const rotate = useTransform(scrollY, [0, 2000], [0, 360]);
-
-  useEffect(() => {
-    setMounted(true);
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 50);
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <nav
-      aria-label="Main Navigation"
-      className={clsx(
-        "fixed top-4 left-1/2 -translate-x-1/2 w-[90%] max-w-[1440px] rounded-full backdrop-blur-xl border border-white/10 z-50 flex justify-between items-center px-[32px] transition-all duration-300",
-        scrolled ? "py-3 shadow-2xl bg-surface/50 dark:bg-surface/80" : "py-4 bg-surface/30 dark:bg-surface/60"
-      )}
-    >
-      <Link 
-        href="/" 
-        aria-label="BeyondWebCo Home"
-        className="flex items-center gap-3 font-display-lg-mobile text-[32px] md:text-display-lg-mobile font-bold text-on-surface tracking-tighter hover:text-[#186ede] transition-colors group"
-      >
-        <div className="relative w-14 h-14 md:w-16 md:h-16 flex items-center justify-center flex-shrink-0">
-          <motion.div style={{ rotate }} className="flex items-center justify-center">
-            <Image
-              src="/arunchalam.webp"
-              alt="BeyondWebCo Official Logo"
-              width={64}
-              height={64}
-              priority
-              quality={80}
-              className="h-12 md:h-14 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
-            />
-          </motion.div>
+    <header className="fixed top-0 left-0 right-0 z-50 bg-[#000000]/90 backdrop-blur-md border-b border-white/10 h-[44px]">
+      <div className="max-w-[1440px] mx-auto h-full px-4 md:px-8 flex items-center justify-between text-[12px] tracking-[-0.12px] text-[#ffffff]/90 font-normal">
+        {/* Brand Logo / Title */}
+        <Link
+          href="/"
+          className="flex items-center gap-2 text-white hover:opacity-80 transition-opacity font-semibold"
+        >
+          <Image
+            src="/arunchalam.webp"
+            alt="BeyondWebCo"
+            width={20}
+            height={20}
+            className="w-5 h-5 object-contain"
+          />
+          <span>BeyondWebCo</span>
+        </Link>
+
+        {/* Desktop Links */}
+        <nav aria-label="Global" className="hidden md:flex items-center gap-6">
+          <Link
+            href="/work"
+            className="text-[#ffffff]/80 hover:text-white transition-colors"
+          >
+            Work
+          </Link>
+          <Link
+            href="/services"
+            className="text-[#ffffff]/80 hover:text-white transition-colors"
+          >
+            Services
+          </Link>
+          <Link
+            href="/about"
+            className="text-[#ffffff]/80 hover:text-white transition-colors"
+          >
+            About
+          </Link>
+          <Link
+            href="/contact"
+            className="text-[#ffffff]/80 hover:text-white transition-colors"
+          >
+            Contact
+          </Link>
+        </nav>
+
+        {/* Action / CTA */}
+        <div className="hidden md:flex items-center gap-4">
+          <Link
+            href="/contact"
+            className="bg-[#0066cc] text-white rounded-full px-3 py-1 text-[12px] font-normal hover:bg-[#0071e3] transition-transform active:scale-95"
+          >
+            Start a Project
+          </Link>
         </div>
-        <span className="font-montserrat font-light">BeyondWebCo</span>
-      </Link>
-      
-      <div className="hidden md:flex gap-8 items-center">
-        <Link href="/" className="text-on-surface-variant hover:text-on-surface transition-colors text-lg font-medium">
-          Home
-        </Link>
-        <Link href="/about" className="text-on-surface-variant hover:text-on-surface transition-colors text-lg font-medium">
-          About
-        </Link>
-        <Link href="/services" className="text-on-surface-variant hover:text-on-surface transition-colors text-lg font-medium">
-          Services
-        </Link>
-        <Link href="/work" className="text-on-surface-variant hover:text-on-surface transition-colors text-lg font-medium">
-          Work
-        </Link>
-        <Link href="/contact" className="text-on-surface-variant hover:text-on-surface transition-colors text-lg font-medium">
-          Contact
-        </Link>
+
+        {/* Mobile Hamburger Toggle */}
+        <button
+          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+          className="md:hidden text-white p-1"
+          aria-label="Toggle navigation menu"
+        >
+          {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+        </button>
       </div>
 
-      <div className="flex items-center gap-6">
-        {mounted && (
-          <button
-            onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-            className="p-2 rounded-full hover:bg-white/10 transition-colors text-on-surface-variant hover:text-on-surface"
-            aria-label={theme === "dark" ? "Switch to Light Theme" : "Switch to Dark Theme"}
+      {/* Mobile Menu Overlay */}
+      {mobileMenuOpen && (
+        <div className="md:hidden fixed inset-x-0 top-[44px] bg-[#000000] border-b border-white/10 py-6 px-6 flex flex-col gap-4 text-[15px] text-white">
+          <Link
+            href="/work"
+            onClick={() => setMobileMenuOpen(false)}
+            className="py-1 border-b border-white/10"
           >
-            {theme === "dark" ? <Sun className="w-6 h-6" /> : <Moon className="w-6 h-6" />}
-          </button>
-        )}
-        <Link 
-          href="/contact" 
-          aria-label="Start a New Project"
-          className="hidden lg:block bg-primary text-black px-7 py-3 text-lg rounded-xl font-bold hover:scale-95 active:scale-90 transition-transform"
-        >
-          Start a Project
-        </Link>
-      </div>
-    </nav>
+            Work
+          </Link>
+          <Link
+            href="/services"
+            onClick={() => setMobileMenuOpen(false)}
+            className="py-1 border-b border-white/10"
+          >
+            Services
+          </Link>
+          <Link
+            href="/about"
+            onClick={() => setMobileMenuOpen(false)}
+            className="py-1 border-b border-white/10"
+          >
+            About
+          </Link>
+          <Link
+            href="/contact"
+            onClick={() => setMobileMenuOpen(false)}
+            className="py-1 border-b border-white/10"
+          >
+            Contact
+          </Link>
+          <Link
+            href="/contact"
+            onClick={() => setMobileMenuOpen(false)}
+            className="mt-2 bg-[#0066cc] text-white rounded-full py-2.5 text-center font-normal hover:bg-[#0071e3] transition-all"
+          >
+            Start a Project
+          </Link>
+        </div>
+      )}
+    </header>
   );
 }

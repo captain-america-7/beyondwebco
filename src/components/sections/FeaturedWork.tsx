@@ -1,112 +1,83 @@
-"use client";
-
-import { motion } from "framer-motion";
 import Image from "next/image";
-import Link from "next/link";
-import { ArrowUpRight } from "lucide-react";
+import { TextLink } from "@/components/ui/Button";
 
 const projects = [
   {
     title: "Sri Lakshmi Automobiles",
-    description: "Modern Business Website",
+    category: "Automotive Platform & Business Site",
+    description: "A fast, SEO-optimized business portal built to drive customer inquiries and showcase services with clarity.",
     image: "/projects/sri_lakshmi_automobiles.webp",
-    tags: ["Next.js", "React", "Responsive Design"],
-    width: 700,
-    height: 400
+    href: "/work",
   },
   {
     title: "Pavani Studios",
-    description: "Photography Portfolio Website",
+    category: "Photography & Creative Portfolio",
+    description: "A sleek, photography-first showcase crafted to highlight high-resolution visual work with fluid performance.",
     image: "/projects/pavani_studios.webp",
-    tags: ["React", "GSAP", "Responsive Design"],
-    width: 700,
-    height: 400
+    href: "/work",
   },
   {
     title: "Dr. Varun Healthcare",
-    description: "Medical Clinic Website",
+    category: "Medical Clinic & Patient Portal",
+    description: "Clean healthcare architecture featuring instant appointment scheduling and accessible information architecture.",
     image: "/projects/dr_varun.webp",
-    tags: ["Next.js", "SEO", "Appointment Integration"],
-    width: 700,
-    height: 400
+    href: "/work",
   },
-  {
-    title: "Restaurant Website",
-    description: "Restaurant Landing Page",
-    image: "/projects/restaurant_website.webp",
-    tags: ["React", "Responsive Design"],
-    width: 700,
-    height: 400
-  },
-  {
-    title: "Portfolio Showcase",
-    description: "Personal Portfolio Platform",
-    image: "/projects/portfolio_website.webp",
-    tags: ["Next.js", "Framer Motion"],
-    width: 700,
-    height: 400
-  }
 ];
 
 export default function FeaturedWork() {
   return (
-    <section className="py-[160px] overflow-hidden bg-surface-container-low">
-      <div className="px-[24px] md:px-[80px] max-w-[1440px] mx-auto mb-16">
-        <motion.h2 
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.8, ease: [0.2, 1, 0.3, 1] }}
-          className="font-display-lg text-[48px] md:text-display-lg"
-        >
-          Selected Case Studies
-        </motion.h2>
-      </div>
-      
-      <div className="overflow-hidden flex w-full">
-        <div className="flex animate-marquee-slow w-max">
-          {[1, 2].map((i) => (
-            <div key={i} className="flex gap-[32px] pr-[32px] flex-shrink-0">
-              {projects.map((project, idx) => (
-                <div key={`${i}-${idx}`} className="w-[85vw] md:w-[700px] flex-shrink-0">
-                  <div className="glass-card rounded-xl overflow-hidden group">
-                    <div className="aspect-[16/9] relative overflow-hidden bg-surface-container-high">
-                      <Image 
-                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" 
-                        src={project.image}
-                        alt={`${project.title} - ${project.description}`}
-                        width={project.width}
-                        height={project.height}
-                        quality={75}
-                        sizes="(max-width: 768px) 85vw, 700px"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-60"></div>
-                    </div>
-                    <div className="p-8 relative z-10">
-                      <div className="flex justify-between items-start mb-4">
-                        <div>
-                          <h3 className="font-headline-md text-headline-md mb-2">{project.title}</h3>
-                          <p className="text-on-surface-variant">{project.description}</p>
-                        </div>
-                        <Link 
-                          href="/work" 
-                          aria-label={`View details for ${project.title}`}
-                          className="p-4 border border-white/10 rounded-full hover:bg-primary hover:text-on-primary-container transition-all"
-                        >
-                          <ArrowUpRight className="w-6 h-6" />
-                        </Link>
-                      </div>
-                      <div className="flex gap-2">
-                        {project.tags.map(tag => (
-                          <span key={tag} className="px-3 py-1 border border-outline-variant rounded-full text-xs font-bold">
-                            {tag}
-                          </span>
-                        ))}
-                      </div>
-                    </div>
-                  </div>
+    <section className="bg-[#272729] text-white py-24 px-6 md:px-12 w-full">
+      <div className="max-w-[1068px] mx-auto">
+        {/* Section Header */}
+        <div className="mb-16 text-center md:text-left">
+          <span className="text-[12px] font-semibold tracking-[0.1em] text-[#cccccc] uppercase mb-2 block">
+            Portfolio
+          </span>
+          <h2 className="text-[34px] md:text-[40px] font-semibold tracking-tight text-white mb-3">
+            Selected Work
+          </h2>
+          <p className="text-[17px] md:text-[21px] text-[#cccccc] max-w-2xl font-normal">
+            Digital experiences designed to perform, convert, and scale.
+          </p>
+        </div>
+
+        {/* Alternating Project Showcases */}
+        <div className="flex flex-col gap-24">
+          {projects.map((project, idx) => (
+            <div
+              key={idx}
+              className="flex flex-col gap-8 items-start border-b border-white/10 pb-16 last:border-0 last:pb-0"
+            >
+              {/* Project Image Frame */}
+              <div className="w-full relative aspect-[16/9] rounded-lg overflow-hidden product-shadow bg-[#1d1d1f]">
+                <Image
+                  src={project.image}
+                  alt={project.title}
+                  fill
+                  quality={85}
+                  sizes="(max-width: 1068px) 100vw, 1068px"
+                  className="object-cover transition-transform duration-500 hover:scale-[1.02]"
+                />
+              </div>
+
+              {/* Project Metadata & Link */}
+              <div className="flex flex-col md:flex-row justify-between items-start md:items-center w-full gap-4">
+                <div>
+                  <span className="text-[12px] text-[#2997ff] font-medium tracking-wide uppercase">
+                    {project.category}
+                  </span>
+                  <h3 className="text-[24px] md:text-[28px] font-semibold text-white mt-1 mb-2">
+                    {project.title}
+                  </h3>
+                  <p className="text-[15px] md:text-[17px] text-[#cccccc] max-w-2xl">
+                    {project.description}
+                  </p>
                 </div>
-              ))}
+                <TextLink href={project.href} onDark className="flex-shrink-0 mt-2 md:mt-0">
+                  View case study →
+                </TextLink>
+              </div>
             </div>
           ))}
         </div>

@@ -1,9 +1,7 @@
 "use client";
 
-import { motion } from "framer-motion";
-import { GlassCard } from "@/components/ui/GlassCard";
 import { useState } from "react";
-import { CheckCircle2, Mail, Phone, Camera } from "lucide-react";
+import { Button } from "@/components/ui/Button";
 
 export default function ContactClient() {
   const [submitted, setSubmitted] = useState(false);
@@ -14,162 +12,164 @@ export default function ContactClient() {
   };
 
   return (
-    <div className="pt-32 pb-[160px] px-margin-mobile md:px-margin-desktop max-w-[1440px] mx-auto min-h-screen">
-      <motion.div 
-        initial={{ opacity: 0, y: 30 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, ease: [0.2, 1, 0.3, 1] }}
-        className="mb-16 max-w-3xl"
-      >
-        <h1 className="font-display-xl text-[52px] md:text-[88px] leading-tight mb-4">
-          Contact BeyondWebCo.
-        </h1>
-        <p className="text-on-surface-variant text-body-lg leading-relaxed">
-          Ready to elevate your online presence? Fill out the contact form below or reach out to our team directly. We respond to all inquiries within 24 business hours.
-        </p>
-      </motion.div>
+    <div className="bg-[#ffffff] text-[#1d1d1f] pt-28 pb-24 px-6 md:px-12 w-full min-h-screen">
+      <div className="max-w-[980px] mx-auto">
+        {/* Page Header */}
+        <div className="mb-16 text-center md:text-left">
+          <span className="text-[12px] font-semibold tracking-[0.1em] text-[#7a7a7a] uppercase mb-3 block">
+            Contact
+          </span>
+          <h1 className="text-[34px] sm:text-[48px] md:text-[56px] font-semibold leading-[1.07] tracking-[-0.02em] text-[#1d1d1f] mb-4">
+            Contact BeyondWebCo.
+          </h1>
+          <p className="text-[17px] md:text-[21px] text-[#7a7a7a] leading-[1.47] max-w-2xl">
+            Ready to elevate your online presence? Fill out the form below or reach out directly. We respond within 24 business hours.
+          </p>
+        </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
-        {/* Contact Form */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2, ease: [0.2, 1, 0.3, 1] }}
-        >
-          <GlassCard className="!p-8">
-            <h2 className="font-display-lg text-[28px] mb-6">Send Us a Message</h2>
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-12">
+          {/* Contact Form */}
+          <div className="md:col-span-7 bg-[#f5f5f7] p-8 md:p-10 rounded-[18px] border border-[#e0e0e0]">
+            <h2 className="text-[21px] font-semibold text-[#1d1d1f] mb-6">
+              Send Us a Message
+            </h2>
             {submitted ? (
-              <div className="py-12 text-center text-primary">
-                <CheckCircle2 className="w-16 h-16 mx-auto mb-4" />
-                <h3 className="font-bold text-2xl mb-2 text-on-surface">Message Received!</h3>
-                <p className="text-on-surface-variant text-sm">Thank you for reaching out. A senior engineer will review your inquiry and respond shortly.</p>
+              <div className="py-12 text-center text-[#0066cc]">
+                <h3 className="text-[24px] font-semibold mb-2 text-[#1d1d1f]">
+                  Message Received
+                </h3>
+                <p className="text-[15px] text-[#7a7a7a]">
+                  Thank you for reaching out. A senior engineer will review your inquiry and respond shortly.
+                </p>
               </div>
             ) : (
               <form className="flex flex-col gap-6" onSubmit={handleSubmit}>
                 <div>
-                  <label htmlFor="contact-name" className="block text-xs font-label-caps mb-2 text-on-surface-variant tracking-wider">
-                    FULL NAME <span className="text-primary">*</span>
+                  <label
+                    htmlFor="contact-name"
+                    className="block text-[12px] font-semibold tracking-wider text-[#7a7a7a] uppercase mb-2"
+                  >
+                    FULL NAME <span className="text-[#0066cc]">*</span>
                   </label>
-                  <input 
+                  <input
                     id="contact-name"
                     name="name"
-                    type="text" 
+                    type="text"
                     required
                     aria-required="true"
-                    className="w-full bg-transparent border-b border-outline-variant py-3 outline-none focus:border-primary transition-colors text-on-surface text-base"
+                    className="w-full bg-white border border-[#e0e0e0] rounded-[8px] px-4 py-3 text-[15px] text-[#1d1d1f] outline-none focus:border-[#0066cc] focus:ring-1 focus:ring-[#0066cc] transition-colors"
                     placeholder="Jane Doe"
                   />
                 </div>
+
                 <div>
-                  <label htmlFor="contact-email" className="block text-xs font-label-caps mb-2 text-on-surface-variant tracking-wider">
-                    WORK EMAIL ADDRESS <span className="text-primary">*</span>
+                  <label
+                    htmlFor="contact-email"
+                    className="block text-[12px] font-semibold tracking-wider text-[#7a7a7a] uppercase mb-2"
+                  >
+                    WORK EMAIL ADDRESS <span className="text-[#0066cc]">*</span>
                   </label>
-                  <input 
+                  <input
                     id="contact-email"
                     name="email"
-                    type="email" 
+                    type="email"
                     required
                     aria-required="true"
-                    className="w-full bg-transparent border-b border-outline-variant py-3 outline-none focus:border-primary transition-colors text-on-surface text-base"
+                    className="w-full bg-white border border-[#e0e0e0] rounded-[8px] px-4 py-3 text-[15px] text-[#1d1d1f] outline-none focus:border-[#0066cc] focus:ring-1 focus:ring-[#0066cc] transition-colors"
                     placeholder="jane@company.com"
                   />
                 </div>
+
                 <div>
-                  <label htmlFor="contact-phone" className="block text-xs font-label-caps mb-2 text-on-surface-variant tracking-wider">
+                  <label
+                    htmlFor="contact-phone"
+                    className="block text-[12px] font-semibold tracking-wider text-[#7a7a7a] uppercase mb-2"
+                  >
                     PHONE NUMBER (OPTIONAL)
                   </label>
-                  <input 
+                  <input
                     id="contact-phone"
                     name="phone"
-                    type="tel" 
-                    className="w-full bg-transparent border-b border-outline-variant py-3 outline-none focus:border-primary transition-colors text-on-surface text-base"
+                    type="tel"
+                    className="w-full bg-white border border-[#e0e0e0] rounded-[8px] px-4 py-3 text-[15px] text-[#1d1d1f] outline-none focus:border-[#0066cc] focus:ring-1 focus:ring-[#0066cc] transition-colors"
                     placeholder="+1 (555) 000-0000"
                   />
                 </div>
+
                 <div>
-                  <label htmlFor="contact-message" className="block text-xs font-label-caps mb-2 text-on-surface-variant tracking-wider">
-                    PROJECT GOALS & DETAILS <span className="text-primary">*</span>
+                  <label
+                    htmlFor="contact-message"
+                    className="block text-[12px] font-semibold tracking-wider text-[#7a7a7a] uppercase mb-2"
+                  >
+                    PROJECT DETAILS <span className="text-[#0066cc]">*</span>
                   </label>
-                  <textarea 
+                  <textarea
                     id="contact-message"
                     name="message"
                     rows={4}
                     required
                     aria-required="true"
-                    className="w-full bg-transparent border-b border-outline-variant py-3 outline-none focus:border-primary transition-colors text-on-surface resize-none text-base"
-                    placeholder="Tell us about your company, target audience, timeline, and project requirements..."
+                    className="w-full bg-white border border-[#e0e0e0] rounded-[8px] px-4 py-3 text-[15px] text-[#1d1d1f] outline-none focus:border-[#0066cc] focus:ring-1 focus:ring-[#0066cc] transition-colors resize-none"
+                    placeholder="Tell us about your company, target audience, timeline, and goals..."
                   ></textarea>
                 </div>
-                <button 
-                  type="submit"
-                  aria-label="Send Project Message"
-                  className="bg-primary text-black font-bold rounded-xl py-4 hover:scale-[0.99] active:scale-[0.97] transition-all w-full mt-4 text-lg shadow-lg shadow-primary/20"
-                >
-                  Send Project Inquiry
-                </button>
+
+                <Button type="submit" variant="primary" className="w-full mt-2">
+                  Send Inquiry
+                </Button>
               </form>
             )}
-          </GlassCard>
-        </motion.div>
+          </div>
 
-        {/* Contact Info & Details */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.4, ease: [0.2, 1, 0.3, 1] }}
-          className="flex flex-col gap-8 justify-between"
-        >
-          <div className="flex flex-col gap-8">
-            <div className="bg-surface-container-low rounded-2xl p-8 border border-white/10">
-              <h2 className="font-bold text-2xl mb-4 text-on-surface">Direct Contact Details</h2>
-              <div className="space-y-4">
-                <div className="flex items-center gap-4 text-on-surface-variant">
-                  <Mail className="w-5 h-5 text-primary" />
-                  <div>
-                    <p className="text-xs uppercase tracking-wider font-bold text-on-surface-variant">Email</p>
-                    <a href="mailto:beyondwebco@gmail.com" className="text-on-surface font-medium hover:text-primary transition-colors">
-                      beyondwebco@gmail.com
-                    </a>
-                  </div>
+          {/* Contact Direct Info */}
+          <div className="md:col-span-5 flex flex-col justify-between gap-8">
+            <div className="bg-[#f5f5f7] p-8 rounded-[18px] border border-[#e0e0e0]">
+              <h2 className="text-[21px] font-semibold text-[#1d1d1f] mb-4">
+                Direct Contact
+              </h2>
+              <div className="space-y-4 text-[15px]">
+                <div>
+                  <p className="text-[12px] uppercase font-semibold text-[#7a7a7a]">Email</p>
+                  <a
+                    href="mailto:beyondwebco@gmail.com"
+                    className="text-[#0066cc] hover:underline"
+                  >
+                    beyondwebco@gmail.com
+                  </a>
                 </div>
-                <div className="flex items-center gap-4 text-on-surface-variant">
-                  <Phone className="w-5 h-5 text-primary" />
-                  <div>
-                    <p className="text-xs uppercase tracking-wider font-bold text-on-surface-variant">Phone / WhatsApp</p>
-                    <a href="tel:+917993597172" className="text-on-surface font-medium hover:text-primary transition-colors">
-                      +91 7993597172
-                    </a>
-                  </div>
+                <div>
+                  <p className="text-[12px] uppercase font-semibold text-[#7a7a7a]">Phone / WhatsApp</p>
+                  <a
+                    href="tel:+917993597172"
+                    className="text-[#0066cc] hover:underline"
+                  >
+                    +91 7993597172
+                  </a>
+                </div>
+                <div>
+                  <p className="text-[12px] uppercase font-semibold text-[#7a7a7a]">Social</p>
+                  <a
+                    href="https://instagram.com/beyondwebco"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-[#0066cc] hover:underline"
+                  >
+                    Instagram @beyondwebco
+                  </a>
                 </div>
               </div>
             </div>
 
-            <div className="bg-surface-container-low rounded-2xl p-8 border border-white/10">
-              <h2 className="font-bold text-2xl mb-4 text-on-surface">Connect on Socials</h2>
-              <div className="flex gap-4">
-                <a 
-                  href="https://instagram.com/beyondwebco" 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
-                  aria-label="BeyondWebCo Instagram Profile"
-                  className="px-6 py-3 rounded-xl bg-surface-container-high hover:bg-primary/20 hover:text-primary transition-all font-medium flex items-center gap-2"
-                >
-                  <Camera className="w-5 h-5" />
-                  <span>Instagram: @beyondwebco</span>
-                </a>
-              </div>
+            <div className="bg-[#272729] text-white p-8 rounded-[18px]">
+              <h3 className="text-[17px] font-semibold mb-3">What happens next?</h3>
+              <ol className="text-[14px] text-[#cccccc] space-y-2 list-decimal list-inside">
+                <li>{"We review your project requirements within 24 hours."}</li>
+                <li>{"We schedule a 15-minute alignment call or send a proposal."}</li>
+                <li>{"Once approved, design & engineering sprints launch immediately."}</li>
+              </ol>
             </div>
           </div>
-
-          <div className="p-8 rounded-2xl border border-primary/20 bg-primary/5">
-            <h3 className="font-bold text-lg mb-2 text-primary">What happens after you reach out?</h3>
-            <ol className="text-sm text-on-surface-variant space-y-2 list-decimal list-inside">
-              <li>We analyze your website requirements and goals within 24 hours.</li>
-              <li>We schedule a brief 15-minute discovery call or send a comprehensive proposal.</li>
-              <li>Once aligned, we initiate design wireframes and development sprints immediately.</li>
-            </ol>
-          </div>
-        </motion.div>
+        </div>
       </div>
     </div>
   );
