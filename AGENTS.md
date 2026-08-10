@@ -27,6 +27,6 @@ BeyondWebCo is a modern web design & engineering studio crafting high-performanc
 ## Contact & Other Data
 - **Website:** https://www.beyondwebco.com
 - **Email:** beyondwebco@gmail.com
-- **Phone:** +91 7993597172
+- **Phone:** +91 80190 82307
 - **Instagram:** @beyondwebco
 - **SEO Keywords:** Web Design Studio, Next.js Development, React Web Apps, SEO Optimization, Custom Software Engineering, High Performance Websites

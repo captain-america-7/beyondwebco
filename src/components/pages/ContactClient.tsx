@@ -140,10 +140,10 @@ export default function ContactClient() {
                 <div>
                   <p className="text-[12px] uppercase font-semibold text-[#7a7a7a]">Phone / WhatsApp</p>
                   <a
-                    href="tel:+917993597172"
+                    href="tel:+918019082307"
                     className="text-[#0066cc] hover:underline"
                   >
-                    +91 7993597172
+                    +91 80190 82307
                   </a>
                 </div>
                 <div>

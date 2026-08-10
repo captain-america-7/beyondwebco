@@ -1,5 +1,4 @@
-import Image from "next/image";
-import { Button } from "@/components/ui/Button";
+import { Button, TextLink } from "@/components/ui/Button";
 
 export default function Hero() {
   return (
@@ -30,24 +29,35 @@ export default function Hero() {
           </Button>
         </div>
 
-        {/* Hero Visual Showcase with Resting Shadow */}
-        <div className="w-full max-w-[1068px] mx-auto mt-4 rounded-xl overflow-hidden product-shadow bg-[#f5f5f7] border border-[#e0e0e0]">
-          <div className="bg-[#1d1d1f] px-4 py-3 flex items-center gap-2 border-b border-[#333333]">
-            <div className="w-3 h-3 rounded-full bg-[#ff5f56]" />
-            <div className="w-3 h-3 rounded-full bg-[#ffbd2e]" />
-            <div className="w-3 h-3 rounded-full bg-[#27c93f]" />
-            <span className="text-[11px] text-[#7a7a7a] mx-auto font-mono">https://www.beyondwebco.com</span>
+        {/* Studio Digital Showcase Container (Typography & Live Product Focus) */}
+        <div className="w-full max-w-[1068px] mx-auto mt-4 rounded-2xl overflow-hidden bg-[#1d1d1f] text-white border border-[#333333] p-8 md:p-12 text-left shadow-2xl">
+          <div className="flex flex-col md:flex-row justify-between items-start md:items-center border-b border-white/10 pb-6 mb-8 gap-4">
+            <div>
+              <span className="text-[12px] font-mono text-[#2997ff] uppercase tracking-wider">
+                Featured Flagship Platform
+              </span>
+              <h2 className="text-[28px] md:text-[36px] font-semibold text-white mt-1">
+                Volta EV Platform
+              </h2>
+            </div>
+            <TextLink href="https://volta.beyondwebco.com/" external onDark className="text-[15px]">
+              Visit Live Site →
+            </TextLink>
           </div>
-          <div className="relative aspect-[16/9] w-full bg-[#fafafc] overflow-hidden">
-            <Image
-              src="/projects/sri_lakshmi_automobiles.webp"
-              alt="BeyondWebCo High Performance Showcase"
-              fill
-              priority
-              quality={90}
-              className="object-cover object-top"
-              sizes="(max-width: 1068px) 100vw, 1068px"
-            />
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-[14px]">
+            <div className="bg-[#272729] p-6 rounded-xl border border-white/5">
+              <span className="text-[11px] font-mono text-[#cccccc] uppercase block mb-1">Architecture</span>
+              <p className="text-white font-medium">Next.js & Edge Infrastructure</p>
+            </div>
+            <div className="bg-[#272729] p-6 rounded-xl border border-white/5">
+              <span className="text-[11px] font-mono text-[#cccccc] uppercase block mb-1">Speed Index</span>
+              <p className="text-white font-medium">Sub-second Core Web Vitals</p>
+            </div>
+            <div className="bg-[#272729] p-6 rounded-xl border border-white/5">
+              <span className="text-[11px] font-mono text-[#cccccc] uppercase block mb-1">Domain</span>
+              <p className="text-[#2997ff] font-mono truncate">volta.beyondwebco.com</p>
+            </div>
           </div>
         </div>
       </div>

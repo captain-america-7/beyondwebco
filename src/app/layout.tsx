@@ -4,7 +4,6 @@ import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
-import LoadingScreen from "@/components/loading-screen";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -100,7 +99,7 @@ const jsonLd = {
       ],
       contactPoint: {
         "@type": "ContactPoint",
-        telephone: "+91-7993597172",
+        telephone: "+91-8019082307",
         contactType: "customer service",
         email: "beyondwebco@gmail.com",
       },
@@ -120,7 +119,7 @@ const jsonLd = {
       name: "BeyondWebCo Web Development",
       image: "https://www.beyondwebco.com/og-image.webp",
       priceRange: "$$$",
-      telephone: "+91-7993597172",
+      telephone: "+91-8019082307",
       email: "beyondwebco@gmail.com",
       address: {
         "@type": "PostalAddress",
@@ -157,11 +156,9 @@ export default function RootLayout({
           enableSystem={false}
           disableTransitionOnChange
         >
-          <LoadingScreen>
-            <Navbar />
-            <main id="main-content" className="flex-grow">{children}</main>
-            <Footer />
-          </LoadingScreen>
+          <Navbar />
+          <main id="main-content" className="flex-grow">{children}</main>
+          <Footer />
         </ThemeProvider>
       </body>
     </html>
