@@ -9,7 +9,7 @@ export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-[#000000]/70 backdrop-blur-xl border-b border-white/15 shadow-sm h-[44px] transition-all">
+    <header className="glass-nav z-50 h-[44px]">
       <div className="max-w-[1440px] mx-auto h-full px-4 md:px-8 flex items-center justify-between text-[12px] tracking-[-0.12px] text-[#ffffff]/90 font-normal">
         {/* Brand Logo / Title */}
         <Link
