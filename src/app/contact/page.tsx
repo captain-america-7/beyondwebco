@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Contact BeyondWebCo | Start Your Web Project Today",
     description: "Get in touch with BeyondWebCo to discuss your web design, Next.js web application, or custom software project. Receive a prompt proposal within 24 hours.",
-    images: ["/og-image.png"],
+    images: ["/og-image.webp"],
   },
 };
 

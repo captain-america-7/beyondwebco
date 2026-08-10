@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "About BeyondWebCo | Senior Web & Software Engineers",
     description: "Learn about BeyondWebCo, an engineering-first web development studio building custom digital platforms, web apps, and SEO-optimized sites for growth brands.",
-    images: ["/og-image.png"],
+    images: ["/og-image.webp"],
   },
 };
 

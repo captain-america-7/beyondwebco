@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Featured Case Studies & Portfolio | BeyondWebCo",
     description: "Explore BeyondWebCo's portfolio of custom websites, high-speed web apps, client case studies, and digital transformations for businesses worldwide.",
-    images: ["/og-image.png"],
+    images: ["/og-image.webp"],
   },
 };
 
