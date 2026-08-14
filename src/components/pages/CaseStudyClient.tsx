@@ -152,14 +152,14 @@ export default function CaseStudyClient({ slug }: { slug: string }) {
         {/* Hero */}
         <div className="mb-16 border-b border-[#e0e0e0] pb-12">
           {data.image ? (
-            <div className="relative aspect-[16/9] w-full rounded-[18px] overflow-hidden mb-10 bg-[#14121b] border border-[#e0e0e0] shadow-[0_8px_32px_rgba(0,0,0,0.12)]">
+            <div className="relative aspect-[16/9] w-full rounded-[18px] overflow-hidden mb-10 border border-[#e0e0e0] shadow-[0_8px_32px_rgba(0,0,0,0.12)]">
               <Image
                 src={data.image}
                 alt={data.title}
                 fill
                 priority
                 sizes="(max-width: 980px) 100vw, 980px"
-                className="object-contain p-4"
+                className="object-cover object-top"
               />
             </div>
           ) : null}
