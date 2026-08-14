@@ -71,13 +71,13 @@ export default function FeaturedWork() {
             >
               <div>
                 {project.image ? (
-                  <div className="relative aspect-[16/10] w-full rounded-[12px] overflow-hidden mb-6 border border-white/10 shadow-[0_4px_25px_rgba(0,0,0,0.3)]">
+                  <div className="relative aspect-[16/10] w-full rounded-[12px] overflow-hidden mb-6 bg-[#14121b] border border-white/10 shadow-[0_4px_25px_rgba(0,0,0,0.3)]">
                     <Image
                       src={project.image}
                       alt={project.title}
                       fill
                       sizes="(max-width: 768px) 100vw, 33vw"
-                      className="object-cover hover:scale-105 transition-transform duration-500"
+                      className="object-contain hover:scale-105 transition-transform duration-500 p-2"
                     />
                   </div>
                 ) : null}
