@@ -2,22 +2,22 @@ const steps = [
   {
     num: "01",
     title: "Understand",
-    desc: "We analyze your business objectives, technical scope, target audience, and market position to establish a clear architectural plan.",
+    desc: "We study the business, users, objectives, competition, and technical requirements.",
   },
   {
     num: "02",
     title: "Design",
-    desc: "Crafting a clean, photography-first visual system with editorial typography, minimal chrome, and intuitive navigation.",
+    desc: "We create the visual direction, interaction system, and responsive experience.",
   },
   {
     num: "03",
     title: "Build",
-    desc: "Engineering high-speed React & Next.js components with clean code, zero unnecessary dependencies, and complete SEO coverage.",
+    desc: "We engineer fast, scalable, maintainable digital products using modern web technology.",
   },
   {
     num: "04",
     title: "Launch",
-    desc: "Comprehensive Core Web Vitals audit, CDN deployment, continuous monitoring, and ongoing optimization.",
+    desc: "We test, optimize, deploy, monitor, and continuously improve performance.",
   },
 ];
 

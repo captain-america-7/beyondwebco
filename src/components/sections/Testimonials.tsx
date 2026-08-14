@@ -1,18 +1,18 @@
 const testimonials = [
   {
-    quote: "BeyondWebCo built a modern website for Sri Lakshmi Automobiles that perfectly represents our business. The team was responsive, delivered on time, and created a fast, professional website that our customers love.",
+    quote: "BeyondWebCo built a modern website that perfectly represents our business. The team was responsive, delivered on time, and created a fast, professional website.",
     author: "Sri Lakshmi Automobiles",
-    role: "Automotive Business",
+    role: "Automotive Dealer",
   },
   {
-    quote: "Our portfolio finally feels premium. BeyondWebCo understood our creative vision and designed a website that beautifully showcases our photography and has already helped us attract new clients.",
+    quote: "Our portfolio finally feels premium. BeyondWebCo understood our creative vision and created an experience that showcases our photography beautifully.",
     author: "Pavani Studios",
     role: "Photography Studio",
   },
   {
-    quote: "The website exceeded my expectations. It is clean, professional, mobile-friendly, and makes it much easier for patients to learn about my services and get in touch.",
+    quote: "The website exceeded my expectations. It is clean, professional, mobile-friendly, and makes it easier for people to understand my services and contact me.",
     author: "Dr. Varun Healthcare",
-    role: "Healthcare Professional",
+    role: "Healthcare Practice",
   },
 ];
 
@@ -35,7 +35,7 @@ export default function Testimonials() {
               key={idx}
               className="bg-white p-8 rounded-[18px] border border-[#e0e0e0] flex flex-col justify-between"
             >
-              <p className="text-[15px] md:text-[17px] text-[#1d1d1f] leading-relaxed mb-8">
+              <p className="text-[15px] md:text-[17px] text-[#1d1d1f] leading-relaxed mb-8 font-normal">
                 {`"${test.quote}"`}
               </p>
 

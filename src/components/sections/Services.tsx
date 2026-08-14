@@ -1,24 +1,24 @@
 import { TextLink } from "@/components/ui/Button";
 
-const capabilities = [
+const homepageServices = [
   {
     title: "Web Design",
-    description: "Photography-first, editorial interface design focused on brand presence, seamless conversion, and crisp user experience.",
+    description: "Thoughtful digital experiences built around brand, usability, and conversion.",
     specs: "Figma · Design Systems · UI/UX",
   },
   {
-    title: "Next.js Development",
-    description: "High-performance web applications built using Next.js App Router, Server Components, and zero-runtime overhead.",
-    specs: "Next.js 16 · React 19 · TypeScript",
+    title: "Web Development",
+    description: "High-performance websites and applications engineered using modern web technologies.",
+    specs: "Next.js · React · TypeScript",
   },
   {
-    title: "SEO & Speed Optimization",
-    description: "Obsessive Core Web Vitals engineering ensuring 95+ performance scores, instant page loads, and top search engine indexability.",
+    title: "SEO & Performance",
+    description: "Technical optimization focused on search visibility, Core Web Vitals, and loading speed.",
     specs: "Core Web Vitals · Schema.org · Edge CDN",
   },
   {
-    title: "Custom Web Software",
-    description: "Tailored enterprise web applications, e-commerce architectures, and scalable API integrations built for growth.",
+    title: "Custom Digital Products",
+    description: "Scalable web software, business platforms, SaaS products, and custom integrations.",
     specs: "REST / GraphQL · PostgreSQL · Cloud Infrastructure",
   },
 ];
@@ -30,7 +30,7 @@ export default function Services() {
         {/* Section Header */}
         <div className="mb-16">
           <span className="text-[12px] font-semibold tracking-[0.1em] text-[#7a7a7a] uppercase mb-2 block">
-            Capabilities
+            Services Preview
           </span>
           <h2 className="text-[34px] md:text-[40px] font-semibold tracking-tight text-[#1d1d1f] mb-3">
             Services built as products.
@@ -41,8 +41,8 @@ export default function Services() {
         </div>
 
         {/* 2-Column Clean Layout */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-          {capabilities.map((item, idx) => (
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-12">
+          {homepageServices.map((item, idx) => (
             <div
               key={idx}
               className="bg-white p-8 rounded-[18px] border border-[#e0e0e0] flex flex-col justify-between"
@@ -63,12 +63,15 @@ export default function Services() {
                 <span className="text-[12px] font-mono text-[#7a7a7a]">
                   {item.specs}
                 </span>
-                <TextLink href="/services" className="text-[14px]">
-                  Learn more →
-                </TextLink>
               </div>
             </div>
           ))}
+        </div>
+
+        <div className="pt-4">
+          <TextLink href="/services" className="text-[15px]">
+            View All Services →
+          </TextLink>
         </div>
       </div>
     </section>
