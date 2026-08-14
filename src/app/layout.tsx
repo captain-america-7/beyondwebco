@@ -160,6 +160,7 @@ export default function RootLayout({
           <main id="main-content" className="flex-grow">{children}</main>
           <Footer />
         </ThemeProvider>
+        <Analytics />
       </body>
     </html>
   );
