@@ -1,52 +1,48 @@
-"use client";
-
-import { motion } from "framer-motion";
-import { GlassCard } from "@/components/ui/GlassCard";
-
 const faqs = [
   {
-    q: "How long does a typical project take?",
-    a: "Depending on the scope, most projects take between 2 to 8 weeks from planning to launch."
+    q: "How long does a typical web project take?",
+    a: "Most website and web application builds take between 2 to 6 weeks from initial architecture planning through deployment.",
   },
   {
-    q: "Do you work with startups or enterprise clients?",
-    a: "We work with startups, local businesses, and growing companies looking for modern digital solutions."
+    q: "Do you work with startups and enterprise clients?",
+    a: "Yes. We partner with growing startups, local businesses, and enterprise teams seeking high-performance Next.js applications.",
   },
   {
-    q: "What technologies do you use?",
-    a: "We specialize in React, Next.js, Flutter, Node.js, and AWS, focusing on performance-first engineering."
-  }
+    q: "What technical stack do you utilize?",
+    a: "Our core stack is Next.js, React, TypeScript, Tailwind CSS, and Edge infrastructure, engineered strictly for maximum performance.",
+  },
+  {
+    q: "How do you handle website maintenance and post-launch?",
+    a: "We offer continuous performance optimization, security updates, and technical maintenance packages.",
+  },
 ];
 
 export default function FAQ() {
   return (
-    <section className="py-[160px] px-margin-mobile md:px-margin-desktop max-w-[1440px] mx-auto">
-      <div className="flex flex-col md:flex-row gap-16">
-        <motion.div 
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.8, ease: [0.2, 1, 0.3, 1] }}
-          className="md:w-1/3"
-        >
-          <h2 className="font-display-lg text-[48px] leading-tight mb-4">Frequently Asked Questions</h2>
-          <p className="text-on-surface-variant text-body-lg">Everything you need to know about our process, pricing, and how we build world-class digital products.</p>
-        </motion.div>
-        
-        <div className="md:w-2/3 flex flex-col gap-6">
-          {faqs.map((faq, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.8, delay: index * 0.1, ease: [0.2, 1, 0.3, 1] }}
-            >
-              <GlassCard className="!p-8">
-                <h3 className="font-headline-md text-[24px] mb-4">{faq.q}</h3>
-                <p className="text-on-surface-variant">{faq.a}</p>
-              </GlassCard>
-            </motion.div>
+    <section className="bg-[#ffffff] text-[#1d1d1f] py-24 px-6 md:px-12 w-full border-t border-[#e0e0e0]">
+      <div className="max-w-[1068px] mx-auto grid grid-cols-1 md:grid-cols-12 gap-12">
+        <div className="md:col-span-4">
+          <span className="text-[12px] font-semibold tracking-[0.1em] text-[#7a7a7a] uppercase mb-2 block">
+            Questions
+          </span>
+          <h2 className="text-[34px] font-semibold tracking-tight text-[#1d1d1f] mb-3">
+            Frequently asked questions.
+          </h2>
+          <p className="text-[15px] text-[#7a7a7a] leading-relaxed">
+            Everything you need to know about our engineering methodology, timelines, and deliverables.
+          </p>
+        </div>
+
+        <div className="md:col-span-8 flex flex-col divide-y divide-[#e0e0e0]">
+          {faqs.map((faq, idx) => (
+            <div key={idx} className="py-6 first:pt-0 last:pb-0">
+              <h3 className="text-[18px] font-semibold text-[#1d1d1f] mb-2">
+                {faq.q}
+              </h3>
+              <p className="text-[15px] text-[#7a7a7a] leading-relaxed">
+                {faq.a}
+              </p>
+            </div>
           ))}
         </div>
       </div>

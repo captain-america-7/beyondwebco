@@ -1,127 +1,149 @@
-"use client";
-
 import Link from "next/link";
 import Image from "next/image";
-import { motion, useScroll, useTransform } from "framer-motion";
-import { Globe, Mail, Camera } from "lucide-react";
 
 export default function Footer() {
-  const { scrollY } = useScroll();
-  const rotate = useTransform(scrollY, [0, 2000], [0, 360]);
-
   return (
-    <footer className="bg-surface-container-lowest py-[120px] w-full border-t border-outline-variant mt-auto">
-      <div className="max-w-[1440px] mx-auto px-[24px] md:px-[80px] grid grid-cols-12 gap-[32px]">
-        {/* Company Info */}
-        <div className="col-span-12 md:col-span-6 mb-12 md:mb-0">
-          <div className="flex items-center gap-4 font-display-lg text-[36px] md:text-[48px] font-black text-on-surface opacity-30 leading-none mb-6 select-none">
-            <div className="relative w-16 h-16 md:w-20 md:h-20 flex items-center justify-center flex-shrink-0">
-              <motion.div style={{ rotate }} className="flex items-center justify-center">
-                <Image
-                  src="/arunchalam.webp"
-                  alt="BeyondWebCo Footer Logo"
-                  width={64}
-                  height={80}
-                  quality={80}
-                  className="h-16 md:h-20 w-auto object-contain"
-                />
-              </motion.div>
-            </div>
-            <span className="font-montserrat font-light">BeyondWebCo</span>
-          </div>
-          <p className="text-on-surface-variant max-w-md text-base leading-relaxed">
-            BeyondWebCo is a modern web design and engineering studio. We build ultra-fast, SEO-optimized, and highly responsive digital products that help businesses scale online.
+    <footer className="bg-[#f5f5f7] text-[#333333] border-t border-[#e0e0e0] py-16 px-6 md:px-12 w-full mt-auto">
+      <div className="max-w-[980px] mx-auto">
+        {/* Upper Brand / Info Note */}
+        <div className="border-b border-[#e0e0e0] pb-6 mb-8 text-[12px] text-[#7a7a7a] leading-relaxed">
+          <p>
+            BeyondWebCo is a modern web design and engineering studio. We build ultra-fast, SEO-optimized, and highly responsive digital products and web applications for ambitious businesses worldwide.
           </p>
-          <div className="flex gap-6 mt-8">
-            <a 
-              href="https://www.beyondwebco.com" 
-              aria-label="BeyondWebCo Website" 
-              className="text-on-surface-variant hover:text-primary transition-colors p-2 bg-surface-container-high rounded-full"
-            >
-              <Globe className="w-5 h-5" />
-            </a>
-            <a 
-              href="mailto:beyondwebco@gmail.com" 
-              aria-label="Email BeyondWebCo" 
-              className="text-on-surface-variant hover:text-primary transition-colors p-2 bg-surface-container-high rounded-full"
-            >
-              <Mail className="w-5 h-5" />
-            </a>
-            <a 
-              href="https://instagram.com/beyondwebco" 
-              target="_blank" 
-              rel="noopener noreferrer" 
-              aria-label="BeyondWebCo Instagram" 
-              className="text-on-surface-variant hover:text-primary transition-colors p-2 bg-surface-container-high rounded-full"
-            >
-              <Camera className="w-5 h-5" />
-            </a>
+        </div>
+
+        {/* Columns Grid */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 pb-12 border-b border-[#e0e0e0] text-[12px]">
+          {/* Solutions Column */}
+          <div>
+            <h3 className="font-semibold text-[12px] text-[#1d1d1f] mb-3 tracking-tight">
+              Solutions & Services
+            </h3>
+            <ul className="flex flex-col space-y-1.5 text-[#333333]">
+              <li>
+                <Link href="/services" className="hover:text-[#0066cc] transition-colors">
+                  Web Design & Architecture
+                </Link>
+              </li>
+              <li>
+                <Link href="/services" className="hover:text-[#0066cc] transition-colors">
+                  Next.js Development
+                </Link>
+              </li>
+              <li>
+                <Link href="/services" className="hover:text-[#0066cc] transition-colors">
+                  React Applications
+                </Link>
+              </li>
+              <li>
+                <Link href="/services" className="hover:text-[#0066cc] transition-colors">
+                  SEO & Speed Optimization
+                </Link>
+              </li>
+              <li>
+                <Link href="/services" className="hover:text-[#0066cc] transition-colors">
+                  Custom Software Engineering
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          {/* Portfolio Column */}
+          <div>
+            <h3 className="font-semibold text-[12px] text-[#1d1d1f] mb-3 tracking-tight">
+              Selected Work
+            </h3>
+            <ul className="flex flex-col space-y-1.5 text-[#333333]">
+              <li>
+                <Link href="/work" className="hover:text-[#0066cc] transition-colors">
+                  All Case Studies
+                </Link>
+              </li>
+              <li>
+                <Link href="/work" className="hover:text-[#0066cc] transition-colors">
+                  Digital Platforms
+                </Link>
+              </li>
+              <li>
+                <Link href="/work" className="hover:text-[#0066cc] transition-colors">
+                  High-Performance Web Apps
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          {/* Company Column */}
+          <div>
+            <h3 className="font-semibold text-[12px] text-[#1d1d1f] mb-3 tracking-tight">
+              Studio
+            </h3>
+            <ul className="flex flex-col space-y-1.5 text-[#333333]">
+              <li>
+                <Link href="/about" className="hover:text-[#0066cc] transition-colors">
+                  About BeyondWebCo
+                </Link>
+              </li>
+              <li>
+                <Link href="/contact" className="hover:text-[#0066cc] transition-colors">
+                  Start a Project
+                </Link>
+              </li>
+              <li>
+                <a
+                  href="https://instagram.com/beyondwebco"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-[#0066cc] transition-colors"
+                >
+                  Instagram @beyondwebco
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          {/* Direct Contact Column */}
+          <div>
+            <h3 className="font-semibold text-[12px] text-[#1d1d1f] mb-3 tracking-tight">
+              Direct Contact
+            </h3>
+            <ul className="flex flex-col space-y-1.5 text-[#333333]">
+              <li>
+                <a
+                  href="mailto:beyondwebco@gmail.com"
+                  className="hover:text-[#0066cc] transition-colors"
+                >
+                  beyondwebco@gmail.com
+                </a>
+              </li>
+              <li>
+                <a
+                  href="tel:+918019082307"
+                  className="hover:text-[#0066cc] transition-colors"
+                >
+                  +91 80190 82307
+                </a>
+              </li>
+            </ul>
           </div>
         </div>
-        
-        {/* Navigation Links */}
-        <div className="col-span-6 md:col-span-2">
-          <h3 className="font-bold text-on-surface mb-6 uppercase tracking-widest text-xs">Solutions</h3>
-          <ul className="flex flex-col gap-3 text-sm">
-            <li>
-              <Link href="/services" className="text-on-surface-variant hover:text-primary transition-colors">
-                Services Overview
-              </Link>
-            </li>
-            <li>
-              <Link href="/work" className="text-on-surface-variant hover:text-primary transition-colors">
-                Case Studies
-              </Link>
-            </li>
-            <li>
-              <Link href="/services" className="text-on-surface-variant hover:text-primary transition-colors">
-                Web Development
-              </Link>
-            </li>
-          </ul>
-        </div>
-        
-        <div className="col-span-6 md:col-span-2">
-          <h3 className="font-bold text-on-surface mb-6 uppercase tracking-widest text-xs">Studio</h3>
-          <ul className="flex flex-col gap-3 text-sm">
-            <li>
-              <Link href="/about" className="text-on-surface-variant hover:text-primary transition-colors">
-                About Us
-              </Link>
-            </li>
-            <li>
-              <Link href="/contact" className="text-on-surface-variant hover:text-primary transition-colors">
-                Contact & Quote
-              </Link>
-            </li>
-            <li>
-              <Link href="/work" className="text-on-surface-variant hover:text-primary transition-colors">
-                Selected Work
-              </Link>
-            </li>
-          </ul>
-        </div>
-        
-        <div className="col-span-12 md:col-span-2 mt-8 md:mt-0">
-          <h3 className="font-bold text-on-surface mb-6 uppercase tracking-widest text-xs">Direct Contact</h3>
-          <ul className="flex flex-col gap-3 text-sm text-on-surface-variant">
-            <li>
-              <a href="mailto:beyondwebco@gmail.com" className="hover:text-primary transition-colors">
-                beyondwebco@gmail.com
-              </a>
-            </li>
-            <li>
-              <a href="tel:+917993597172" className="hover:text-primary transition-colors">
-                +91 7993597172
-              </a>
-            </li>
-          </ul>
-        </div>
-        
-        {/* Copyright */}
-        <div className="col-span-12 mt-16 border-t border-white/5 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-on-surface-variant text-xs">
-          <p>© {new Date().getFullYear()} <span className="font-montserrat font-light">BeyondWebCo</span>. All rights reserved.</p>
-          <p>Engineered for speed, performance & enterprise security.</p>
+
+        {/* Bottom Fine Print Row */}
+        <div className="pt-6 flex flex-col md:flex-row justify-between items-center gap-4 text-[11px] text-[#7a7a7a]">
+          <div className="flex items-center gap-2">
+            <Image
+              src="/arunchalam.webp"
+              alt="BeyondWebCo Logo"
+              width={16}
+              height={16}
+              className="w-4 h-4 object-contain opacity-70"
+            />
+            <span>Copyright © {new Date().getFullYear()} BeyondWebCo Inc. All rights reserved.</span>
+          </div>
+          <div className="flex gap-6">
+            <span className="hover:text-[#1d1d1f]">Privacy Policy</span>
+            <span className="hover:text-[#1d1d1f]">Terms of Service</span>
+            <span className="hover:text-[#1d1d1f]">Site Map</span>
+          </div>
         </div>
       </div>
     </footer>

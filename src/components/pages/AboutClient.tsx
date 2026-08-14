@@ -1,147 +1,108 @@
-"use client";
-
-import { motion } from "framer-motion";
 import Image from "next/image";
-import Link from "next/link";
-import { GlassCard } from "@/components/ui/GlassCard";
-import { Code2, Zap, SearchCheck } from "lucide-react";
+import { Button } from "@/components/ui/Button";
 
 export default function AboutClient() {
   return (
-    <div className="pt-32 pb-[160px] px-margin-mobile md:px-margin-desktop max-w-[1440px] mx-auto min-h-screen">
-      {/* Hero Section */}
-      <div className="max-w-4xl mx-auto text-center mb-24">
-        <motion.h1 
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: [0.2, 1, 0.3, 1] }}
-          className="font-display-xl text-[52px] md:text-[88px] leading-tight mb-6"
-        >
-          We are <span className="text-primary font-montserrat font-light">BeyondWebCo.</span>
-        </motion.h1>
-        <motion.p 
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2, ease: [0.2, 1, 0.3, 1] }}
-          className="text-on-surface-variant text-body-lg max-w-3xl mx-auto leading-relaxed"
-        >
-          A dedicated web design and development studio focused on building high-converting, high-speed digital products for modern companies, ambitious startups, creators, and market leaders.
-        </motion.p>
-      </div>
+    <div className="bg-[#ffffff] text-[#1d1d1f] pt-28 pb-24 px-6 md:px-12 w-full min-h-screen">
+      <div className="max-w-[980px] mx-auto">
+        {/* Header / Hero */}
+        <div className="mb-20 text-center md:text-left">
+          <span className="text-[12px] font-semibold tracking-[0.1em] text-[#7a7a7a] uppercase mb-3 block">
+            About BeyondWebCo
+          </span>
+          <h1 className="text-[34px] sm:text-[48px] md:text-[56px] font-semibold leading-[1.07] tracking-[-0.02em] text-[#1d1d1f] mb-6">
+            We are BeyondWebCo.
+          </h1>
+          <p className="text-[17px] md:text-[21px] text-[#7a7a7a] leading-[1.47] max-w-2xl">
+            A dedicated web design and development studio focused on building high-converting, high-speed digital products for modern companies and ambitious leaders.
+          </p>
+        </div>
 
-      {/* Mission & Story Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center mb-32">
-        <motion.div
-          initial={{ opacity: 0, x: -30 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.8, ease: [0.2, 1, 0.3, 1] }}
-        >
-          <div className="aspect-square md:aspect-[4/5] rounded-2xl overflow-hidden relative border border-white/10">
-            <div className="absolute inset-0 bg-primary/20 mix-blend-overlay z-10"></div>
-            <Image 
-              src="https://lh3.googleusercontent.com/aida-public/AB6AXuB__OW0d9kLOzUNoFpeX9vbp2qvo5fZTQ_4dWHY0jr8oEUmQN2cgK2r9gKyzvBWputuyvkxnFo-EbuUaUKzSZx-UPb6MfaD6CHsu8fwZyd9XmNxMSbEVctY1TptFwE45VnL7hhtKpFFq6fzjsy6ig2jFyG00Nj8s9ceya2ECZQuPoLeTjLbMicw82jED8OT94_jquDreHx41H0FjEJfZbGaKzZxleqYjOqKpiSO6mUDSa4eW_5a5cU5" 
-              alt="BeyondWebCo Engineering Excellence and Digital Innovation" 
-              fill 
+        {/* Mission Section */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-24 pb-20 border-b border-[#e0e0e0]">
+          <div className="relative aspect-[4/3] w-full rounded-[18px] overflow-hidden product-shadow bg-[#fafafc] border border-[#e0e0e0]">
+            <Image
+              src="/arunchalam.webp"
+              alt="BeyondWebCo Engineering"
+              fill
               sizes="(max-width: 768px) 100vw, 50vw"
-              className="object-cover grayscale hover:grayscale-0 transition-all duration-700" 
+              className="object-cover"
               priority
             />
           </div>
-        </motion.div>
-        
-        <motion.div
-          initial={{ opacity: 0, x: 30 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.8, ease: [0.2, 1, 0.3, 1] }}
-        >
-          <h2 className="font-display-lg text-[36px] md:text-[48px] mb-6 leading-tight">
-            Engineering-First Studio for Growing Brands
-          </h2>
-          <p className="text-on-surface-variant text-body-lg mb-6 leading-relaxed">
-            At BeyondWebCo, our mission is to redefine how digital experiences are built. We combine sleek modern aesthetic design with senior-level software engineering to give businesses a significant competitive edge online.
-          </p>
-          <p className="text-on-surface-variant text-body-lg mb-8 leading-relaxed">
-            We believe your website should be your company's most productive revenue driver. Every digital platform we build is engineered from scratch for lightning-fast speeds, seamless Core Web Vitals, enterprise security, and maximum SEO visibility.
-          </p>
-          
-          <div className="grid grid-cols-2 gap-8 pt-8 border-t border-outline-variant/30">
-            <div>
-              <p className="font-display-lg text-primary text-[40px] font-bold">100%</p>
-              <p className="font-label-caps text-on-surface-variant text-xs">SENIOR ENGINEERS</p>
-            </div>
-            <div>
-              <p className="font-display-lg text-primary text-[40px] font-bold">30+</p>
-              <p className="font-label-caps text-on-surface-variant text-xs">PROJECTS LAUNCHED</p>
+
+          <div>
+            <h2 className="text-[28px] md:text-[34px] font-semibold text-[#1d1d1f] leading-tight mb-4">
+              Engineering-First Studio
+            </h2>
+            <p className="text-[15px] md:text-[17px] text-[#7a7a7a] leading-[1.47] mb-4">
+              At BeyondWebCo, our mission is to redefine how digital experiences are built. We combine sleek modern aesthetic design with senior-level software engineering to give businesses a significant competitive edge online.
+            </p>
+            <p className="text-[15px] md:text-[17px] text-[#7a7a7a] leading-[1.47] mb-6">
+              {"We believe your website should be your company's most productive revenue driver. Every digital platform we build is engineered from scratch for lightning-fast speeds, seamless Core Web Vitals, and maximum SEO visibility."}
+            </p>
+
+            <div className="grid grid-cols-2 gap-6 pt-6 border-t border-[#f0f0f0]">
+              <div>
+                <span className="text-[34px] font-semibold text-[#0066cc] block">100%</span>
+                <span className="text-[12px] text-[#7a7a7a] font-semibold uppercase tracking-wider">Senior Engineers</span>
+              </div>
+              <div>
+                <span className="text-[34px] font-semibold text-[#0066cc] block">30+</span>
+                <span className="text-[12px] text-[#7a7a7a] font-semibold uppercase tracking-wider">Projects Delivered</span>
+              </div>
             </div>
           </div>
-        </motion.div>
-      </div>
+        </div>
 
-      {/* Core Pillars */}
-      <div className="mb-32">
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <h2 className="font-display-lg text-[36px] md:text-[48px] mb-4">Our Core Development Principles</h2>
-          <p className="text-on-surface-variant text-body-lg">
-            How we maintain unmatched quality, speed, and architectural longevity across every project we launch.
+        {/* Core Principles Section */}
+        <div className="mb-24">
+          <div className="mb-12">
+            <h2 className="text-[28px] md:text-[34px] font-semibold text-[#1d1d1f] mb-3">
+              Core Principles
+            </h2>
+            <p className="text-[17px] text-[#7a7a7a]">
+              How we maintain quality, speed, and architectural longevity.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="bg-[#f5f5f7] p-8 rounded-[18px] border border-[#e0e0e0]">
+              <span className="text-[12px] font-mono text-[#0066cc] font-semibold block mb-2">01</span>
+              <h3 className="text-[18px] font-semibold text-[#1d1d1f] mb-2">Senior Engineering</h3>
+              <p className="text-[14px] text-[#7a7a7a] leading-relaxed">
+                Clean, type-safe Next.js codebases built with modular architecture and zero technical bloat.
+              </p>
+            </div>
+            <div className="bg-[#f5f5f7] p-8 rounded-[18px] border border-[#e0e0e0]">
+              <span className="text-[12px] font-mono text-[#0066cc] font-semibold block mb-2">02</span>
+              <h3 className="text-[18px] font-semibold text-[#1d1d1f] mb-2">Performance Focus</h3>
+              <p className="text-[14px] text-[#7a7a7a] leading-relaxed">
+                Sub-second LCP speeds, zero layout shift (CLS), and asset compression pipelines.
+              </p>
+            </div>
+            <div className="bg-[#f5f5f7] p-8 rounded-[18px] border border-[#e0e0e0]">
+              <span className="text-[12px] font-mono text-[#0066cc] font-semibold block mb-2">03</span>
+              <h3 className="text-[18px] font-semibold text-[#1d1d1f] mb-2">Built-in SEO</h3>
+              <p className="text-[14px] text-[#7a7a7a] leading-relaxed">
+                Semantic HTML5, Schema.org JSON-LD structured data, dynamic XML sitemaps, and Open Graph controls.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {/* CTA Banner */}
+        <div className="bg-[#272729] text-white p-12 rounded-[18px] text-center flex flex-col items-center">
+          <h2 className="text-[28px] md:text-[34px] font-semibold mb-4">
+            Ready to work with senior web engineers?
+          </h2>
+          <p className="text-[15px] md:text-[17px] text-[#cccccc] max-w-xl mx-auto mb-8">
+            {"Let's discuss how BeyondWebCo can engineer a high-performing digital platform tailored specifically to your goals."}
           </p>
+          <Button variant="primary" href="/contact">
+            Start Your Project
+          </Button>
         </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <GlassCard className="!p-8">
-            <Code2 className="w-10 h-10 text-primary mb-6" />
-            <h3 className="font-headline-md text-[24px] mb-4">Senior Engineering</h3>
-            <p className="text-on-surface-variant text-sm leading-relaxed mb-4">
-              We eliminate technical debt before it happens. All codebases are architected by experienced engineers utilizing strict TypeScript, clean modular structure, and automated testing patterns.
-            </p>
-            <ul className="text-xs text-on-surface-variant space-y-2 list-disc list-inside">
-              <li>Type-safe architectures</li>
-              <li>Reusable design systems</li>
-              <li>Maintainable clean code</li>
-            </ul>
-          </GlassCard>
-
-          <GlassCard className="!p-8">
-            <Zap className="w-10 h-10 text-primary mb-6" />
-            <h3 className="font-headline-md text-[24px] mb-4">Performance Obsession</h3>
-            <p className="text-on-surface-variant text-sm leading-relaxed mb-4">
-              Speed is directly correlated to conversion rate and search rankings. We optimize asset sizes, bundle splits, web fonts, and dynamic caching strategies to guarantee 95+ Lighthouse scores.
-            </p>
-            <ul className="text-xs text-on-surface-variant space-y-2 list-disc list-inside">
-              <li>Sub-second LCP speeds</li>
-              <li>Zero Layout Shift (CLS)</li>
-              <li>Next.js automatic asset compression</li>
-            </ul>
-          </GlassCard>
-
-          <GlassCard className="!p-8">
-            <SearchCheck className="w-10 h-10 text-primary mb-6" />
-            <h3 className="font-headline-md text-[24px] mb-4">Technical SEO Built-In</h3>
-            <p className="text-on-surface-variant text-sm leading-relaxed mb-4">
-              SEO is never an afterthought. We implement semantic HTML5, custom metadata controls, JSON-LD structured data, dynamic XML sitemaps, and canonical link configurations out of the box.
-            </p>
-            <ul className="text-xs text-on-surface-variant space-y-2 list-disc list-inside">
-              <li>Rich JSON-LD schemas</li>
-              <li>Open Graph & Twitter Cards</li>
-              <li>Clean URL structures & tags</li>
-            </ul>
-          </GlassCard>
-        </div>
-      </div>
-
-      {/* Call to Action */}
-      <div className="text-center bg-surface-container-low rounded-3xl p-12 md:p-20 border border-white/10">
-        <h2 className="font-display-lg text-[36px] md:text-[56px] mb-6">Ready to work with senior web engineers?</h2>
-        <p className="text-on-surface-variant text-body-lg max-w-2xl mx-auto mb-8">
-          Let's discuss how BeyondWebCo can engineer a high-performing digital platform tailored specifically to your business goals.
-        </p>
-        <Link 
-          href="/contact" 
-          className="inline-block bg-primary text-black px-10 py-5 rounded-xl font-bold text-lg hover:scale-105 transition-transform"
-        >
-          Start Your Project
-        </Link>
       </div>
     </div>
   );

@@ -1,40 +1,30 @@
-"use client";
-
-import { motion } from "framer-motion";
-import Link from "next/link";
+import { Button } from "@/components/ui/Button";
 
 export default function FinalCTA() {
   return (
-    <section className="relative py-[160px] px-margin-mobile md:px-margin-desktop overflow-hidden mt-20">
-      <div className="absolute inset-0 bg-primary/10 -z-20"></div>
-      <div 
-        className="absolute inset-0 bg-gradient-to-tr from-primary/20 via-surface to-secondary-container/10 -z-10 animate-pulse" 
-        style={{ animationDuration: '8s' }}
-      ></div>
-      
-      <motion.div 
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, margin: "-100px" }}
-        transition={{ duration: 0.8, ease: [0.2, 1, 0.3, 1] }}
-        className="max-w-4xl mx-auto text-center"
-      >
-        <h2 className="font-display-xl text-[56px] md:text-[110px] mb-12">
-          Ready to build something exceptional?
+    <section className="bg-[#252527] text-white py-28 px-6 md:px-12 w-full text-center flex flex-col items-center justify-center">
+      <div className="max-w-[800px] mx-auto flex flex-col items-center">
+        <span className="text-[12px] font-semibold tracking-[0.1em] text-[#cccccc] uppercase mb-4">
+          Start a Project
+        </span>
+
+        <h2 className="text-[34px] sm:text-[48px] md:text-[56px] font-semibold leading-[1.07] tracking-[-0.02em] text-white mb-6">
+          Have a project in mind?
         </h2>
-        <p className="font-body-lg text-[20px] text-on-surface-variant mb-12">
-          Let's discuss your project and build a fast, modern website that helps your business stand out online.
+
+        <p className="text-[17px] md:text-[21px] text-[#cccccc] max-w-xl mx-auto mb-10 font-normal leading-[1.47]">
+          {"Let's build something fast, clear, and engineered to scale."}
         </p>
-        
-        <div className="flex flex-col sm:flex-row gap-6 justify-center">
-          <Link href="/contact" className="bg-primary text-black px-12 py-6 rounded-xl font-black text-xl hover:scale-105 transition-transform shadow-2xl shadow-primary/20">
-            Get Started Now
-          </Link>
-          <Link href="/contact" className="border border-white/20 px-12 py-6 rounded-xl font-bold text-xl backdrop-blur-xl hover:bg-white/10 transition-colors">
-            Book a Consultation
-          </Link>
+
+        <div className="flex flex-col sm:flex-row gap-4 items-center justify-center">
+          <Button variant="primary" href="/contact">
+            Start a Project
+          </Button>
+          <Button variant="secondary-pill" href="/work" className="border-white/30 text-white hover:bg-white/10">
+            Explore Work
+          </Button>
         </div>
-      </motion.div>
+      </div>
     </section>
   );
 }

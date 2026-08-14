@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     siteName: "BeyondWebCo",
     images: [
       {
-        url: "/og-image.png",
+        url: "/og-image.webp",
         width: 1200,
         height: 630,
         alt: "BeyondWebCo Web Studio Homepage Showcase",
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "BeyondWebCo | High-Performance Web Design & App Studio",
     description: "BeyondWebCo designs and builds ultra-fast, modern, SEO-optimized websites and web applications engineered to convert visitors and scale your business online.",
-    images: ["/og-image.png"],
+    images: ["/og-image.webp"],
   },
 };
 

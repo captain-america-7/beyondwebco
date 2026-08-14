@@ -1,37 +1,54 @@
-"use client";
-
-import { motion } from "framer-motion";
+import { TextLink } from "@/components/ui/Button";
 
 export default function AboutPreview() {
   return (
-    <section className="py-[160px] px-margin-mobile md:px-margin-desktop max-w-[1440px] mx-auto text-center">
-      <motion.div 
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, margin: "-100px" }}
-        transition={{ duration: 0.8, ease: [0.2, 1, 0.3, 1] }}
-        className="max-w-4xl mx-auto"
-      >
-        <h2 className="font-display-lg text-[40px] md:text-[72px] leading-tight mb-stack-lg">
-          Engineering-first methodology. <br />
-          <span className="text-on-surface-variant font-medium">No junior developers. No outsourcing.</span>
+    <section className="bg-[#2a2a2c] text-white py-24 px-6 md:px-12 w-full">
+      <div className="max-w-[980px] mx-auto text-center md:text-left">
+        <span className="text-[12px] font-semibold tracking-[0.1em] text-[#cccccc] uppercase mb-4 block">
+          Philosophy & Engineering
+        </span>
+
+        <h2 className="text-[34px] sm:text-[48px] md:text-[56px] font-semibold leading-[1.07] tracking-[-0.02em] text-white mb-8 max-w-3xl">
+          Good websites should feel obvious.
         </h2>
-        
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mt-20 text-left">
+
+        <p className="text-[17px] md:text-[24px] font-light leading-[1.5] text-[#cccccc] max-w-3xl mb-12">
+          We reject slow scripts, heavy frameworks, and superficial design clutter. Instead, we engineer fast, accessible, and responsive digital products built around real user behavior.
+        </p>
+
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 border-t border-white/10 pt-12 text-left">
           <div>
-            <h3 className="font-bold text-xl mb-4 text-primary">Experienced Development</h3>
-            <p className="text-on-surface-variant">Every project is crafted using modern development practices, clean code, and attention to performance.</p>
+            <h3 className="text-[17px] font-semibold text-white mb-2">
+              Performance First
+            </h3>
+            <p className="text-[14px] text-[#cccccc] leading-relaxed">
+              Engineered to load in under a second with 95+ Core Web Vitals and zero bloat.
+            </p>
           </div>
           <div>
-            <h3 className="font-bold text-xl mb-4 text-primary">Performance Obsessed</h3>
-            <p className="text-on-surface-variant">Every website is optimized for speed, SEO, accessibility, and Core Web Vitals.</p>
+            <h3 className="text-[17px] font-semibold text-white mb-2">
+              Typography Led
+            </h3>
+            <p className="text-[14px] text-[#cccccc] leading-relaxed">
+              Clear hierarchy and thoughtful reading rhythm that keeps content at the center.
+            </p>
           </div>
           <div>
-            <h3 className="font-bold text-xl mb-4 text-primary">Scale-Ready Architecture</h3>
-            <p className="text-on-surface-variant">We build maintainable websites and applications that are easy to expand as your business grows.</p>
+            <h3 className="text-[17px] font-semibold text-white mb-2">
+              Scale Ready
+            </h3>
+            <p className="text-[14px] text-[#cccccc] leading-relaxed">
+              Built on Next.js 16 and TypeScript architecture designed to grow with your business.
+            </p>
           </div>
         </div>
-      </motion.div>
+
+        <div className="mt-12 text-left">
+          <TextLink href="/about" onDark>
+            Read more about BeyondWebCo →
+          </TextLink>
+        </div>
+      </div>
     </section>
   );
 }

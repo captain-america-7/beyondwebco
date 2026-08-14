@@ -1,168 +1,127 @@
-"use client";
-
-import { motion } from "framer-motion";
-import { GlassCard } from "@/components/ui/GlassCard";
-import Link from "next/link";
-import { 
-  Building2, 
-  Globe, 
-  Image as ImageIcon, 
-  Store, 
-  AppWindow, 
-  Palette, 
-  RefreshCw, 
-  Zap, 
-  SearchCheck 
-} from "lucide-react";
+import { Button } from "@/components/ui/Button";
 
 const servicesList = [
-  { 
-    title: "Custom Business Websites", 
-    desc: "Enterprise-grade corporate websites optimized for brand trust, rapid load speeds, and high conversion lead generation.", 
-    icon: Building2,
-    details: ["Next.js & React Core", "Custom CMS Integration", "95+ Lighthouse Score"]
+  {
+    title: "Custom Business Websites",
+    desc: "Enterprise-grade corporate websites optimized for brand trust, rapid load speeds, and high conversion lead generation.",
+    details: ["Next.js & React Core", "Custom CMS Integration", "95+ Lighthouse Score"],
   },
-  { 
-    title: "High-Conversion Landing Pages", 
-    desc: "Single-page marketing engines tailored for paid ad campaigns, product launches, and fast customer acquisition.", 
-    icon: Globe,
-    details: ["A/B Testing Ready", "Fast Interactive Load", "Conversion Focused UI"]
+  {
+    title: "High-Conversion Landing Pages",
+    desc: "Single-page marketing engines tailored for paid ad campaigns, product launches, and fast customer acquisition.",
+    details: ["A/B Testing Ready", "Fast Interactive Load", "Conversion Focused UI"],
   },
-  { 
-    title: "Creative Showcase Portfolios", 
-    desc: "Premium interactive showcases for agencies, photographers, executives, and creative professionals.", 
-    icon: ImageIcon,
-    details: ["Smooth Micro-Animations", "High-Res Image Optimization", "Mobile First Design"]
+  {
+    title: "Creative Showcase Portfolios",
+    desc: "Premium interactive showcases for agencies, photographers, executives, and creative professionals.",
+    details: ["Smooth Micro-Animations", "High-Res Image Optimization", "Mobile First Design"],
   },
-  { 
-    title: "Custom E-Commerce Platforms", 
-    desc: "High-performance custom storefronts integrated with Stripe, Shopify Headless, and custom inventory workflows.", 
-    icon: Store,
-    details: ["Secure Checkout Flow", "Headless Commerce Architecture", "Sub-second Page Load"]
+  {
+    title: "Custom E-Commerce Platforms",
+    desc: "High-performance custom storefronts integrated with Stripe, Shopify Headless, and custom inventory workflows.",
+    details: ["Secure Checkout Flow", "Headless Commerce Architecture", "Sub-second Page Load"],
   },
-  { 
-    title: "Web Applications & SaaS", 
-    desc: "Complex web applications, SaaS dashboards, and workflow tools built with modern frameworks and robust backend APIs.", 
-    icon: AppWindow,
-    details: ["Role-Based Authentication", "Real-Time Cloud Backends", "Scalable SQL/NoSQL Databases"]
+  {
+    title: "Web Applications & SaaS",
+    desc: "Complex web applications, SaaS dashboards, and workflow tools built with modern frameworks and robust backend APIs.",
+    details: ["Role-Based Authentication", "Real-Time Cloud Backends", "Scalable SQL/NoSQL Databases"],
   },
-  { 
-    title: "UI/UX & Product Design", 
-    desc: "User-centric design systems, wireframes, interactive prototypes, and modern interface visual design.", 
-    icon: Palette,
-    details: ["Comprehensive Design Systems", "Figma Design Tokens", "Accessibility WCAG Compliance"]
+  {
+    title: "UI/UX & Product Design",
+    desc: "User-centric design systems, wireframes, interactive prototypes, and modern interface visual design.",
+    details: ["Comprehensive Design Systems", "Figma Design Tokens", "Accessibility WCAG Compliance"],
   },
-  { 
-    title: "Website Redesign & Modernization", 
-    desc: "Transforming slow, outdated websites into fast, responsive, modern digital assets built on contemporary technology stacks.", 
-    icon: RefreshCw,
-    details: ["Zero Downtime Migration", "Preserved SEO Rankings", "Modern Tech Stack Upgrade"]
-  },
-  { 
-    title: "Speed & Performance Optimization", 
-    desc: "Auditing and optimizing existing web codebases to dramatically boost Core Web Vitals, LCP, INP, and CLS scores.", 
-    icon: Zap,
-    details: ["Bundle & Asset Reduction", "Server-Side Caching", "Image Compression Pipeline"]
-  },
-  { 
-    title: "Technical SEO & Architecture", 
-    desc: "Engineering site structure, semantic markup, schema headers, dynamic sitemaps, and indexing optimizations for search engines.", 
-    icon: SearchCheck,
-    details: ["Rich JSON-LD Schemas", "Canonical Tag Management", "Robots & Sitemap Optimization"]
-  }
 ];
 
 export default function ServicesClient() {
   return (
-    <div className="pt-32 pb-[160px] px-margin-mobile md:px-margin-desktop max-w-[1440px] mx-auto min-h-screen">
-      <motion.div 
-        initial={{ opacity: 0, y: 30 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, ease: [0.2, 1, 0.3, 1] }}
-        className="mb-24 max-w-4xl"
-      >
-        <h1 className="font-display-xl text-[52px] md:text-[88px] leading-tight mb-6">
-          Our Development Services.
-        </h1>
-        <p className="text-on-surface-variant text-body-lg max-w-2xl leading-relaxed">
-          BeyondWebCo offers an end-to-end suite of digital development and design services crafted to help businesses establish authority, attract customers, and scale online.
-        </p>
-      </motion.div>
-
-      {/* Services Grid */}
-      <div className="mb-24">
-        <h2 className="font-display-lg text-[36px] md:text-[48px] mb-12">
-          Specialized Engineering Capabilities
-        </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {servicesList.map((service, index) => {
-            const Icon = service.icon;
-            return (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-100px" }}
-                transition={{ duration: 0.8, delay: (index % 3) * 0.1, ease: [0.2, 1, 0.3, 1] }}
-              >
-                <GlassCard className="!p-8 flex flex-col h-full">
-                  <Icon className="w-10 h-10 text-primary mb-6" />
-                  <h3 className="font-headline-md text-[24px] mb-3">{service.title}</h3>
-                  <p className="text-on-surface-variant text-sm mb-6 flex-grow leading-relaxed">{service.desc}</p>
-                  <div className="pt-4 border-t border-white/10 flex flex-col gap-2">
-                    {service.details.map((detail, idx) => (
-                      <div key={idx} className="flex items-center gap-2 text-xs text-on-surface-variant font-medium">
-                        <span className="w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0"></span>
-                        <span>{detail}</span>
-                      </div>
-                    ))}
-                  </div>
-                </GlassCard>
-              </motion.div>
-            );
-          })}
+    <div className="bg-[#ffffff] text-[#1d1d1f] pt-28 pb-24 px-6 md:px-12 w-full min-h-screen">
+      <div className="max-w-[980px] mx-auto">
+        {/* Page Header */}
+        <div className="mb-20 text-center md:text-left">
+          <span className="text-[12px] font-semibold tracking-[0.1em] text-[#7a7a7a] uppercase mb-3 block">
+            Capabilities
+          </span>
+          <h1 className="text-[34px] sm:text-[48px] md:text-[56px] font-semibold leading-[1.07] tracking-[-0.02em] text-[#1d1d1f] mb-6">
+            Development Services.
+          </h1>
+          <p className="text-[17px] md:text-[21px] text-[#7a7a7a] leading-[1.47] max-w-2xl">
+            BeyondWebCo offers a focused suite of digital engineering and design services crafted to help ambitious businesses scale online.
+          </p>
         </div>
-      </div>
 
-      {/* Process Highlight */}
-      <div className="bg-surface-container-low rounded-3xl p-12 md:p-16 border border-white/10 mb-24">
-        <h2 className="font-display-lg text-[36px] md:text-[48px] mb-6">
-          Why Choose BeyondWebCo Services?
-        </h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div>
-            <h3 className="font-bold text-xl mb-3 text-primary">Custom Code, No Bloat</h3>
-            <p className="text-on-surface-variant text-sm leading-relaxed">
-              We avoid heavy bloated website builders. Everything is hand-crafted with modern Next.js and clean CSS for maximum performance and security.
-            </p>
-          </div>
-          <div>
-            <h3 className="font-bold text-xl mb-3 text-primary">Conversion Driven UI</h3>
-            <p className="text-on-surface-variant text-sm leading-relaxed">
-              We design with clarity, clear call-to-action buttons, intuitive navigation, and micro-interactions that turn visitors into paying clients.
-            </p>
-          </div>
-          <div>
-            <h3 className="font-bold text-xl mb-3 text-primary">Ongoing Maintenance</h3>
-            <p className="text-on-surface-variant text-sm leading-relaxed">
-              We don't leave you stranded after launch. We provide continuous support, updates, speed monitoring, and feature enhancements.
-            </p>
+        {/* Services Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-24">
+          {servicesList.map((service, idx) => (
+            <div
+              key={idx}
+              className="bg-[#f5f5f7] p-8 rounded-[18px] border border-[#e0e0e0] flex flex-col justify-between"
+            >
+              <div>
+                <span className="text-[12px] font-mono text-[#0066cc] font-semibold block mb-2">
+                  0{idx + 1}
+                </span>
+                <h3 className="text-[21px] font-semibold text-[#1d1d1f] mb-3">
+                  {service.title}
+                </h3>
+                <p className="text-[15px] text-[#7a7a7a] leading-relaxed mb-6">
+                  {service.desc}
+                </p>
+              </div>
+
+              <div className="pt-4 border-t border-[#e0e0e0] flex flex-wrap gap-2">
+                {service.details.map((detail, dIdx) => (
+                  <span
+                    key={dIdx}
+                    className="text-[12px] font-mono text-[#1d1d1f] bg-white px-2.5 py-1 rounded-[5px] border border-[#e0e0e0]"
+                  >
+                    {detail}
+                  </span>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Why Choose Us */}
+        <div className="bg-[#272729] text-white p-12 rounded-[18px] mb-20">
+          <h2 className="text-[28px] md:text-[34px] font-semibold mb-8">
+            Why BeyondWebCo Engineering?
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div>
+              <h3 className="text-[17px] font-semibold text-white mb-2">Custom Code, No Bloat</h3>
+              <p className="text-[14px] text-[#cccccc] leading-relaxed">
+                Everything is hand-crafted with Next.js and clean CSS for speed, accessibility, and enterprise security.
+              </p>
+            </div>
+            <div>
+              <h3 className="text-[17px] font-semibold text-white mb-2">Conversion Driven UI</h3>
+              <p className="text-[14px] text-[#cccccc] leading-relaxed">
+                Designed with clear editorial visual hierarchy and intuitive user navigation.
+              </p>
+            </div>
+            <div>
+              <h3 className="text-[17px] font-semibold text-white mb-2">Ongoing Optimization</h3>
+              <p className="text-[14px] text-[#cccccc] leading-relaxed">
+                {"We don't leave you stranded after launch. Continuous support and Core Web Vitals monitoring included."}
+              </p>
+            </div>
           </div>
         </div>
-      </div>
 
-      {/* CTA */}
-      <div className="text-center">
-        <h2 className="font-display-lg text-[36px] md:text-[56px] mb-6">Need a custom solution for your business?</h2>
-        <p className="text-on-surface-variant text-body-lg max-w-xl mx-auto mb-8">
-          Tell us about your project requirements and let's craft a custom proposal tailored to your goals.
-        </p>
-        <Link 
-          href="/contact" 
-          className="inline-block bg-primary text-black px-10 py-5 rounded-xl font-bold text-lg hover:scale-105 transition-transform"
-        >
-          Request a Quote
-        </Link>
+        {/* CTA */}
+        <div className="text-center pt-8">
+          <h2 className="text-[28px] md:text-[34px] font-semibold text-[#1d1d1f] mb-4">
+            Need a custom solution for your business?
+          </h2>
+          <p className="text-[17px] text-[#7a7a7a] max-w-lg mx-auto mb-8">
+            {"Tell us about your project requirements and let's craft a proposal tailored to your goals."}
+          </p>
+          <Button variant="primary" href="/contact">
+            Request a Quote
+          </Button>
+        </div>
       </div>
     </div>
   );

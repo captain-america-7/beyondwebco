@@ -1,112 +1,100 @@
-"use client";
-
-import { motion } from "framer-motion";
-import Image from "next/image";
-import Link from "next/link";
-import { ArrowUpRight } from "lucide-react";
+import { TextLink } from "@/components/ui/Button";
 
 const projects = [
   {
+    title: "Volta EV Platform",
+    category: "Electric Mobility & Tech Web App",
+    domain: "volta.beyondwebco.com",
+    description: "A high-performance digital platform built for next-generation electric mobility, featuring sub-second interactive load times and responsive design.",
+    url: "https://volta.beyondwebco.com/",
+    tags: ["Next.js", "React 19", "Edge CDN"],
+  },
+  {
     title: "Sri Lakshmi Automobiles",
-    description: "Modern Business Website",
-    image: "/projects/sri_lakshmi_automobiles.webp",
-    tags: ["Next.js", "React", "Responsive Design"],
-    width: 700,
-    height: 400
+    category: "Automotive Business & Service Portal",
+    domain: "sri-lakshmi-automobiles.vercel.app",
+    description: "Corporate website and service inquiry portal built for Sri Lakshmi Automobiles, providing high SEO visibility and streamlined customer interaction.",
+    url: "https://sri-lakshmi-automobiles.vercel.app/",
+    tags: ["Next.js", "TypeScript", "Tailwind CSS"],
   },
   {
-    title: "Pavani Studios",
-    description: "Photography Portfolio Website",
-    image: "/projects/pavani_studios.webp",
-    tags: ["React", "GSAP", "Responsive Design"],
-    width: 700,
-    height: 400
+    title: "Aura Luxe Interior Design",
+    category: "Luxury Design Studio Showcase",
+    domain: "aura-luxe-interior-design.vercel.app",
+    description: "An editorial portfolio showcase for a high-end interior design studio, crafted with spatial presentation and elegant typography.",
+    url: "https://aura-luxe-interior-design.vercel.app/",
+    tags: ["React", "Editorial UI", "Portfolio"],
   },
   {
-    title: "Dr. Varun Healthcare",
-    description: "Medical Clinic Website",
-    image: "/projects/dr_varun.webp",
-    tags: ["Next.js", "SEO", "Appointment Integration"],
-    width: 700,
-    height: 400
+    title: "Forenmed Advisory",
+    category: "Forensic & Medical Advisory Platform",
+    domain: "forenmed-advisory.vercel.app",
+    description: "A specialized professional consulting platform built for medical-legal advisory services, case scheduling, and client communication.",
+    url: "https://forenmed-advisory.vercel.app/",
+    tags: ["Next.js", "SEO", "Consulting Portal"],
   },
-  {
-    title: "Restaurant Website",
-    description: "Restaurant Landing Page",
-    image: "/projects/restaurant_website.webp",
-    tags: ["React", "Responsive Design"],
-    width: 700,
-    height: 400
-  },
-  {
-    title: "Portfolio Showcase",
-    description: "Personal Portfolio Platform",
-    image: "/projects/portfolio_website.webp",
-    tags: ["Next.js", "Framer Motion"],
-    width: 700,
-    height: 400
-  }
 ];
 
 export default function FeaturedWork() {
   return (
-    <section className="py-[160px] overflow-hidden bg-surface-container-low">
-      <div className="px-[24px] md:px-[80px] max-w-[1440px] mx-auto mb-16">
-        <motion.h2 
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.8, ease: [0.2, 1, 0.3, 1] }}
-          className="font-display-lg text-[48px] md:text-display-lg"
-        >
-          Selected Case Studies
-        </motion.h2>
-      </div>
-      
-      <div className="overflow-hidden flex w-full">
-        <div className="flex animate-marquee-slow w-max">
-          {[1, 2].map((i) => (
-            <div key={i} className="flex gap-[32px] pr-[32px] flex-shrink-0">
-              {projects.map((project, idx) => (
-                <div key={`${i}-${idx}`} className="w-[85vw] md:w-[700px] flex-shrink-0">
-                  <div className="glass-card rounded-xl overflow-hidden group">
-                    <div className="aspect-[16/9] relative overflow-hidden bg-surface-container-high">
-                      <Image 
-                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" 
-                        src={project.image}
-                        alt={`${project.title} - ${project.description}`}
-                        width={project.width}
-                        height={project.height}
-                        quality={75}
-                        sizes="(max-width: 768px) 85vw, 700px"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-60"></div>
-                    </div>
-                    <div className="p-8 relative z-10">
-                      <div className="flex justify-between items-start mb-4">
-                        <div>
-                          <h3 className="font-headline-md text-headline-md mb-2">{project.title}</h3>
-                          <p className="text-on-surface-variant">{project.description}</p>
-                        </div>
-                        <Link 
-                          href="/work" 
-                          aria-label={`View details for ${project.title}`}
-                          className="p-4 border border-white/10 rounded-full hover:bg-primary hover:text-on-primary-container transition-all"
-                        >
-                          <ArrowUpRight className="w-6 h-6" />
-                        </Link>
-                      </div>
-                      <div className="flex gap-2">
-                        {project.tags.map(tag => (
-                          <span key={tag} className="px-3 py-1 border border-outline-variant rounded-full text-xs font-bold">
-                            {tag}
-                          </span>
-                        ))}
-                      </div>
-                    </div>
-                  </div>
+    <section className="bg-[#272729] text-white py-24 px-6 md:px-12 w-full">
+      <div className="max-w-[1068px] mx-auto">
+        {/* Section Header */}
+        <div className="mb-16 text-center md:text-left">
+          <span className="text-[12px] font-semibold tracking-[0.1em] text-[#cccccc] uppercase mb-2 block">
+            Portfolio
+          </span>
+          <h2 className="text-[34px] md:text-[40px] font-semibold tracking-tight text-white mb-3">
+            Selected Work
+          </h2>
+          <p className="text-[17px] md:text-[21px] text-[#cccccc] max-w-2xl font-normal">
+            Digital experiences designed to perform, convert, and scale.
+          </p>
+        </div>
+
+        {/* Project Showcase Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {projects.map((project, idx) => (
+            <div
+              key={idx}
+              className="bg-[#1d1d1f] p-8 rounded-[18px] border border-white/10 flex flex-col justify-between"
+            >
+              <div>
+                <div className="flex justify-between items-center mb-4">
+                  <span className="text-[12px] text-[#2997ff] font-semibold uppercase tracking-wide">
+                    {project.category}
+                  </span>
+                  <span className="text-[11px] font-mono text-[#cccccc] bg-white/5 px-2.5 py-1 rounded-[5px] border border-white/10">
+                    {project.domain}
+                  </span>
                 </div>
-              ))}
+
+                <h3 className="text-[24px] font-semibold text-white mb-3">
+                  {project.title}
+                </h3>
+                <p className="text-[15px] text-[#cccccc] leading-relaxed mb-6">
+                  {project.description}
+                </p>
+              </div>
+
+              <div>
+                <div className="flex flex-wrap gap-2 mb-6">
+                  {project.tags.map((tag, tIdx) => (
+                    <span
+                      key={tIdx}
+                      className="text-[11px] font-mono text-[#cccccc] bg-[#272729] px-2.5 py-1 rounded-[5px]"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+
+                <div className="pt-4 border-t border-white/10 flex items-center justify-between">
+                  <TextLink href={project.url} external onDark className="text-[15px]">
+                    Visit Live Site →
+                  </TextLink>
+                </div>
+              </div>
             </div>
           ))}
         </div>

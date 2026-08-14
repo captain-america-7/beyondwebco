@@ -1,49 +1,64 @@
-import Link from "next/link";
+import { Button, TextLink } from "@/components/ui/Button";
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen flex flex-col justify-center items-center px-margin-mobile md:px-margin-desktop text-center overflow-hidden pt-32">
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-surface/50 to-surface -z-10" />
-      
-      <div className="flex flex-col items-center">
-        <span className="inline-flex items-center gap-2 px-4 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary font-label-caps text-label-caps mb-8">
-          <span className="relative flex h-2 w-2">
-            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
-            <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
-          </span>
-          AVAILABLE FOR NEW PROJECTS
+    <section className="bg-[#ffffff] text-[#1d1d1f] pt-28 pb-16 md:pt-36 md:pb-24 px-6 md:px-12 flex flex-col items-center text-center overflow-hidden">
+      <div className="max-w-[980px] mx-auto flex flex-col items-center">
+        {/* Subtle Category/Eyebrow */}
+        <span className="text-[12px] font-semibold tracking-[0.1em] text-[#7a7a7a] uppercase mb-4">
+          BeyondWebCo Studio
         </span>
-        
-        <h1 className="font-display-xl text-[48px] sm:text-[64px] md:text-[84px] leading-[1.1] max-w-5xl mx-auto mb-stack-lg font-bold">
-          We Build Websites That <span className="text-[#9D4EDD]">Grow Businesses.</span>
+
+        {/* Hero Title */}
+        <h1 className="font-semibold text-[34px] sm:text-[48px] md:text-[56px] leading-[1.07] tracking-[-0.02em] text-[#1d1d1f] max-w-4xl mx-auto mb-6">
+          We build digital experiences people remember.
         </h1>
-        
-        <p className="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto mb-12 leading-relaxed">
-          High-performance websites and digital products engineered for speed, scalability, SEO, and exceptional user experience.
+
+        {/* Subcopy */}
+        <p className="text-[17px] md:text-[21px] leading-[1.47] text-[#7a7a7a] max-w-2xl mx-auto mb-8 font-normal">
+          High-performance websites and custom digital products engineered for ambitious businesses.
         </p>
-        
-        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center w-full sm:w-auto">
-          <Link href="/contact" className="w-full sm:w-auto px-10 py-4 bg-primary text-black font-bold rounded-xl text-lg hover:scale-105 transition-transform shadow-lg shadow-primary/20">
+
+        {/* CTAs */}
+        <div className="flex flex-col sm:flex-row gap-4 items-center justify-center mb-16">
+          <Button variant="primary" href="/contact">
             Start a Project
-          </Link>
-          <Link href="/work" className="w-full sm:w-auto px-10 py-4 border border-outline-variant hover:bg-white/5 font-bold rounded-xl text-lg transition-all">
-            View Our Work
-          </Link>
+          </Button>
+          <Button variant="secondary-pill" href="/work">
+            View Selected Work
+          </Button>
         </div>
-      </div>
-      
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-gutter mt-24 w-full max-w-4xl">
-        <div className="flex flex-col items-center">
-          <span className="font-display-lg text-display-lg text-[#9D4EDD] font-bold">30+</span>
-          <span className="text-on-surface-variant font-label-caps text-label-caps font-semibold">PROJECTS DELIVERED</span>
-        </div>
-        <div className="flex flex-col items-center">
-          <span className="font-display-lg text-display-lg text-[#9D4EDD] font-bold">100%</span>
-          <span className="text-on-surface-variant font-label-caps text-label-caps font-semibold">CLIENT SATISFACTION</span>
-        </div>
-        <div className="flex flex-col items-center">
-          <span className="font-display-lg text-display-lg text-[#9D4EDD] font-bold">2+</span>
-          <span className="text-on-surface-variant font-label-caps text-label-caps font-semibold">YEARS OF EXPERIENCE</span>
+
+        {/* Studio Digital Showcase Container (Typography & Live Product Focus) */}
+        <div className="w-full max-w-[1068px] mx-auto mt-4 rounded-2xl overflow-hidden bg-[#1d1d1f] text-white border border-[#333333] p-8 md:p-12 text-left shadow-2xl">
+          <div className="flex flex-col md:flex-row justify-between items-start md:items-center border-b border-white/10 pb-6 mb-8 gap-4">
+            <div>
+              <span className="text-[12px] font-mono text-[#2997ff] uppercase tracking-wider">
+                Featured Flagship Platform
+              </span>
+              <h2 className="text-[28px] md:text-[36px] font-semibold text-white mt-1">
+                Volta EV Platform
+              </h2>
+            </div>
+            <TextLink href="https://volta.beyondwebco.com/" external onDark className="text-[15px]">
+              Visit Live Site →
+            </TextLink>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-[14px]">
+            <div className="bg-[#272729] p-6 rounded-xl border border-white/5">
+              <span className="text-[11px] font-mono text-[#cccccc] uppercase block mb-1">Architecture</span>
+              <p className="text-white font-medium">Next.js & Edge Infrastructure</p>
+            </div>
+            <div className="bg-[#272729] p-6 rounded-xl border border-white/5">
+              <span className="text-[11px] font-mono text-[#cccccc] uppercase block mb-1">Speed Index</span>
+              <p className="text-white font-medium">Sub-second Core Web Vitals</p>
+            </div>
+            <div className="bg-[#272729] p-6 rounded-xl border border-white/5">
+              <span className="text-[11px] font-mono text-[#cccccc] uppercase block mb-1">Domain</span>
+              <p className="text-[#2997ff] font-mono truncate">volta.beyondwebco.com</p>
+            </div>
+          </div>
         </div>
       </div>
     </section>

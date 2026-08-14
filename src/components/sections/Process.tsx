@@ -1,44 +1,60 @@
-"use client";
-
-import { motion } from "framer-motion";
-
 const steps = [
-  { num: "01", title: "Discovery & Strategy", desc: "We analyze your business goals, target audience, and technical requirements to form a comprehensive blueprint." },
-  { num: "02", title: "Design & Development Planning", desc: "Planning the UI/UX visual language and system architecture to ensure scalability and a premium user experience." },
-  { num: "03", title: "Engineering", desc: "Our senior developers build your product using modern, high-performance tech stacks with clean, maintainable code." },
-  { num: "04", title: "Launch & Scale", desc: "Rigorous testing, optimized deployment, and ongoing support to ensure your product grows with your business." }
+  {
+    num: "01",
+    title: "Understand",
+    desc: "We analyze your business objectives, technical scope, target audience, and market position to establish a clear architectural plan.",
+  },
+  {
+    num: "02",
+    title: "Design",
+    desc: "Crafting a clean, photography-first visual system with editorial typography, minimal chrome, and intuitive navigation.",
+  },
+  {
+    num: "03",
+    title: "Build",
+    desc: "Engineering high-speed React & Next.js components with clean code, zero unnecessary dependencies, and complete SEO coverage.",
+  },
+  {
+    num: "04",
+    title: "Launch",
+    desc: "Comprehensive Core Web Vitals audit, CDN deployment, continuous monitoring, and ongoing optimization.",
+  },
 ];
 
 export default function Process() {
   return (
-    <section className="py-[160px] px-margin-mobile md:px-margin-desktop max-w-[1440px] mx-auto bg-surface-container-low rounded-[32px] overflow-hidden">
-      <div className="text-center mb-20">
-        <motion.h2 
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.8, ease: [0.2, 1, 0.3, 1] }}
-          className="font-display-lg text-[48px] md:text-[72px]"
-        >
-          Our Process
-        </motion.h2>
-      </div>
-      
-      <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-        {steps.map((step, index) => (
-          <motion.div
-            key={index}
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.8, delay: index * 0.1, ease: [0.2, 1, 0.3, 1] }}
-            className="flex flex-col relative"
-          >
-            <span className="font-display-lg text-[80px] text-primary/60 dark:text-primary/70 leading-none mb-4 font-black">{step.num}</span>
-            <h3 className="font-headline-md text-[24px] mb-4">{step.title}</h3>
-            <p className="text-on-surface-variant">{step.desc}</p>
-          </motion.div>
-        ))}
+    <section className="bg-[#ffffff] text-[#1d1d1f] py-24 px-6 md:px-12 w-full border-t border-[#e0e0e0]">
+      <div className="max-w-[1068px] mx-auto">
+        <div className="mb-16">
+          <span className="text-[12px] font-semibold tracking-[0.1em] text-[#7a7a7a] uppercase mb-2 block">
+            Methodology
+          </span>
+          <h2 className="text-[34px] md:text-[40px] font-semibold tracking-tight text-[#1d1d1f] mb-3">
+            How we build.
+          </h2>
+          <p className="text-[17px] md:text-[21px] text-[#7a7a7a] max-w-xl">
+            A disciplined engineering process designed for precision and predictability.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+          {steps.map((step, idx) => (
+            <div
+              key={idx}
+              className="flex flex-col border-t border-[#e0e0e0] pt-6"
+            >
+              <span className="text-[14px] font-mono text-[#0066cc] font-semibold mb-2">
+                {step.num}
+              </span>
+              <h3 className="text-[21px] font-semibold text-[#1d1d1f] mb-3">
+                {step.title}
+              </h3>
+              <p className="text-[14px] text-[#7a7a7a] leading-relaxed">
+                {step.desc}
+              </p>
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );

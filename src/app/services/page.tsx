@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Web Design & Development Services | BeyondWebCo",
     description: "Explore high-performance web development, custom Next.js applications, mobile apps, SaaS platforms, and UI/UX engineering services by BeyondWebCo.",
-    images: ["/og-image.png"],
+    images: ["/og-image.webp"],
   },
 };
 
