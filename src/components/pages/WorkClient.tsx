@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import { Button, TextLink } from "@/components/ui/Button";
 
 type ProjectCategory =
@@ -22,9 +23,46 @@ interface Project {
   slug?: string;
   tags: string[];
   services: string[];
+  image?: string;
 }
 
 const allProjects: Project[] = [
+  {
+    title: "Aura Luxe Interior Design",
+    category: "Creative",
+    industry: "Architecture & Interior Design",
+    domain: "aura-luxe-interior-design.vercel.app",
+    description: "Ultra-luxury residential and commercial architecture showcase crafted with spatial presentation and elegant typography.",
+    url: "https://aura-luxe-interior-design.vercel.app/",
+    slug: "aura-luxe",
+    tags: ["React", "Architectural UI", "Micro-Animations"],
+    services: ["Brand Experience", "Web Design", "Portfolio Showcase"],
+    image: "/auraluxe.png",
+  },
+  {
+    title: "Nactura Spices Premium",
+    category: "E-commerce",
+    industry: "Food & Beverage Retail",
+    domain: "nacturaspices.beyondwebco.com",
+    description: "A premium spices and dry-fruits brand centred on natural, handpicked Idukki products.",
+    url: "https://nacturaspices.beyondwebco.com",
+    slug: "nactura-spices",
+    tags: ["Next.js", "Shopify Integration", "Tailwind CSS"],
+    services: ["E-commerce Platform", "Brand Design", "Payment Gateway"],
+    image: "/nactura.png",
+  },
+  {
+    title: "Patte Patries",
+    category: "E-commerce",
+    industry: "Handcrafted Bakery & Desserts",
+    domain: "patte-patries.vercel.app",
+    description: "Small-batch, handcrafted eggless cakes, cookies, chocolates, and gourmet desserts web shop.",
+    url: "https://patte-patries.vercel.app",
+    slug: "patte-patries",
+    tags: ["React", "Custom Order Flow", "Fast Load"],
+    services: ["Gourmet Storefront", "Menu UI", "Local Ordering"],
+    image: "/pattepastries.png",
+  },
   {
     title: "Volta EV Platform",
     category: "Digital Platforms",
@@ -59,17 +97,6 @@ const allProjects: Project[] = [
     services: ["Portfolio Design", "High-Res Image Pipeline", "Responsive UI"],
   },
   {
-    title: "Aura Luxe Interior Design",
-    category: "Creative",
-    industry: "Architecture & Interior Design",
-    domain: "aura-luxe-interior-design.vercel.app",
-    description: "Ultra-luxury residential and commercial architecture showcase crafted with spatial presentation and elegant typography.",
-    url: "https://aura-luxe-interior-design.vercel.app/",
-    slug: "aura-luxe",
-    tags: ["React", "Architectural UI", "Micro-Animations"],
-    services: ["Brand Experience", "Web Design", "Portfolio Showcase"],
-  },
-  {
     title: "Forenmed Advisory",
     category: "Healthcare",
     industry: "Medicolegal Consultancy",
@@ -99,26 +126,6 @@ const allProjects: Project[] = [
     url: "https://houseofnayu.vercel.app",
     tags: ["Next.js", "E-commerce UI", "High-Res Gallery"],
     services: ["Digital Storefront", "Product Showcase", "Mobile Optimization"],
-  },
-  {
-    title: "Nactura Spices Premium",
-    category: "E-commerce",
-    industry: "Food & Beverage Retail",
-    domain: "nacturaspices.beyondwebco.com",
-    description: "A premium spices and dry-fruits brand centred on natural, handpicked Idukki products.",
-    url: "https://nacturaspices.beyondwebco.com",
-    tags: ["Next.js", "Shopify Integration", "Tailwind CSS"],
-    services: ["E-commerce Platform", "Brand Design", "Payment Gateway"],
-  },
-  {
-    title: "Patte Patries",
-    category: "E-commerce",
-    industry: "Handcrafted Bakery & Desserts",
-    domain: "patte-patries.vercel.app",
-    description: "Small-batch, handcrafted eggless cakes, cookies, chocolates, and gourmet desserts web shop.",
-    url: "https://patte-patries.vercel.app",
-    tags: ["React", "Custom Order Flow", "Fast Load"],
-    services: ["Gourmet Storefront", "Menu UI", "Local Ordering"],
   },
   {
     title: "Makhana Healthy Snacks",
@@ -311,6 +318,18 @@ export default function WorkClient() {
               className="bg-[#f5f5f7] p-8 rounded-[18px] border border-[#e0e0e0] flex flex-col justify-between"
             >
               <div>
+                {project.image ? (
+                  <div className="relative aspect-[16/10] w-full rounded-[12px] overflow-hidden mb-6 border border-[#e0e0e0] shadow-[0_4px_20px_rgba(0,0,0,0.08)]">
+                    <Image
+                      src={project.image}
+                      alt={project.title}
+                      fill
+                      sizes="(max-width: 768px) 100vw, 50vw"
+                      className="object-cover hover:scale-105 transition-transform duration-500"
+                    />
+                  </div>
+                ) : null}
+
                 <div className="flex flex-wrap justify-between items-center gap-2 mb-4">
                   <span className="text-[12px] text-[#0066cc] font-semibold tracking-wide uppercase">
                     {project.industry}

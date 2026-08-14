@@ -1,32 +1,47 @@
+import Image from "next/image";
 import { TextLink } from "@/components/ui/Button";
 
-const selectedHomepageProjects = [
+interface SelectedProject {
+  title: string;
+  category: string;
+  domain: string;
+  description: string;
+  internalUrl: string;
+  liveUrl: string;
+  tags: string[];
+  image?: string;
+}
+
+const selectedHomepageProjects: SelectedProject[] = [
   {
-    title: "Volta EV Platform",
-    category: "Electric Mobility & Technology",
-    domain: "volta.beyondwebco.com",
-    description: "A high-performance digital platform created for next-generation electric mobility.",
-    internalUrl: "/work/volta",
-    liveUrl: "https://volta.beyondwebco.com/",
-    tags: ["Next.js", "React", "Edge Infrastructure"],
+    title: "Aura Luxe Interior Design",
+    category: "Architecture & Interior Design",
+    domain: "aura-luxe-interior-design.vercel.app",
+    description: "Ultra-luxury residential and commercial architecture showcase crafted with spatial presentation and elegant typography.",
+    internalUrl: "/work/aura-luxe",
+    liveUrl: "https://aura-luxe-interior-design.vercel.app/",
+    tags: ["React", "Architectural UI", "Micro-Animations"],
+    image: "/auraluxe.png",
   },
   {
-    title: "Sri Lakshmi Automobiles",
-    category: "Automotive Business Platform",
-    domain: "sri-lakshmi-automobiles.vercel.app",
-    description: "A modern corporate and customer inquiry platform designed for visibility, speed, and conversion.",
-    internalUrl: "/work/sri-lakshmi-automobiles",
-    liveUrl: "https://sri-lakshmi-automobiles.vercel.app/",
-    tags: ["Next.js", "TypeScript", "Tailwind CSS"],
+    title: "Nactura Spices Premium",
+    category: "Food & Beverage Retail",
+    domain: "nacturaspices.beyondwebco.com",
+    description: "A premium spices and dry-fruits brand centred on natural, handpicked Idukki products.",
+    internalUrl: "/work/nactura-spices",
+    liveUrl: "https://nacturaspices.beyondwebco.com",
+    tags: ["Next.js", "E-commerce UI", "Tailwind CSS"],
+    image: "/nactura.png",
   },
   {
-    title: "Pavani Studios",
-    category: "Photography & Creative Studio",
-    domain: "pavanistudios.shop",
-    description: "A premium digital experience designed around photography, storytelling, and visual presentation.",
-    internalUrl: "/work/pavani-studios",
-    liveUrl: "https://pavanistudios.shop",
-    tags: ["React", "Editorial UI", "Showcase"],
+    title: "Patte Patries",
+    category: "Handcrafted Bakery & Desserts",
+    domain: "patte-patries.vercel.app",
+    description: "Small-batch, handcrafted eggless cakes, cookies, chocolates, and gourmet desserts web shop.",
+    internalUrl: "/work/patte-patries",
+    liveUrl: "https://patte-patries.vercel.app",
+    tags: ["React", "Custom Order Flow", "Fast Load"],
+    image: "/pattepastries.png",
   },
 ];
 
@@ -52,25 +67,37 @@ export default function FeaturedWork() {
           {selectedHomepageProjects.map((project, idx) => (
             <div
               key={idx}
-              className="bg-[#1d1d1f] p-8 rounded-[18px] border border-white/10 flex flex-col justify-between"
+              className="bg-[#1d1d1f] p-6 rounded-[18px] border border-white/10 flex flex-col justify-between"
             >
               <div>
-                <div className="flex justify-between items-center mb-4">
+                {project.image ? (
+                  <div className="relative aspect-[16/10] w-full rounded-[12px] overflow-hidden mb-6 border border-white/10 shadow-[0_4px_25px_rgba(0,0,0,0.3)]">
+                    <Image
+                      src={project.image}
+                      alt={project.title}
+                      fill
+                      sizes="(max-width: 768px) 100vw, 33vw"
+                      className="object-cover hover:scale-105 transition-transform duration-500"
+                    />
+                  </div>
+                ) : null}
+
+                <div className="flex justify-between items-center mb-3">
                   <span className="text-[12px] text-[#2997ff] font-semibold uppercase tracking-wide">
                     {project.category}
                   </span>
                 </div>
 
-                <h3 className="text-[24px] font-semibold text-white mb-3">
+                <h3 className="text-[22px] font-semibold text-white mb-2">
                   {project.title}
                 </h3>
-                <p className="text-[15px] text-[#cccccc] leading-relaxed mb-6 font-normal">
+                <p className="text-[14px] text-[#cccccc] leading-relaxed mb-6 font-normal">
                   {project.description}
                 </p>
               </div>
 
               <div>
-                <div className="flex flex-wrap gap-2 mb-6">
+                <div className="flex flex-wrap gap-1.5 mb-6">
                   {project.tags.map((tag, tIdx) => (
                     <span
                       key={tIdx}

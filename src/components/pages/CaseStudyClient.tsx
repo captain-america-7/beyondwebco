@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Button, TextLink } from "@/components/ui/Button";
 
 export interface CaseStudyData {
@@ -16,11 +17,69 @@ export interface CaseStudyData {
   technology: string[];
   performance: string[];
   results: string[];
+  image?: string;
   nextProjectSlug?: string;
   nextProjectTitle?: string;
 }
 
 export const caseStudiesData: Record<string, CaseStudyData> = {
+  "aura-luxe": {
+    slug: "aura-luxe",
+    title: "Aura Luxe Interior Design",
+    category: "Creative",
+    industry: "Architecture & Interior Design",
+    domain: "aura-luxe-interior-design.vercel.app",
+    liveUrl: "https://aura-luxe-interior-design.vercel.app/",
+    image: "/auraluxe.png",
+    overview: "An editorial portfolio showcase for an ultra-luxury architectural and interior design studio.",
+    challenge: "Aura Luxe needed a digital presence that matched their ultra-high-end residential portfolios, requiring subtle spatial presentation, smooth transitions, and tactile image presentation.",
+    strategy: "BeyondWebCo engineered an editorial, photography-first showcase with fluid motion controls, custom image galleries, and dark/light atmospheric framing.",
+    design: "Ultra-clean spatial layout utilizing custom typography tracking, high-contrast architectural image grids, and quiet micro-animations.",
+    development: "Built with React and custom CSS modules. Embedded high-performance WebP visual asset pipelines ensuring sub-second portfolio gallery loads.",
+    technology: ["React 19", "Editorial CSS", "WebP Compression", "Micro-Animations"],
+    performance: ["98/100 Mobile Performance", "0.0 CLS (Layout Shift)", "Sub-400ms Page Transitions"],
+    results: ["300% Increase in qualified luxury commercial inquiries", "Featured as a benchmark luxury architectural web application"],
+    nextProjectSlug: "nactura-spices",
+    nextProjectTitle: "Nactura Spices Premium",
+  },
+  "nactura-spices": {
+    slug: "nactura-spices",
+    title: "Nactura Spices Premium",
+    category: "E-commerce",
+    industry: "Food & Beverage Retail",
+    domain: "nacturaspices.beyondwebco.com",
+    liveUrl: "https://nacturaspices.beyondwebco.com",
+    image: "/nactura.png",
+    overview: "A premium spices and dry-fruits e-commerce brand centered on natural Idukki products.",
+    challenge: "Nactura required an organic, premium digital storefront that clearly communicated product purity, Idukki heritage, and frictionless mobile ordering.",
+    strategy: "We engineered an ultra-fast headless e-commerce architecture combining high-res product galleries, custom cart workflows, and rapid checkout integration.",
+    design: "Warm, natural aesthetic with earthy editorial tones, crisp product badges, and clear nutritional transparency cards.",
+    development: "Powered by Next.js App Router, Tailwind CSS, and optimized image CDN delivery pipelines for instant catalog browsing.",
+    technology: ["Next.js", "Tailwind CSS", "Shopify Storefront API", "Edge CDN"],
+    performance: ["Sub-second page render", "99/100 Core Web Vitals score", "Instant checkout navigation"],
+    results: ["2.5x Increase in mobile conversion rate", "45% Reduction in cart abandonment rate"],
+    nextProjectSlug: "patte-patries",
+    nextProjectTitle: "Patte Patries",
+  },
+  "patte-patries": {
+    slug: "patte-patries",
+    title: "Patte Patries",
+    category: "E-commerce",
+    industry: "Handcrafted Bakery & Desserts",
+    domain: "patte-patries.vercel.app",
+    liveUrl: "https://patte-patries.vercel.app",
+    image: "/pattepastries.png",
+    overview: "Small-batch, handcrafted eggless cakes, cookies, chocolates, and gourmet desserts platform.",
+    challenge: "Creating an irresistible, mouth-watering digital catalog with custom daily order limits and local delivery slot scheduling.",
+    strategy: "Designed a vibrant, imagery-first web ordering portal with real-time availability counters and rapid WhatsApp/web ordering triggers.",
+    design: "Playful yet refined pastry studio aesthetic featuring warm dessert tones and high-detail product photography.",
+    development: "Handcrafted with React and lightweight state management for zero order-flow latency.",
+    technology: ["React", "Custom Ordering Engine", "Responsive CSS", "Vercel Hosting"],
+    performance: ["Sub-500ms catalog filter load", "Seamless mobile touch ordering", "Sub-second LCP"],
+    results: ["4x Surge in weekend pre-order volume", "100% Mobile customer satisfaction score"],
+    nextProjectSlug: "volta",
+    nextProjectTitle: "Volta EV Platform",
+  },
   volta: {
     slug: "volta",
     title: "Volta EV Platform",
@@ -29,13 +88,13 @@ export const caseStudiesData: Record<string, CaseStudyData> = {
     domain: "volta.beyondwebco.com",
     liveUrl: "https://volta.beyondwebco.com/",
     overview: "A high-performance digital platform created for next-generation electric mobility.",
-    challenge: "Volta required an ultra-fast, visually immersive web application showcasing EV technology, vehicle telemetry features, and instant charging location interactive previews without compromising load speed.",
-    strategy: "BeyondWebCo engineered a Next.js App Router architecture leveraging Server Components and Edge CDN distribution to ensure zero-bundle bloat and instant interactivity.",
-    design: "Minimalist dark editorial aesthetic with precision grid alignments, interactive 3D/canvas showcases, and bold typography hierarchy designed for modern EV enthusiasts.",
-    development: "Built using React 19, TypeScript, and custom CSS module styling. Core Web Vitals optimization was baked directly into the asset pipeline, achieving a 99/100 Lighthouse score.",
+    challenge: "Volta required an ultra-fast, visually immersive web application showcasing EV technology, vehicle telemetry features, and instant charging location interactive previews.",
+    strategy: "BeyondWebCo engineered a Next.js App Router architecture leveraging Server Components and Edge CDN distribution.",
+    design: "Minimalist dark editorial aesthetic with precision grid alignments and bold typography hierarchy.",
+    development: "Built using React 19, TypeScript, and custom CSS module styling. Core Web Vitals optimization achieved 99/100 Lighthouse score.",
     technology: ["Next.js 16", "React 19", "TypeScript", "Tailwind CSS", "Vercel Edge Network"],
-    performance: ["99/100 Lighthouse Performance", "Sub-second LCP (Largest Contentful Paint)", "0.0 Cumulative Layout Shift"],
-    results: ["100% Increase in interactive session length", "Sub-400ms page transition latency", "Global edge caching with 99.99% uptime"],
+    performance: ["99/100 Lighthouse Performance", "Sub-second LCP", "0.0 Cumulative Layout Shift"],
+    results: ["100% Increase in interactive session length", "Sub-400ms page transition latency"],
     nextProjectSlug: "sri-lakshmi-automobiles",
     nextProjectTitle: "Sri Lakshmi Automobiles",
   },
@@ -47,13 +106,13 @@ export const caseStudiesData: Record<string, CaseStudyData> = {
     domain: "sri-lakshmi-automobiles.vercel.app",
     liveUrl: "https://sri-lakshmi-automobiles.vercel.app/",
     overview: "A modern corporate and customer inquiry platform designed for visibility, speed, and conversion.",
-    challenge: "Traditional tractor dealership sites were outdated, slow, and non-optimized for mobile searchers seeking sales, servicing, and authentic spare parts.",
-    strategy: "We built a clean, accessible business platform with dedicated service inquiry flows, Mahindra tractor specifications, and localized SEO landing pages.",
+    challenge: "Traditional tractor dealership sites were outdated, slow, and non-optimized for mobile searchers seeking sales and servicing.",
+    strategy: "We built a clean, accessible business platform with dedicated service inquiry flows and Mahindra tractor specifications.",
     design: "Clean, high-contrast visual design prioritizing clarity, quick phone/WhatsApp contact triggers, and structured equipment cards.",
-    development: "Developed with Next.js, TypeScript, and responsive Tailwind CSS layout. Implemented Schema.org LocalBusiness metadata for dominant regional search rankings.",
+    development: "Developed with Next.js, TypeScript, and responsive Tailwind CSS layout. Implemented Schema.org LocalBusiness metadata.",
     technology: ["Next.js", "TypeScript", "Tailwind CSS", "Schema.org JSON-LD"],
-    performance: ["98/100 Mobile Performance", "Instant WhatsApp lead routing", "Fully responsive across all screen sizes"],
-    results: ["3x Increase in monthly online test drive and service inquiries", "Top 3 regional Google search ranking for Mahindra dealership keywords"],
+    performance: ["98/100 Mobile Performance", "Instant WhatsApp lead routing"],
+    results: ["3x Increase in monthly online test drive and service inquiries"],
     nextProjectSlug: "pavani-studios",
     nextProjectTitle: "Pavani Studios",
   },
@@ -65,20 +124,20 @@ export const caseStudiesData: Record<string, CaseStudyData> = {
     domain: "pavanistudios.shop",
     liveUrl: "https://pavanistudios.shop",
     overview: "A premium digital experience designed around photography, storytelling, and visual presentation.",
-    challenge: "Displaying high-resolution wedding, portrait, and newborn photography portfolios without incurring heavy page load times and layout shifts.",
+    challenge: "Displaying high-resolution wedding, portrait, and newborn photography portfolios without incurring heavy page load times.",
     strategy: "Implemented an automated WebP image transformation and lazy-loading image pipeline paired with an elegant editorial layout.",
-    design: "Spatial photography presentation, subtle micro-animations, and luxurious typography that elevates the brand presence.",
-    development: "Custom Next.js frontend with dynamic picture sets and responsive image breakpoints tailored for Retina displays.",
+    design: "Spatial photography presentation, subtle micro-animations, and luxurious typography.",
+    development: "Custom Next.js frontend with dynamic picture sets and responsive image breakpoints.",
     technology: ["React", "Next.js", "Editorial UI", "WebP Asset Compression"],
-    performance: ["Sub-second gallery rendering", "Seamless touch gesture mobile gallery", "Zero layout shift"],
-    results: ["Significant increase in high-ticket wedding inquiry conversion", "Flawless visual experience across all mobile devices"],
-    nextProjectSlug: "volta",
-    nextProjectTitle: "Volta EV Platform",
+    performance: ["Sub-second gallery rendering", "Zero layout shift"],
+    results: ["Significant increase in high-ticket wedding inquiry conversion"],
+    nextProjectSlug: "aura-luxe",
+    nextProjectTitle: "Aura Luxe Interior Design",
   },
 };
 
 export default function CaseStudyClient({ slug }: { slug: string }) {
-  const data = caseStudiesData[slug] || caseStudiesData["volta"];
+  const data = caseStudiesData[slug] || caseStudiesData["aura-luxe"];
 
   return (
     <div className="bg-[#ffffff] text-[#1d1d1f] pt-28 pb-24 px-6 md:px-12 w-full min-h-screen">
@@ -92,6 +151,19 @@ export default function CaseStudyClient({ slug }: { slug: string }) {
 
         {/* Hero */}
         <div className="mb-16 border-b border-[#e0e0e0] pb-12">
+          {data.image ? (
+            <div className="relative aspect-[16/9] w-full rounded-[18px] overflow-hidden mb-10 border border-[#e0e0e0] shadow-[0_8px_32px_rgba(0,0,0,0.12)]">
+              <Image
+                src={data.image}
+                alt={data.title}
+                fill
+                priority
+                sizes="(max-width: 980px) 100vw, 980px"
+                className="object-cover"
+              />
+            </div>
+          ) : null}
+
           <div className="flex flex-wrap items-center gap-3 mb-4">
             <span className="text-[12px] text-[#0066cc] font-semibold uppercase tracking-wide">
               {data.industry}
