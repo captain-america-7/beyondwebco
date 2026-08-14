@@ -319,13 +319,13 @@ export default function WorkClient() {
             >
               <div>
                 {project.image ? (
-                  <div className="relative aspect-[16/10] w-full rounded-[12px] overflow-hidden mb-6 bg-[#14121b] border border-[#e0e0e0] shadow-[0_4px_20px_rgba(0,0,0,0.08)]">
+                  <div className="relative aspect-[16/9] w-full rounded-[12px] overflow-hidden mb-6 bg-[#14121b] border border-[#e0e0e0] shadow-[0_4px_20px_rgba(0,0,0,0.08)]">
                     <Image
                       src={project.image}
                       alt={project.title}
                       fill
                       sizes="(max-width: 768px) 100vw, 50vw"
-                      className="object-contain hover:scale-105 transition-transform duration-500 p-2"
+                      className="object-contain w-full h-full hover:scale-105 transition-transform duration-500 p-1.5"
                     />
                   </div>
                 ) : null}
