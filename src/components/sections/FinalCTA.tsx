@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/Button";
 
 export default function FinalCTA() {
   return (
-    <section className="bg-[#252527] text-white py-28 px-6 md:px-12 w-full text-center flex flex-col items-center justify-center">
+    <section className="bg-[#14121b] text-white py-28 px-6 md:px-12 w-full text-center flex flex-col items-center justify-center border-t border-white/10">
       <div className="max-w-[800px] mx-auto flex flex-col items-center">
         <span className="text-[12px] font-semibold tracking-[0.1em] text-[#cccccc] uppercase mb-4">
           START A PROJECT

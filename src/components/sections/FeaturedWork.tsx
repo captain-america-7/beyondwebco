@@ -32,7 +32,7 @@ const selectedHomepageProjects = [
 
 export default function FeaturedWork() {
   return (
-    <section className="bg-[#272729] text-white py-24 px-6 md:px-12 w-full">
+    <section className="bg-[#2a2a2c] text-white py-24 px-6 md:px-12 w-full border-t border-white/10">
       <div className="max-w-[1068px] mx-auto">
         {/* Section Header */}
         <div className="mb-16 text-center md:text-left">
@@ -64,7 +64,7 @@ export default function FeaturedWork() {
                 <h3 className="text-[24px] font-semibold text-white mb-3">
                   {project.title}
                 </h3>
-                <p className="text-[15px] text-[#cccccc] leading-relaxed mb-6">
+                <p className="text-[15px] text-[#cccccc] leading-relaxed mb-6 font-normal">
                   {project.description}
                 </p>
               </div>

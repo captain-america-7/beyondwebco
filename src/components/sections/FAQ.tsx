@@ -19,7 +19,7 @@ const faqs = [
 
 export default function FAQ() {
   return (
-    <section className="bg-[#ffffff] text-[#1d1d1f] py-24 px-6 md:px-12 w-full border-t border-[#e0e0e0]">
+    <section className="bg-[#f5f5f7] text-[#1d1d1f] py-24 px-6 md:px-12 w-full border-t border-[#e0e0e0]">
       <div className="max-w-[1068px] mx-auto grid grid-cols-1 md:grid-cols-12 gap-12">
         <div className="md:col-span-4">
           <span className="text-[12px] font-semibold tracking-[0.1em] text-[#7a7a7a] uppercase mb-2 block">
@@ -28,7 +28,7 @@ export default function FAQ() {
           <h2 className="text-[34px] font-semibold tracking-tight text-[#1d1d1f] mb-3">
             Frequently asked questions.
           </h2>
-          <p className="text-[15px] text-[#7a7a7a] leading-relaxed">
+          <p className="text-[15px] text-[#7a7a7a] leading-relaxed font-normal">
             Everything you need to know about our engineering methodology, timelines, and deliverables.
           </p>
         </div>
@@ -39,7 +39,7 @@ export default function FAQ() {
               <h3 className="text-[18px] font-semibold text-[#1d1d1f] mb-2">
                 {faq.q}
               </h3>
-              <p className="text-[15px] text-[#7a7a7a] leading-relaxed">
+              <p className="text-[15px] text-[#7a7a7a] leading-relaxed font-normal">
                 {faq.a}
               </p>
             </div>
