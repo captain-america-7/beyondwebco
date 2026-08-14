@@ -1,37 +1,32 @@
 import { TextLink } from "@/components/ui/Button";
 
-const projects = [
+const selectedHomepageProjects = [
   {
     title: "Volta EV Platform",
-    category: "Electric Mobility & Tech Web App",
+    category: "Electric Mobility & Technology",
     domain: "volta.beyondwebco.com",
-    description: "A high-performance digital platform built for next-generation electric mobility, featuring sub-second interactive load times and responsive design.",
-    url: "https://volta.beyondwebco.com/",
-    tags: ["Next.js", "React 19", "Edge CDN"],
+    description: "A high-performance digital platform created for next-generation electric mobility.",
+    internalUrl: "/work/volta",
+    liveUrl: "https://volta.beyondwebco.com/",
+    tags: ["Next.js", "React", "Edge Infrastructure"],
   },
   {
     title: "Sri Lakshmi Automobiles",
-    category: "Automotive Business & Service Portal",
+    category: "Automotive Business Platform",
     domain: "sri-lakshmi-automobiles.vercel.app",
-    description: "Corporate website and service inquiry portal built for Sri Lakshmi Automobiles, providing high SEO visibility and streamlined customer interaction.",
-    url: "https://sri-lakshmi-automobiles.vercel.app/",
+    description: "A modern corporate and customer inquiry platform designed for visibility, speed, and conversion.",
+    internalUrl: "/work/sri-lakshmi-automobiles",
+    liveUrl: "https://sri-lakshmi-automobiles.vercel.app/",
     tags: ["Next.js", "TypeScript", "Tailwind CSS"],
   },
   {
-    title: "Aura Luxe Interior Design",
-    category: "Luxury Design Studio Showcase",
-    domain: "aura-luxe-interior-design.vercel.app",
-    description: "An editorial portfolio showcase for a high-end interior design studio, crafted with spatial presentation and elegant typography.",
-    url: "https://aura-luxe-interior-design.vercel.app/",
-    tags: ["React", "Editorial UI", "Portfolio"],
-  },
-  {
-    title: "Forenmed Advisory",
-    category: "Forensic & Medical Advisory Platform",
-    domain: "forenmed-advisory.vercel.app",
-    description: "A specialized professional consulting platform built for medical-legal advisory services, case scheduling, and client communication.",
-    url: "https://forenmed-advisory.vercel.app/",
-    tags: ["Next.js", "SEO", "Consulting Portal"],
+    title: "Pavani Studios",
+    category: "Photography & Creative Studio",
+    domain: "pavanistudios.shop",
+    description: "A premium digital experience designed around photography, storytelling, and visual presentation.",
+    internalUrl: "/work/pavani-studios",
+    liveUrl: "https://pavanistudios.shop",
+    tags: ["React", "Editorial UI", "Showcase"],
   },
 ];
 
@@ -53,8 +48,8 @@ export default function FeaturedWork() {
         </div>
 
         {/* Project Showcase Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {projects.map((project, idx) => (
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+          {selectedHomepageProjects.map((project, idx) => (
             <div
               key={idx}
               className="bg-[#1d1d1f] p-8 rounded-[18px] border border-white/10 flex flex-col justify-between"
@@ -63,9 +58,6 @@ export default function FeaturedWork() {
                 <div className="flex justify-between items-center mb-4">
                   <span className="text-[12px] text-[#2997ff] font-semibold uppercase tracking-wide">
                     {project.category}
-                  </span>
-                  <span className="text-[11px] font-mono text-[#cccccc] bg-white/5 px-2.5 py-1 rounded-[5px] border border-white/10">
-                    {project.domain}
                   </span>
                 </div>
 
@@ -90,13 +82,19 @@ export default function FeaturedWork() {
                 </div>
 
                 <div className="pt-4 border-t border-white/10 flex items-center justify-between">
-                  <TextLink href={project.url} external onDark className="text-[15px]">
-                    Visit Live Site →
+                  <TextLink href={project.internalUrl} onDark className="text-[14px]">
+                    View Project →
                   </TextLink>
                 </div>
               </div>
             </div>
           ))}
+        </div>
+
+        <div className="pt-4 text-center md:text-left">
+          <TextLink href="/work" onDark className="text-[15px]">
+            Explore All Work →
+          </TextLink>
         </div>
       </div>
     </section>

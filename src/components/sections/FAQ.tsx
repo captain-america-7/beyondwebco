@@ -1,19 +1,19 @@
 const faqs = [
   {
-    q: "How long does a typical web project take?",
-    a: "Most website and web application builds take between 2 to 6 weeks from initial architecture planning through deployment.",
+    q: "How long does a typical project take?",
+    a: "Most website projects take approximately 2–6 weeks depending on scope and complexity.",
   },
   {
-    q: "Do you work with startups and enterprise clients?",
-    a: "Yes. We partner with growing startups, local businesses, and enterprise teams seeking high-performance Next.js applications.",
+    q: "Who do you work with?",
+    a: "We work with startups, local businesses, growing companies, professionals, and enterprise teams.",
   },
   {
-    q: "What technical stack do you utilize?",
-    a: "Our core stack is Next.js, React, TypeScript, Tailwind CSS, and Edge infrastructure, engineered strictly for maximum performance.",
+    q: "What technologies do you use?",
+    a: "Our primary stack includes Next.js, React, TypeScript, Tailwind CSS, cloud infrastructure, and modern databases.",
   },
   {
-    q: "How do you handle website maintenance and post-launch?",
-    a: "We offer continuous performance optimization, security updates, and technical maintenance packages.",
+    q: "Do you provide maintenance?",
+    a: "Yes. BeyondWebCo provides ongoing technical maintenance, security updates, hosting support, and performance optimization.",
   },
 ];
 
