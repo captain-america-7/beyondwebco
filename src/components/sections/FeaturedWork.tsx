@@ -21,7 +21,7 @@ const selectedHomepageProjects: SelectedProject[] = [
     internalUrl: "/work/aura-luxe",
     liveUrl: "https://aura-luxe-interior-design.vercel.app/",
     tags: ["React", "Architectural UI", "Micro-Animations"],
-    image: "/auraluxe.png",
+    image: "/auraluxe.avif",
   },
   {
     title: "Nactura Spices Premium",
@@ -31,7 +31,7 @@ const selectedHomepageProjects: SelectedProject[] = [
     internalUrl: "/work/nactura-spices",
     liveUrl: "https://nacturaspices.beyondwebco.com",
     tags: ["Next.js", "E-commerce UI", "Tailwind CSS"],
-    image: "/nactura.png",
+    image: "/nactura.avif",
   },
   {
     title: "Patte Patries",
@@ -41,7 +41,7 @@ const selectedHomepageProjects: SelectedProject[] = [
     internalUrl: "/work/patte-patries",
     liveUrl: "https://patte-patries.vercel.app",
     tags: ["React", "Custom Order Flow", "Fast Load"],
-    image: "/pattepastries.png",
+    image: "/pattepastries.avif",
   },
 ];
 

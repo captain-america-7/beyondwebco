@@ -37,7 +37,7 @@ const allProjects: Project[] = [
     slug: "aura-luxe",
     tags: ["React", "Architectural UI", "Micro-Animations"],
     services: ["Brand Experience", "Web Design", "Portfolio Showcase"],
-    image: "/auraluxe.png",
+    image: "/auraluxe.avif",
   },
   {
     title: "Nactura Spices Premium",
@@ -49,7 +49,7 @@ const allProjects: Project[] = [
     slug: "nactura-spices",
     tags: ["Next.js", "Shopify Integration", "Tailwind CSS"],
     services: ["E-commerce Platform", "Brand Design", "Payment Gateway"],
-    image: "/nactura.png",
+    image: "/nactura.avif",
   },
   {
     title: "Patte Patries",
@@ -61,7 +61,7 @@ const allProjects: Project[] = [
     slug: "patte-patries",
     tags: ["React", "Custom Order Flow", "Fast Load"],
     services: ["Gourmet Storefront", "Menu UI", "Local Ordering"],
-    image: "/pattepastries.png",
+    image: "/pattepastries.avif",
   },
   {
     title: "Volta EV Platform",
