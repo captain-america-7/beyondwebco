@@ -1,46 +1,47 @@
 import type { Metadata } from "next";
-import { Inter, Montserrat } from "next/font/google";
+import { Inter_Tight, Instrument_Serif } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import { Analytics } from "@vercel/analytics/react";
+import { siteConfig } from "@/content/site";
 
-const inter = Inter({
+const interTight = Inter_Tight({
   subsets: ["latin"],
-  weight: ["400", "600", "700"],
-  variable: "--font-inter",
+  weight: ["400", "500", "600", "700", "800"],
+  variable: "--font-inter-tight",
   display: "swap",
 });
 
-const montserrat = Montserrat({
+const instrumentSerif = Instrument_Serif({
   subsets: ["latin"],
-  weight: ["300", "400", "600", "700"],
-  variable: "--font-montserrat",
+  weight: "400",
+  style: ["normal", "italic"],
+  variable: "--font-instrument-serif",
   display: "swap",
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://www.beyondwebco.com"),
+  metadataBase: new URL(siteConfig.url),
   title: {
-    default: "BeyondWebCo | Premium Web Design & Development Studio",
-    template: "%s | BeyondWebCo",
+    default: `${siteConfig.name} — ${siteConfig.tagline}`,
+    template: `%s | ${siteConfig.name}`,
   },
-  description: "BeyondWebCo is a modern web design & engineering studio crafting high-performance, SEO-optimized, and scalable websites for growing businesses.",
+  description: siteConfig.description,
   keywords: [
     "Web Design Studio",
+    "Agency Website",
     "Next.js Development",
     "React Web Apps",
     "SEO Optimization",
-    "Custom Software Engineering",
     "High Performance Websites",
+    "Design Engineering",
+    "UI/UX Design",
   ],
-  authors: [{ name: "BeyondWebCo", url: "https://www.beyondwebco.com" }],
-  creator: "BeyondWebCo",
-  publisher: "BeyondWebCo",
-  verification: {
-    google: "0-NGjg76iZChw9kl6ncjClegyYrAGaWytVtLPx00W2k",
-  },
+  authors: [{ name: siteConfig.name, url: siteConfig.url }],
+  creator: siteConfig.name,
+  publisher: siteConfig.name,
   formatDetection: {
     email: false,
     address: false,
@@ -60,29 +61,28 @@ export const metadata: Metadata = {
     },
   },
   icons: {
-    icon: "/logo.webp",
-    apple: "/logo.webp",
+    icon: "/favicon.ico",
   },
   openGraph: {
     type: "website",
-    url: "https://www.beyondwebco.com",
-    title: "BeyondWebCo | Premium Web Design & Development Studio",
-    description: "BeyondWebCo is a modern web design & engineering studio crafting high-performance, SEO-optimized, and scalable websites for growing businesses.",
-    siteName: "BeyondWebCo",
+    url: siteConfig.url,
+    title: `${siteConfig.name} — ${siteConfig.tagline}`,
+    description: siteConfig.description,
+    siteName: siteConfig.name,
     images: [
       {
-        url: "/og-image.webp",
+        url: siteConfig.ogImage,
         width: 1200,
         height: 630,
-        alt: "BeyondWebCo Digital Studio Showcase",
+        alt: `${siteConfig.name} — ${siteConfig.tagline}`,
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "BeyondWebCo | Premium Web Design & Development Studio",
-    description: "BeyondWebCo is a modern web design & engineering studio crafting high-performance, SEO-optimized, and scalable websites for growing businesses.",
-    images: ["/og-image.webp"],
+    title: `${siteConfig.name} — ${siteConfig.tagline}`,
+    description: siteConfig.description,
+    images: [siteConfig.ogImage],
   },
 };
 
@@ -91,40 +91,25 @@ const jsonLd = {
   "@graph": [
     {
       "@type": "Organization",
-      "@id": "https://www.beyondwebco.com/#organization",
-      name: "BeyondWebCo",
-      url: "https://www.beyondwebco.com",
-      logo: "https://www.beyondwebco.com/logo.webp",
-      sameAs: [
-        "https://instagram.com/beyondwebco",
-      ],
+      "@id": `${siteConfig.url}/#organization`,
+      name: siteConfig.name,
+      url: siteConfig.url,
+      description: siteConfig.description,
+      sameAs: siteConfig.socials.map((s) => s.href),
       contactPoint: {
         "@type": "ContactPoint",
-        telephone: "+91-8019082307",
+        telephone: siteConfig.contact.phone,
         contactType: "customer service",
-        email: "beyondwebco@gmail.com",
+        email: siteConfig.contact.email,
       },
     },
     {
       "@type": "WebSite",
-      "@id": "https://www.beyondwebco.com/#website",
-      url: "https://www.beyondwebco.com",
-      name: "BeyondWebCo",
+      "@id": `${siteConfig.url}/#website`,
+      url: siteConfig.url,
+      name: siteConfig.name,
       publisher: {
-        "@id": "https://www.beyondwebco.com/#organization",
-      },
-    },
-    {
-      "@type": "ProfessionalService",
-      "@id": "https://www.beyondwebco.com/#service",
-      name: "BeyondWebCo Web Development",
-      image: "https://www.beyondwebco.com/og-image.webp",
-      priceRange: "$$$",
-      telephone: "+91-8019082307",
-      email: "beyondwebco@gmail.com",
-      address: {
-        "@type": "PostalAddress",
-        addressCountry: "IN",
+        "@id": `${siteConfig.url}/#organization`,
       },
     },
   ],
@@ -136,18 +121,21 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning className="scroll-smooth">
+    <html
+      lang="en"
+      suppressHydrationWarning
+      className={`${interTight.variable} ${instrumentSerif.variable} scroll-smooth`}
+    >
       <head>
-        <meta name="google-site-verification" content="0-NGjg76iZChw9kl6ncjClegyYrAGaWytVtLPx00W2k" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body className={`${inter.className} ${montserrat.variable} bg-surface text-on-surface antialiased min-h-screen flex flex-col`}>
+      <body className="bg-[var(--bg)] text-[var(--text)] font-sans antialiased min-h-screen flex flex-col selection:bg-white selection:text-black">
         <a
           href="#main-content"
-          className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[100] bg-primary text-black px-6 py-3 rounded-xl font-bold shadow-2xl transition-all"
+          className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] bg-white text-black px-6 py-2.5 rounded-full font-semibold shadow-2xl transition-all"
         >
           Skip to main content
         </a>
@@ -158,7 +146,9 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <Navbar />
-          <main id="main-content" className="flex-grow">{children}</main>
+          <main id="main-content" className="flex-grow flex flex-col">
+            {children}
+          </main>
           <Footer />
         </ThemeProvider>
         <Analytics />
