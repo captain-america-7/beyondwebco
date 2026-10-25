@@ -23,8 +23,8 @@ export interface FooterSection {
 
 export const siteConfig = {
   name: "BRAND",
-  tagline: "Crafted Websites, Lasting Impressions",
-  headline: "Crafted Websites, Lasting Impressions",
+  tagline: "We Build Websites That Matter.",
+  headline: "We Build Websites That Matter.",
   subtext: "Premium websites crafted for bold brands.",
   description:
     "BRAND is an elite web design & engineering studio crafting high-performance, aesthetically arresting digital experiences and websites for forward-thinking brands worldwide.",
