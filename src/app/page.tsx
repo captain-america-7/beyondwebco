@@ -2,6 +2,7 @@ import { Metadata } from 'next';
 import Hero from '@/components/sections/Hero';
 import PortfolioSection from '@/components/sections/PortfolioSection';
 import InfiniteSpiral from '@/components/ui/InfiniteSpiral';
+import Testimonials from '@/components/Testimonials';
 import { siteConfig } from '@/content/site';
 
 export const metadata: Metadata = {
@@ -46,6 +47,7 @@ export default function Home() {
           grayscale={0}
         />
       </div>
+      <Testimonials />
     </>
   );
 }
