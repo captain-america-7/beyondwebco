@@ -46,8 +46,9 @@ export default function Hero() {
           className="mb-8"
         >
           <SpecularButton
-            size="lg"
-            radius={30}
+            size="sm"
+            radius={20}
+            className="!py-2 !px-5"
             tint="#ffffff"
             tintOpacity={0}
             textColor="#f5f5f5"
@@ -64,7 +65,7 @@ export default function Hero() {
             onClick={() => console.log('clicked')}
           >
             <span
-              className="inline-flex items-center gap-2.5 text-sm sm:text-[15px] font-medium tracking-wide text-neutral-100"
+              className="inline-flex items-center gap-2 text-xs sm:text-[13px] font-medium tracking-wide text-neutral-100"
               style={{ fontFamily: 'var(--font-playfair), "Playfair Display", Georgia, serif' }}
             >
               <span className="w-1.5 h-1.5 rounded-full bg-[#5457e6] animate-pulse" />
