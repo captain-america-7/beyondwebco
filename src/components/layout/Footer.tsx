@@ -7,9 +7,11 @@ import RollingButton from "@/components/ui/RollingButton";
 
 export function Footer() {
   return (
-    <footer className="relative w-full border-t border-[var(--border)] bg-[var(--surface)] text-[var(--text)] overflow-hidden transition-colors duration-300">
-      {/* Background ambient radial glow */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[300px] bg-gradient-to-b from-[var(--color-accent-blue)]/5 via-transparent to-transparent blur-[120px] pointer-events-none" />
+    <footer className="relative w-full bg-[var(--surface)] text-[var(--text)] overflow-hidden transition-colors duration-300">
+      {/* Soft atmospheric top diffuser into Footer */}
+      <div className="absolute top-0 inset-x-0 h-32 bg-gradient-to-b from-black via-black/40 to-transparent pointer-events-none" />
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[900px] h-[250px] bg-gradient-to-b from-[#1d69dd]/12 via-[#7E57C2]/6 to-transparent blur-[120px] pointer-events-none" />
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-2/3 max-w-3xl h-[1px] bg-gradient-to-r from-transparent via-white/10 to-transparent pointer-events-none" />
 
       {/* Final CTA Banner */}
       <div className="max-w-7xl mx-auto px-6 md:px-10 pt-24 pb-20 border-b border-[var(--border)]">

@@ -32,7 +32,9 @@ export default function Hero() {
         />
         {/* Atmospheric vignette overlays that softly fade into surrounding sections */}
         <div className="absolute inset-0 bg-radial-gradient from-transparent via-[var(--bg)]/15 to-[var(--bg)]/80 pointer-events-none" />
-        <div className="absolute inset-x-0 bottom-0 h-48 md:h-64 bg-gradient-to-t from-[var(--bg)] to-transparent pointer-events-none" />
+        <div className="absolute inset-x-0 bottom-0 h-52 md:h-72 bg-gradient-to-t from-[var(--bg)] via-[var(--bg)]/80 via-[var(--bg)]/30 to-transparent pointer-events-none" />
+        <div className="pointer-events-none absolute bottom-0 left-1/2 -translate-x-1/2 w-3/4 max-w-4xl h-[1px] bg-gradient-to-r from-transparent via-[#7E57C2]/40 to-transparent blur-[1px]" />
+        <div className="pointer-events-none absolute bottom-0 left-1/2 -translate-x-1/2 w-[700px] h-[120px] bg-gradient-to-t from-[#7E57C2]/10 to-transparent blur-[80px] rounded-full" />
         <div className="absolute inset-x-0 top-0 h-28 md:h-36 bg-gradient-to-b from-[var(--bg)]/80 via-[var(--bg)]/25 to-transparent pointer-events-none" />
       </div>
 

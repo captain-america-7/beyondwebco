@@ -169,9 +169,17 @@ export default function PortfolioSection() {
   return (
     <section
       ref={sectionRef}
-      className="relative w-full bg-[#000000] text-white py-16 sm:py-20 lg:py-28 overflow-hidden"
+      className="relative w-full bg-[#000000] text-white py-20 sm:py-24 lg:py-32 overflow-hidden"
     >
-      <div className="w-full flex flex-col lg:flex-row items-center gap-12 lg:gap-0">
+      {/* Ambient Diffuse Light Auras behind the section */}
+      <div className="pointer-events-none absolute -top-32 left-1/4 w-[750px] h-[380px] bg-gradient-to-br from-[#7E57C2]/15 via-[#1d69dd]/10 to-transparent blur-[140px] rounded-full z-0" />
+      <div className="pointer-events-none absolute -bottom-32 right-1/4 w-[750px] h-[380px] bg-gradient-to-tl from-[#1d69dd]/15 via-[#a2e7ff]/8 to-transparent blur-[140px] rounded-full z-0" />
+
+      {/* Top & Bottom feathered edge blending */}
+      <div className="pointer-events-none absolute inset-x-0 top-0 h-32 md:h-44 bg-gradient-to-b from-black via-black/70 to-transparent z-20" />
+      <div className="pointer-events-none absolute inset-x-0 bottom-0 h-32 md:h-44 bg-gradient-to-t from-black via-black/70 to-transparent z-20" />
+
+      <div className="w-full flex flex-col lg:flex-row items-center gap-12 lg:gap-0 relative z-10">
         {/* LEFT COLUMN: ~38% desktop width, editorial text */}
         <div className="w-full lg:w-[38%] shrink-0 flex flex-col justify-center px-6 sm:px-10 lg:pl-16 lg:pr-8 z-20 relative bg-gradient-to-b lg:bg-gradient-to-r from-black via-black/95 to-transparent">
           <div className="max-w-[480px]">

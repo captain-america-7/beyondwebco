@@ -52,10 +52,14 @@ export default function Testimonials() {
           vignette={0.25}
           brightness={1.05}
         />
-        {/* Soft edge blend overlays — center remains transparent so fibers shine through */}
-        <div className="pointer-events-none absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-black via-black/60 to-transparent" />
-        <div className="pointer-events-none absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-black via-black/70 to-transparent" />
-        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_40%,rgba(0,0,0,0.6)_100%)]" />
+        {/* Soft edge blend overlays — ultra-diffuse multi-stage feathering */}
+        <div className="pointer-events-none absolute inset-x-0 top-0 h-48 md:h-64 bg-gradient-to-b from-black via-black/80 via-black/25 to-transparent z-10" />
+        <div className="pointer-events-none absolute inset-x-0 bottom-0 h-48 md:h-64 bg-gradient-to-t from-black via-black/85 via-black/30 to-transparent z-10" />
+        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_35%,rgba(0,0,0,0.55)_100%)] z-10" />
+
+        {/* Ambient bottom diffuse light seam connecting into the Footer */}
+        <div className="pointer-events-none absolute bottom-0 left-1/2 -translate-x-1/2 w-3/4 max-w-4xl h-[1px] bg-gradient-to-r from-transparent via-[#1d69dd]/40 to-transparent blur-[1px] z-10" />
+        <div className="pointer-events-none absolute bottom-0 left-1/2 -translate-x-1/2 w-[800px] h-[120px] bg-gradient-to-t from-[#1d69dd]/10 to-transparent blur-[80px] rounded-full z-10" />
       </div>
 
       {/* Content */}

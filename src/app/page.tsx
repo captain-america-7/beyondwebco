@@ -4,6 +4,7 @@ import PortfolioSection from '@/components/sections/PortfolioSection';
 import InfiniteSpiral from '@/components/ui/InfiniteSpiral';
 import LightPillar from '@/components/LightPillar';
 import Testimonials from '@/components/Testimonials';
+import DiffuseTransition from '@/components/ui/DiffuseTransition';
 import { siteConfig } from '@/content/site';
 
 export const metadata: Metadata = {
@@ -24,7 +25,25 @@ export default function Home() {
   return (
     <>
       <Hero />
+
+      {/* Atmospheric Diffuse Transition between Hero & Portfolio */}
+      <DiffuseTransition
+        glowColor="#7E57C2"
+        secondaryGlow="#1d69dd"
+        className="-my-10 relative z-30"
+        spread="sm"
+      />
+
       <PortfolioSection />
+
+      {/* Atmospheric Diffuse Transition into the 3D Spiral */}
+      <DiffuseTransition
+        glowColor="#4ee0ef"
+        secondaryGlow="#110ab2"
+        className="-my-10 relative z-30"
+        spread="sm"
+      />
+
       <div style={{ height: '750px', position: 'relative', overflow: 'hidden' }} className="w-full bg-black">
         {/* LightPillar WebGL Atmospheric Background */}
         <div className="absolute inset-0 z-0">
@@ -47,9 +66,15 @@ export default function Home() {
           />
         </div>
 
-        {/* Ambient Top & Bottom Vignettes for Seamless Blending */}
-        <div className="pointer-events-none absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-black to-transparent z-10" />
-        <div className="pointer-events-none absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-black to-transparent z-10" />
+        {/* Ambient Top & Bottom Multi-Stage Feathered Vignettes */}
+        <div className="pointer-events-none absolute inset-x-0 top-0 h-44 md:h-56 bg-gradient-to-b from-black via-black/80 via-black/25 to-transparent z-10" />
+        <div className="pointer-events-none absolute inset-x-0 bottom-0 h-44 md:h-56 bg-gradient-to-t from-black via-black/80 via-black/25 to-transparent z-10" />
+
+        {/* Ambient entrance & exit light pools */}
+        <div className="pointer-events-none absolute top-0 left-1/2 -translate-x-1/2 w-3/4 max-w-4xl h-[1px] bg-gradient-to-r from-transparent via-[#4ee0ef]/40 to-transparent blur-[1px] z-20" />
+        <div className="pointer-events-none absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[120px] bg-gradient-to-b from-[#4ee0ef]/10 to-transparent blur-[80px] rounded-full z-20" />
+        <div className="pointer-events-none absolute bottom-0 left-1/2 -translate-x-1/2 w-3/4 max-w-4xl h-[1px] bg-gradient-to-r from-transparent via-[#1d69dd]/40 to-transparent blur-[1px] z-20" />
+        <div className="pointer-events-none absolute bottom-0 left-1/2 -translate-x-1/2 w-[700px] h-[120px] bg-gradient-to-t from-[#1d69dd]/10 to-transparent blur-[80px] rounded-full z-20" />
 
         {/* Rotating 3D Spiral Showcase */}
         <div className="relative z-10 w-full h-full">
@@ -76,6 +101,15 @@ export default function Home() {
           />
         </div>
       </div>
+
+      {/* Atmospheric Diffuse Transition between 3D Spiral & Testimonials */}
+      <DiffuseTransition
+        glowColor="#1d69dd"
+        secondaryGlow="#dfd1fc"
+        className="-my-10 relative z-30"
+        spread="sm"
+      />
+
       <Testimonials />
     </>
   );
