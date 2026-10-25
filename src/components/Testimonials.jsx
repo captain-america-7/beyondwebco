@@ -63,13 +63,16 @@ export default function Testimonials() {
         <div className="mb-16 md:mb-20 text-center">
           <span className="mb-4 inline-flex items-center gap-2 rounded-full border border-[#1d69dd]/40 bg-[#1d69dd]/10 px-4 py-1.5 text-xs uppercase tracking-[0.2em] text-[#dfd1fc] backdrop-blur-md shadow-[inset_0_1px_1px_rgba(255,255,255,0.15)]">
             <span className="w-1.5 h-1.5 rounded-full bg-[#dfd1fc] animate-pulse" />
-            Client Endorsements
+            BeyondWebCo • Client Endorsements
           </span>
           <h2 className="text-4xl sm:text-5xl md:text-6xl font-semibold tracking-tight text-white">
-            Loved by bold brands.
+            Loved by bold brands.{' '}
+            <span className="block mt-2 font-serif italic font-normal text-transparent bg-clip-text bg-gradient-to-r from-[#dfd1fc] via-white to-[#1d69dd]">
+              Crafted by BeyondWebCo.
+            </span>
           </h2>
           <p className="mx-auto mt-4 max-w-xl text-base md:text-lg text-neutral-400 font-light">
-            What clients say after we ship their high-performance digital experiences.
+            What founders and creative leaders say about partnering with BeyondWebCo.
           </p>
         </div>
 

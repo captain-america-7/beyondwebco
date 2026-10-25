@@ -22,24 +22,24 @@ export interface FooterSection {
 }
 
 export const siteConfig = {
-  name: "BRAND",
+  name: "BeyondWebCo",
   tagline: "We Build Websites That Matter.",
   headline: "We Build Websites That Matter.",
   subtext: "Premium websites crafted for bold brands.",
   description:
-    "BRAND is an elite web design & engineering studio crafting high-performance, aesthetically arresting digital experiences and websites for forward-thinking brands worldwide.",
-  url: "https://brandstudio.example.com",
+    "BeyondWebCo is an elite web design & engineering studio crafting high-performance, aesthetically arresting digital experiences and websites for forward-thinking brands worldwide.",
+  url: "https://www.beyondwebco.com",
   ogImage: "/og-image.webp",
   contact: {
-    email: "hello@brandstudio.example",
-    phone: "+91 98765 43210",
-    address: "Based in India, serving worldwide",
+    email: "beyondwebco@gmail.com",
+    phone: "+91 80190 82307",
+    address: "Hyderabad, India • Serving Worldwide",
   },
   socials: [
-    { platform: "Instagram", href: "https://instagram.com", label: "@brandstudio" },
-    { platform: "LinkedIn", href: "https://linkedin.com", label: "BRAND Studio" },
-    { platform: "Twitter", href: "https://x.com", label: "@brandstudio" },
-    { platform: "WhatsApp", href: "https://whatsapp.com", label: "+91 98765 43210" },
+    { platform: "Instagram", href: "https://instagram.com/beyondwebco", label: "@beyondwebco" },
+    { platform: "LinkedIn", href: "https://linkedin.com", label: "BeyondWebCo" },
+    { platform: "Twitter", href: "https://x.com/beyondwebco", label: "@beyondwebco" },
+    { platform: "WhatsApp", href: "https://whatsapp.com", label: "+91 80190 82307" },
   ] as SocialLink[],
 };
 
@@ -100,10 +100,10 @@ export const footerContent = {
   ] as FooterSection[],
   contact: {
     title: "Contact",
-    email: "hello@brandstudio.example",
-    phone: "+91 98765 43210",
-    location: "Based in India, serving worldwide",
+    email: "beyondwebco@gmail.com",
+    phone: "+91 80190 82307",
+    location: "Hyderabad, India • Serving Worldwide",
   },
   copyright: `© ${new Date().getFullYear()} ${siteConfig.name}. All rights reserved.`,
-  oversizedWordmark: "BRAND",
+  oversizedWordmark: "BEYONDWEBCO",
 };
