@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowUpRight, Mail, Phone, MapPin } from "lucide-react";
 import { siteConfig, footerContent } from "@/content/site";
 import RollingButton from "@/components/ui/RollingButton";
@@ -162,7 +163,16 @@ export function Footer() {
 
         {/* Legal & Status Row */}
         <div className="mt-16 pt-8 border-t border-[var(--border)] flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-[var(--muted)]">
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-2.5">
+            <div className="relative w-5 h-5 rounded-full overflow-hidden border border-white/20 bg-black/40 p-0.5">
+              <Image
+                src="/logo.png"
+                alt={`${siteConfig.name} logo`}
+                width={20}
+                height={20}
+                className="w-full h-full object-contain"
+              />
+            </div>
             <span className="font-semibold text-[var(--text)] tracking-wider">{siteConfig.name}</span>
             <span>•</span>
             <span>{footerContent.copyright}</span>

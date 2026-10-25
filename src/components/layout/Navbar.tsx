@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, ArrowUpRight } from "lucide-react";
@@ -67,21 +68,16 @@ export function Navbar() {
           className="flex items-center gap-2.5 text-[var(--text)] group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white rounded-full p-1"
           aria-label={`${siteConfig.name} Home`}
         >
-          {/* Minimalist geometric mark */}
-          <div className="w-8 h-8 rounded-full border border-[var(--border-strong)] bg-[var(--surface)] flex items-center justify-center group-hover:border-white/50 transition-colors shadow-sm">
-            <svg
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              className="w-4 h-4 text-[var(--text)] transition-transform duration-300 group-hover:scale-110"
-            >
-              <polygon points="12 2 22 8.5 22 15.5 12 22 2 15.5 2 8.5 12 2" />
-              <line x1="12" y1="22" x2="12" y2="15.5" />
-              <polyline points="22 8.5 12 15.5 2 8.5" />
-            </svg>
+          {/* Logo icon */}
+          <div className="relative w-8 h-8 rounded-full border border-white/20 bg-black/40 flex items-center justify-center group-hover:border-white/50 transition-colors shadow-sm overflow-hidden p-0.5">
+            <Image
+              src="/logo.png"
+              alt={`${siteConfig.name} Logo`}
+              width={32}
+              height={32}
+              className="w-full h-full object-contain rounded-full transition-transform duration-300 group-hover:scale-110"
+              priority
+            />
           </div>
           <span className="font-bold tracking-widest text-sm uppercase text-[var(--text)]">
             {siteConfig.name}
