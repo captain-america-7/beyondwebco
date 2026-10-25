@@ -46,25 +46,25 @@ export default function Hero() {
           className="mb-8"
         >
           <SpecularButton
-            size="sm"
-            radius={9999}
-            tint="#000000"
-            tintOpacity={0.65}
-            blur={14}
+            size="lg"
+            radius={30}
+            tint="#ffffff"
+            tintOpacity={0}
             textColor="#f5f5f5"
-            lineColor="#ffffff"
-            baseColor="#333333"
-            intensity={1.25}
-            shineSize={16}
-            shineFade={36}
+            lineColor="#5457e6"
+            baseColor="#525252"
+            intensity={1.15}
+            idleIntensity={0.3}
+            shineSize={28}
+            shineFade={50}
             thickness={1.2}
-            speed={0.4}
-            autoAnimate={true}
-            followMouse={true}
-            proximity={350}
+            glow={1.25}
+            followMouse={false}
+            proximity={240}
+            onClick={() => console.log('clicked')}
           >
-            <span className="inline-flex items-center gap-2 font-mono text-[11px] uppercase tracking-widest text-neutral-200">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#e100ff] animate-pulse" />
+            <span className="inline-flex items-center gap-2 font-mono text-xs uppercase tracking-widest text-neutral-200">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#5457e6] animate-pulse" />
               Design In Details
             </span>
           </SpecularButton>
