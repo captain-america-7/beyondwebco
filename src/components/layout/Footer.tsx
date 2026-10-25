@@ -179,16 +179,6 @@ export function Footer() {
           </div>
         </div>
       </div>
-
-      {/* Oversized faint wordmark at bottom */}
-      <div
-        className="w-full text-center overflow-hidden pointer-events-none select-none pb-2 pt-6 opacity-[0.035] dark:opacity-[0.05] transition-opacity"
-        aria-hidden="true"
-      >
-        <span className="inline-block text-[19vw] font-black tracking-tighter uppercase leading-none text-[var(--text)]">
-          {footerContent.oversizedWordmark}
-        </span>
-      </div>
     </footer>
   );
 }
