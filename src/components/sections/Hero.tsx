@@ -63,7 +63,10 @@ export default function Hero() {
             proximity={240}
             onClick={() => console.log('clicked')}
           >
-            <span className="inline-flex items-center gap-2 font-mono text-xs uppercase tracking-widest text-neutral-200">
+            <span
+              className="inline-flex items-center gap-2.5 text-sm sm:text-[15px] font-medium tracking-wide text-neutral-100"
+              style={{ fontFamily: 'var(--font-playfair), "Playfair Display", Georgia, serif' }}
+            >
               <span className="w-1.5 h-1.5 rounded-full bg-[#5457e6] animate-pulse" />
               Design In Details
             </span>

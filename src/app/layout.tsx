@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter_Tight, Instrument_Serif } from "next/font/google";
+import { Inter_Tight, Instrument_Serif, Playfair_Display } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import Navbar from "@/components/layout/Navbar";
@@ -15,10 +15,18 @@ const interTight = Inter_Tight({
 });
 
 const instrumentSerif = Instrument_Serif({
-  subsets: ["latin"],
   weight: "400",
   style: ["normal", "italic"],
+  subsets: ["latin"],
   variable: "--font-instrument-serif",
+  display: "swap",
+});
+
+const playfairDisplay = Playfair_Display({
+  weight: ["400", "500", "600", "700"],
+  style: ["normal", "italic"],
+  subsets: ["latin"],
+  variable: "--font-playfair",
   display: "swap",
 });
 
@@ -124,7 +132,7 @@ export default function RootLayout({
     <html
       lang="en"
       suppressHydrationWarning
-      className={`${interTight.variable} ${instrumentSerif.variable} scroll-smooth`}
+      className={`${interTight.variable} ${instrumentSerif.variable} ${playfairDisplay.variable} scroll-smooth`}
     >
       <head>
         <script
