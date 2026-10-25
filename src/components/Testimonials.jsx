@@ -34,7 +34,9 @@ export default function Testimonials() {
       {/* Background */}
       <div className="absolute inset-0 z-0">
         <GhostFibers
-          glowColor="#7E57C2"
+          glowColor="#1d69dd"
+          lineColor="#dfd1fc"
+          secondaryColor="#1d69dd"
           layers={3}
           twist={1.2}
           threads={72}
@@ -53,7 +55,7 @@ export default function Testimonials() {
       {/* Content */}
       <div className="relative z-10 mx-auto max-w-6xl px-6">
         <div className="mb-14 text-center">
-          <span className="mb-4 inline-block rounded-full border border-[#7E57C2]/30 bg-[#7E57C2]/10 px-4 py-1 text-xs uppercase tracking-[0.2em] text-[#a2e7ff]">
+          <span className="mb-4 inline-block rounded-full border border-[#1d69dd]/40 bg-[#1d69dd]/15 px-4 py-1 text-xs uppercase tracking-[0.2em] text-[#dfd1fc]">
             Testimonials
           </span>
           <h2 className="text-4xl font-semibold tracking-tight text-white md:text-5xl">
@@ -68,14 +70,14 @@ export default function Testimonials() {
           {TESTIMONIALS.map((t, i) => (
             <figure
               key={i}
-              className="group flex flex-col justify-between rounded-2xl border border-white/10 bg-white/[0.03] p-7 backdrop-blur-md transition-all duration-300 hover:-translate-y-1 hover:border-[#7E57C2]/50 hover:bg-white/[0.06] hover:shadow-[0_10px_30px_rgba(126,87,194,0.15)]"
+              className="group flex flex-col justify-between rounded-2xl border border-white/10 bg-white/[0.03] p-7 backdrop-blur-md transition-all duration-300 hover:-translate-y-1 hover:border-[#1d69dd]/50 hover:bg-white/[0.06] hover:shadow-[0_10px_30px_rgba(29,105,221,0.2)]"
             >
-              <div className="mb-4 text-3xl leading-none text-[#7E57C2]">“</div>
+              <div className="mb-4 text-3xl leading-none text-[#1d69dd]">“</div>
               <blockquote className="flex-1 text-[15px] leading-relaxed text-neutral-200">
                 {t.quote}
               </blockquote>
               <figcaption className="mt-6 flex items-center gap-3 border-t border-white/10 pt-5">
-                <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#7E57C2]/20 text-sm font-medium text-[#a2e7ff]">
+                <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#1d69dd]/20 text-sm font-medium text-[#dfd1fc]">
                   {t.name.charAt(0)}
                 </div>
                 <div>
